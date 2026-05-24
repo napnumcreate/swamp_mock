@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>顧客管理 - ホストクラブ店内業務システム</title>
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/mockup.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">店舗<span>管理</span></div>
+      <nav class="sidebar-nav">
+        <a href="../index.html" class="nav-link">← 一覧へ</a>
+        <div class="sidebar-section-label">管理メニュー</div>
+        <a href="customer-management.html" class="nav-link nav-link--active">顧客管理</a>
+        <a href="attendance.html" class="nav-link">勤怠管理</a>
+        <a href="salary-calculation.html" class="nav-link">給料計算</a>
+        <a href="analytics.html" class="nav-link">アナリティクス</a>
+      </nav>
+    </aside>
+    <div class="main-wrapper">
+      <header class="header"><span class="header-title">顧客管理</span><div class="header-meta"><span class="tag">営業管理</span><span class="label-provisional">静的モック</span></div></header>
+      <main class="main-content">
+        <div class="page-header"><h1 class="page-title">顧客管理</h1><p class="page-subtitle">来店顧客の情報を管理します</p></div>
+        <div class="grid-4 section-gap">
+          <div class="kpi-card kpi-accent"><div class="kpi-label">総顧客数</div><div class="kpi-value">248名</div><div class="kpi-trend">登録済み顧客</div></div>
+          <div class="kpi-card"><div class="kpi-label">今月の新規</div><div class="kpi-value">12名</div><div class="kpi-trend">2026年5月</div></div>
+          <div class="kpi-card"><div class="kpi-label">VIP顧客</div><div class="kpi-value">34名</div><div class="kpi-trend">重点フォロー対象</div></div>
+          <div class="kpi-card"><div class="kpi-label">近日来店予定</div><div class="kpi-value">8名</div><div class="kpi-trend">予約確認済み</div></div>
+        </div>
+        <div class="card section-gap">
+          <div class="card-header"><span class="card-title">顧客一覧</span><div class="btn-group"><span class="tag">すべて (248)</span><span class="badge badge-warning">VIP (34)</span><span class="badge badge-neutral">ゴールド (82)</span><span class="badge badge-neutral">シルバー (98)</span></div></div>
+          <div class="table-wrapper">
+            <table class="table">
+              <thead><tr><th>顧客名</th><th>ランク</th><th>担当ホスト</th><th>来店回数</th><th>累計売上</th><th>最終来店</th></tr></thead>
+              <tbody>
+                <tr><td class="cell-strong">田中 優子</td><td><span class="tag">VIP</span></td><td>REN</td><td>24回</td><td class="cell-money">&yen;2,840,000</td><td class="cell-time">2026/05/22</td></tr>
+                <tr><td class="cell-strong">佐藤 美咲</td><td><span class="tag">VIP</span></td><td>KAITO</td><td>18回</td><td class="cell-money">&yen;1,920,000</td><td class="cell-time">2026/05/20</td></tr>
+                <tr><td class="cell-strong">鈴木 麻衣</td><td><span class="badge badge-warning">ゴールド</span></td><td>HAYATO</td><td>12回</td><td class="cell-money">&yen;980,000</td><td class="cell-time">2026/05/23</td></tr>
+                <tr><td class="cell-strong">高橋 夏子</td><td><span class="badge badge-warning">ゴールド</span></td><td>RYU</td><td>9回</td><td class="cell-money">&yen;720,000</td><td class="cell-time">2026/05/18</td></tr>
+                <tr><td class="cell-strong">伊藤 沙織</td><td><span class="badge badge-neutral">シルバー</span></td><td>SORA</td><td>6回</td><td class="cell-money">&yen;480,000</td><td class="cell-time">2026/05/15</td></tr>
+                <tr><td class="cell-strong">渡辺 留美</td><td><span class="badge badge-neutral">シルバー</span></td><td>YUKI</td><td>5回</td><td class="cell-money">&yen;350,000</td><td class="cell-time">2026/05/10</td></tr>
+                <tr><td class="cell-strong">山本 京香</td><td><span class="badge badge-info">レギュラー</span></td><td>KENTA</td><td>3回</td><td class="cell-money">&yen;180,000</td><td class="cell-time">2026/04/28</td></tr>
+                <tr><td class="cell-strong">中村 彩花</td><td><span class="badge badge-success">新規</span></td><td>DAIKI</td><td>1回</td><td class="cell-money">&yen;45,000</td><td class="cell-time">2026/05/24</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-header"><span class="card-title">顧客詳細</span><span class="tag">VIP</span></div>
+            <div class="card-body">
+              <div class="detail-row"><span class="detail-label">顧客名</span><span class="detail-value"><strong>田中 優子</strong></span></div>
+              <div class="detail-row"><span class="detail-label">登録日</span><span class="detail-value">2024/03/15</span></div>
+              <div class="detail-row"><span class="detail-label">担当</span><span class="detail-value">REN</span></div>
+              <div class="detail-row"><span class="detail-label">備考</span><span class="detail-value">シャンパン好み、誕生日 8/12</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">来店履歴</span>
+              <span class="tag">直近4件</span>
+            </div>
+            <div class="table-wrapper">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>来店日</th>
+                    <th>担当</th>
+                    <th>利用金額</th>
+                    <th>内容</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="cell-time">2026/05/22</td>
+                    <td>REN</td>
+                    <td class="cell-money">&yen;186,000</td>
+                    <td>VIP席・シャンパン</td>
+                  </tr>
+                  <tr>
+                    <td class="cell-time">2026/05/10</td>
+                    <td>REN</td>
+                    <td class="cell-money">&yen;94,000</td>
+                    <td>指名・ボトル</td>
+                  </tr>
+                  <tr>
+                    <td class="cell-time">2026/04/28</td>
+                    <td>REN</td>
+                    <td class="cell-money">&yen;128,000</td>
+                    <td>同伴・フード</td>
+                  </tr>
+                  <tr>
+                    <td class="cell-time">2026/04/12</td>
+                    <td>REN</td>
+                    <td class="cell-money">&yen;76,000</td>
+                    <td>通常来店</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

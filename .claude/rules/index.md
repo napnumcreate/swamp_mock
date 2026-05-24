@@ -4,6 +4,7 @@
 
 | 作業 | 参照先 |
 |---|---|
+| **プロジェクト前提を確認する** | `.claude/rules/project-premises.md` |
 | 静的モック制作の考え方を確認する | `.claude/rules/static-mockup-workflow.md` |
 | Codex 委任の原則を確認する | `.claude/rules/codex-workflow.md` |
 | 実装レビューを行う | `.claude/rules/implementation-review.md` |

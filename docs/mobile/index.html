@@ -74,15 +74,6 @@
       color: var(--color-text-secondary);
       font-size: var(--font-size-xs);
     }
-    .no-pages-note {
-      padding: var(--space-4);
-      color: var(--color-text-muted);
-      background-color: var(--color-surface-secondary);
-      border: 1px dashed var(--color-border);
-      border-radius: var(--radius-md);
-      font-size: var(--font-size-sm);
-      text-align: center;
-    }
   </style>
 </head>
 <body>
@@ -94,15 +85,23 @@
       表示内容は確認用のイメージです。実際の機能は動作しません。
     </p>
 
-    <!-- 主要な mobile ページへのリンクをここに追加してください -->
     <div class="page-links">
-      <!-- 例:
       <div class="page-link-item">
-        <a href="pages/home.html">ホーム画面</a>
-        <p class="page-link-desc">モバイルホーム画面の確認用リンク</p>
+        <a href="pages/seat-management.html">客席管理</a>
+        <p class="page-link-desc">営業中の客席状況・担当ホストをリアルタイム確認</p>
       </div>
-      -->
-      <div class="no-pages-note">確認対象のモバイル画面へのリンクをこちらに掲載します。</div>
+      <div class="page-link-item">
+        <a href="pages/host-assignment.html">付け回し管理</a>
+        <p class="page-link-desc">席ごとの担当ホスト・待機状況の管理</p>
+      </div>
+      <div class="page-link-item">
+        <a href="pages/order.html">注文管理</a>
+        <p class="page-link-desc">席ごとの注文状況確認・追加操作</p>
+      </div>
+      <div class="page-link-item">
+        <a href="pages/shift-register.html">シフト管理</a>
+        <p class="page-link-desc">スタッフの出勤予定確認・シフト登録</p>
+      </div>
     </div>
   </div>
 </body>

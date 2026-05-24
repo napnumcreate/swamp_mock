@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アナリティクス - ホストクラブ店内業務システム</title>
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/mockup.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">店舗<span>管理</span></div>
+      <nav class="sidebar-nav">
+        <a href="../index.html" class="nav-link">← 一覧へ</a>
+        <div class="sidebar-section-label">管理メニュー</div>
+        <a href="customer-management.html" class="nav-link">顧客管理</a>
+        <a href="attendance.html" class="nav-link">勤怠管理</a>
+        <a href="salary-calculation.html" class="nav-link">給料計算</a>
+        <a href="analytics.html" class="nav-link nav-link--active">アナリティクス</a>
+      </nav>
+    </aside>
+    <div class="main-wrapper">
+      <header class="header"><span class="header-title">アナリティクス</span><div class="header-meta"><span class="tag">2026年5月</span><span class="label-provisional">静的モック</span></div></header>
+      <main class="main-content">
+        <div class="page-header"><h1 class="page-title">アナリティクス</h1><p class="page-subtitle">売上・来客・ホスト実績の概要</p></div>
+        <div class="grid-4 section-gap">
+          <div class="kpi-card kpi-accent"><div class="kpi-label">本日売上</div><div class="kpi-value">&yen;840,000</div><div class="kpi-trend kpi-trend--up">営業速報</div></div>
+          <div class="kpi-card"><div class="kpi-label">今月売上</div><div class="kpi-value">&yen;18,240,000</div><div class="kpi-trend">5月累計</div></div>
+          <div class="kpi-card"><div class="kpi-label">今月来店数</div><div class="kpi-value">186組</div><div class="kpi-trend">来店実績</div></div>
+          <div class="kpi-card"><div class="kpi-label">客単価</div><div class="kpi-value">&yen;98,000</div><div class="kpi-trend">平均金額</div></div>
+        </div>
+        <div class="grid-2 section-gap">
+          <div class="card">
+            <div class="card-header"><span class="card-title">週次売上推移（5月）</span><span class="tag">今週</span></div>
+            <div class="card-body">
+              <div style="display:flex; align-items:flex-end; gap:12px; height:140px; padding:8px 0;">
+                <div style="flex:1; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; gap:4px;"><span style="font-size:10px; color:var(--color-text-secondary);">&yen;3.8M</span><div style="width:100%; background:var(--color-accent); border-radius:4px 4px 0 0; height:76px;"></div><span style="font-size:10px; color:var(--color-text-muted);">第1週</span></div>
+                <div style="flex:1; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; gap:4px;"><span style="font-size:10px; color:var(--color-text-secondary);">&yen;4.1M</span><div style="width:100%; background:var(--color-accent); border-radius:4px 4px 0 0; height:83px;"></div><span style="font-size:10px; color:var(--color-text-muted);">第2週</span></div>
+                <div style="flex:1; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; gap:4px;"><span style="font-size:10px; color:var(--color-text-secondary);">&yen;4.7M</span><div style="width:100%; background:var(--color-accent); border-radius:4px 4px 0 0; height:94px;"></div><span style="font-size:10px; color:var(--color-text-muted);">第3週</span></div>
+                <div style="flex:1; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; gap:4px;"><span style="font-size:10px; color:var(--color-accent-text); font-weight:700;">&yen;5.6M</span><div style="width:100%; background:var(--color-accent-text); border-radius:4px 4px 0 0; height:100px;"></div><span style="font-size:10px; color:var(--color-accent-text); font-weight:700;">第4週</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header"><span class="card-title">ホスト別売上ランキング（今月）</span></div>
+            <div class="card-body">
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="min-width:72px; font-size:12px; color:var(--color-text-secondary); font-weight:600;">1. REN</span><div style="flex:1; background:var(--color-surface-secondary); border-radius:4px; height:18px;"><div style="width:100%; background:var(--color-accent); height:100%; border-radius:4px;"></div></div><span style="min-width:88px; font-size:12px; font-weight:600; text-align:right;">&yen;2,480,000</span></div>
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="min-width:72px; font-size:12px; color:var(--color-text-secondary); font-weight:600;">2. HAYATO</span><div style="flex:1; background:var(--color-surface-secondary); border-radius:4px; height:18px;"><div style="width:94%; background:var(--color-accent); height:100%; border-radius:4px;"></div></div><span style="min-width:88px; font-size:12px; font-weight:600; text-align:right;">&yen;2,320,000</span></div>
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="min-width:72px; font-size:12px; color:var(--color-text-secondary); font-weight:600;">3. KAITO</span><div style="flex:1; background:var(--color-surface-secondary); border-radius:4px; height:18px;"><div style="width:78%; background:var(--color-accent); height:100%; border-radius:4px;"></div></div><span style="min-width:88px; font-size:12px; font-weight:600; text-align:right;">&yen;1,920,000</span></div>
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="min-width:72px; font-size:12px; color:var(--color-text-secondary); font-weight:600;">4. RYU</span><div style="flex:1; background:var(--color-surface-secondary); border-radius:4px; height:18px;"><div style="width:67%; background:var(--color-accent); height:100%; border-radius:4px;"></div></div><span style="min-width:88px; font-size:12px; font-weight:600; text-align:right;">&yen;1,650,000</span></div>
+              <div style="display:flex; align-items:center; gap:8px;"><span style="min-width:72px; font-size:12px; color:var(--color-text-secondary); font-weight:600;">5. SORA</span><div style="flex:1; background:var(--color-surface-secondary); border-radius:4px; height:18px;"><div style="width:52%; background:var(--color-accent); height:100%; border-radius:4px;"></div></div><span style="min-width:88px; font-size:12px; font-weight:600; text-align:right;">&yen;1,280,000</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-header"><span class="card-title">カテゴリ別売上</span></div>
+            <div class="table-wrapper">
+              <table class="table">
+                <thead><tr><th>カテゴリ</th><th>売上</th><th>構成比</th></tr></thead>
+                <tbody>
+                  <tr><td>ボトル</td><td class="cell-money">&yen;9,840,000</td><td>54%</td></tr>
+                  <tr><td>グラス</td><td class="cell-money">&yen;3,280,000</td><td>18%</td></tr>
+                  <tr><td>フード</td><td class="cell-money">&yen;2,190,000</td><td>12%</td></tr>
+                  <tr><td>その他</td><td class="cell-money">&yen;2,930,000</td><td>16%</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header"><span class="card-title">時間帯別来店</span></div>
+            <div class="card-body">
+              <div class="detail-row"><span class="detail-label">20:00〜21:00</span><span class="detail-value">18組</span></div>
+              <div class="detail-row"><span class="detail-label">21:00〜22:00</span><span class="detail-value">42組</span></div>
+              <div class="detail-row"><span class="detail-label">22:00〜23:00</span><span class="detail-value"><span class="tag">68組 / 最多</span></span></div>
+              <div class="detail-row"><span class="detail-label">23:00〜24:00</span><span class="detail-value">41組</span></div>
+              <div class="detail-row"><span class="detail-label">24:00〜25:00</span><span class="detail-value">17組</span></div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>勤怠管理 - ホストクラブ店内業務システム</title>
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/mockup.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">店舗<span>管理</span></div>
+      <nav class="sidebar-nav">
+        <a href="../index.html" class="nav-link">← 一覧へ</a>
+        <div class="sidebar-section-label">管理メニュー</div>
+        <a href="customer-management.html" class="nav-link">顧客管理</a>
+        <a href="attendance.html" class="nav-link nav-link--active">勤怠管理</a>
+        <a href="salary-calculation.html" class="nav-link">給料計算</a>
+        <a href="analytics.html" class="nav-link">アナリティクス</a>
+      </nav>
+    </aside>
+    <div class="main-wrapper">
+      <header class="header"><span class="header-title">勤怠管理</span><div class="header-meta"><span class="tag">本日</span><span class="label-provisional">静的モック</span></div></header>
+      <main class="main-content">
+        <div class="page-header"><h1 class="page-title">勤怠管理</h1><p class="page-subtitle">スタッフの出退勤状況を確認します</p></div>
+        <div class="grid-4 section-gap">
+          <div class="kpi-card kpi-accent"><div class="kpi-label">本日出勤</div><div class="kpi-value">8名</div><div class="kpi-trend">予定スタッフ</div></div>
+          <div class="kpi-card"><div class="kpi-label">出勤済み</div><div class="kpi-value">6名</div><div class="kpi-trend kpi-trend--up">打刻確認済み</div></div>
+          <div class="kpi-card kpi-card--warning"><div class="kpi-label">遅刻</div><div class="kpi-value">1名</div><div class="kpi-trend">要確認</div></div>
+          <div class="kpi-card kpi-card--danger"><div class="kpi-label">未打刻</div><div class="kpi-value">1名</div><div class="kpi-trend">対応が必要</div></div>
+        </div>
+        <div class="alert alert-warning section-gap">
+          <span class="alert-icon">!</span>
+          <div class="alert-body"><div class="alert-title">未打刻スタッフがあります</div><span>RYOTA の出勤打刻が確認できません。確認してください。</span></div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">勤怠一覧</span><div class="btn-group"><span class="tag">本日 (8)</span><span class="badge badge-neutral">今週</span><span class="badge badge-success">出勤済み</span><span class="badge badge-warning">遅刻/未打刻</span></div></div>
+          <div class="table-wrapper">
+            <table class="table">
+              <thead><tr><th>スタッフ名</th><th>役職</th><th>出勤予定</th><th>打刻時刻</th><th>退勤予定</th><th>勤務時間</th><th>ステータス</th></tr></thead>
+              <tbody>
+                <tr><td class="cell-strong">REN</td><td>ホスト</td><td>20:00</td><td>20:03</td><td>2:00</td><td>5h57m</td><td><span class="badge badge-success">出勤済み</span></td></tr>
+                <tr><td class="cell-strong">KAITO</td><td>ホスト</td><td>19:30</td><td>19:28</td><td>1:00</td><td>ー</td><td><span class="badge badge-success">出勤済み</span></td></tr>
+                <tr><td class="cell-strong">SORA</td><td>ホスト</td><td>21:00</td><td>21:15</td><td>2:00</td><td>ー</td><td><span class="badge badge-warning">遅刻</span></td></tr>
+                <tr><td class="cell-strong">HAYATO</td><td>ホスト</td><td>20:00</td><td>20:01</td><td>2:00</td><td>ー</td><td><span class="badge badge-success">出勤済み</span></td></tr>
+                <tr><td class="cell-strong">RYU</td><td>ホスト</td><td>20:30</td><td>20:29</td><td>1:30</td><td>ー</td><td><span class="badge badge-success">出勤済み</span></td></tr>
+                <tr><td class="cell-strong">YUKI</td><td>ホスト</td><td>21:00</td><td>21:00</td><td>2:00</td><td>ー</td><td><span class="badge badge-success">出勤済み</span></td></tr>
+                <tr><td class="cell-strong">RYOTA</td><td>ホスト</td><td>20:00</td><td>ー</td><td>ー</td><td>ー</td><td><span class="badge badge-danger">未打刻</span></td></tr>
+                <tr><td class="cell-strong">山田 花子</td><td>内勤</td><td>18:00</td><td>17:58</td><td>1:00</td><td>ー</td><td><span class="badge badge-success">出勤済み</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

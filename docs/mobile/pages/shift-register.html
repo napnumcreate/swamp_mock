@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>シフト管理 - ホストクラブ店内業務システム</title>
+  <link rel="stylesheet" href="../../assets/css/reset.css">
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/mockup.css">
+  <link rel="stylesheet" href="../assets/css/mobile.css">
+</head>
+<body>
+  <div class="mobile-shell">
+    <header class="mobile-header">
+      <a href="../index.html" class="mobile-header-link">← 戻る</a>
+      <h1 class="mobile-header-title">シフト管理</h1>
+      <span class="mobile-header-spacer"></span>
+    </header>
+    <main class="mobile-body">
+      <section class="mobile-section" aria-label="シフトサマリー">
+        <div class="mobile-tile-grid">
+          <div class="mobile-tile kpi-accent"><div class="mobile-tile-value">18名</div><div class="mobile-tile-label">今週出勤予定</div></div>
+          <div class="mobile-tile"><div class="mobile-tile-value">8名</div><div class="mobile-tile-label">本日出勤</div></div>
+          <div class="mobile-tile"><div class="mobile-tile-value">3名</div><div class="mobile-tile-label">未提出</div></div>
+          <div class="mobile-tile"><div class="mobile-tile-value">5名</div><div class="mobile-tile-label">承認待ち</div></div>
+        </div>
+      </section>
+      <section class="mobile-section">
+        <h2 class="mobile-section-title">今週のシフト</h2>
+        <article class="mobile-card">
+          <div class="mobile-key-value"><span class="mobile-key">月 (5/26)</span><span class="mobile-value">7名</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">火 (5/27)</span><span class="mobile-value">9名</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">水 (5/28)</span><span class="mobile-value">8名</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">木 (5/29)</span><span class="mobile-value">11名</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">金 (5/30)</span><span class="mobile-value">12名</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">土 (5/31)</span><span class="tag">15名</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">日 (6/01)</span><span class="mobile-value">14名</span></div>
+        </article>
+      </section>
+      <section class="mobile-section">
+        <article class="mobile-card kpi-accent">
+          <h2 class="mobile-section-title">REN のシフト（今週）</h2>
+          <div class="mobile-key-value"><span class="mobile-key">登録済み日</span><span class="mobile-value">水・木・金・土・日</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">未登録</span><span class="badge badge-warning">月・火</span></div>
+          <div class="mobile-btn-row" style="margin-top: var(--space-4);"><a href="#" class="btn btn-primary">希望を出す</a><a href="#" class="btn btn-secondary">変更依頼</a></div>
+        </article>
+      </section>
+      <section class="mobile-section">
+        <h2 class="mobile-section-title">未提出スタッフ</h2>
+        <article class="mobile-card">
+          <div class="mobile-list-item"><div class="mobile-status-row"><div><strong>KENTA</strong><p class="mobile-list-meta"><span class="badge badge-warning">木〜土未提出</span></p></div><a href="#" class="btn btn-secondary btn-sm">リマインド</a></div></div>
+          <div class="mobile-list-item"><div class="mobile-status-row"><div><strong>RYOTA</strong><p class="mobile-list-meta"><span class="badge badge-danger">全日未提出</span></p></div><a href="#" class="btn btn-secondary btn-sm">リマインド</a></div></div>
+          <div class="mobile-list-item"><div class="mobile-status-row"><div><strong>DAIKI</strong><p class="mobile-list-meta"><span class="badge badge-warning">土日未提出</span></p></div><a href="#" class="btn btn-secondary btn-sm">リマインド</a></div></div>
+        </article>
+      </section>
+      <section class="mobile-section"><div class="mobile-btn-row"><a href="#" class="btn btn-primary">シフト確定</a><a href="#" class="btn btn-secondary">一括送信</a><a href="#" class="btn btn-secondary">履歴確認</a></div></section>
+    </main>
+    <nav class="mobile-bottom-nav" aria-label="メインナビゲーション">
+      <a href="seat-management.html" class="mobile-bottom-nav-item mobile-nav-home">客席</a>
+      <a href="order.html" class="mobile-bottom-nav-item mobile-nav-list">注文</a>
+      <a href="host-assignment.html" class="mobile-bottom-nav-item mobile-nav-detail">付け回し</a>
+      <a href="shift-register.html" class="mobile-bottom-nav-item mobile-nav-form active">シフト</a>
+    </nav>
+  </div>
+</body>
+</html>

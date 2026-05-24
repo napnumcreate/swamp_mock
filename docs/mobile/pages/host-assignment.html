@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>付け回し管理 - ホストクラブ店内業務システム</title>
+  <link rel="stylesheet" href="../../assets/css/reset.css">
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/mockup.css">
+  <link rel="stylesheet" href="../assets/css/mobile.css">
+</head>
+<body>
+  <div class="mobile-shell">
+    <header class="mobile-header">
+      <a href="../index.html" class="mobile-header-link">← 戻る</a>
+      <h1 class="mobile-header-title">付け回し管理</h1>
+      <span class="tag">営業中</span>
+    </header>
+    <main class="mobile-body">
+      <section class="mobile-section" aria-label="付け回しサマリー">
+        <div class="mobile-tile-grid">
+          <div class="mobile-tile kpi-accent"><div class="mobile-tile-value">12名</div><div class="mobile-tile-label">稼働ホスト</div></div>
+          <div class="mobile-tile"><div class="mobile-tile-value">8名</div><div class="mobile-tile-label">接客中</div></div>
+          <div class="mobile-tile"><div class="mobile-tile-value">3名</div><div class="mobile-tile-label">待機中</div></div>
+          <div class="mobile-tile"><div class="mobile-tile-value">1名</div><div class="mobile-tile-label">指名対応</div></div>
+        </div>
+      </section>
+      <section class="mobile-section">
+        <h2 class="mobile-section-title">席ごとの担当一覧</h2>
+        <article class="mobile-card" style="border-left: 3px solid var(--color-accent);">
+          <div class="mobile-status-row"><div class="btn-group"><strong>A-01</strong><span class="tag">入店中</span></div><strong>REN</strong></div>
+          <p class="mobile-list-meta">3名 / 指名あり</p>
+          <div class="btn-group"><a href="#" class="btn btn-secondary btn-sm">付け替え</a><a href="#" class="btn btn-primary btn-sm">応援依頼</a></div>
+        </article>
+        <article class="mobile-card" style="border-left: 3px solid var(--color-accent);">
+          <div class="mobile-status-row"><div class="btn-group"><strong>A-02</strong><span class="tag">入店中</span></div><strong>KAITO</strong></div>
+          <p class="mobile-list-meta">4名 / 指名なし</p>
+          <div class="btn-group"><a href="#" class="btn btn-secondary btn-sm">付け替え</a><a href="#" class="btn btn-secondary btn-sm">詳細</a></div>
+        </article>
+        <article class="mobile-card" style="border-left: 3px solid var(--color-accent);">
+          <div class="mobile-status-row"><div class="btn-group"><strong>B-01</strong><span class="tag">入店中</span></div><strong>SORA</strong></div>
+          <p class="mobile-list-meta">2名 / 指名なし</p>
+          <div class="btn-group"><a href="#" class="btn btn-secondary btn-sm">付け替え</a><a href="#" class="btn btn-primary btn-sm">応援依頼</a></div>
+        </article>
+        <article class="mobile-card" style="border-left: 3px solid var(--color-warning);">
+          <div class="mobile-status-row"><div class="btn-group"><strong>B-02</strong><span class="badge badge-warning">会計待ち</span></div><strong>RYU</strong></div>
+          <p class="mobile-list-meta">5名 / 指名あり</p>
+          <div class="btn-group"><a href="#" class="btn btn-secondary btn-sm">詳細</a></div>
+        </article>
+        <article class="mobile-card" style="border-left: 3px solid var(--color-accent);">
+          <div class="mobile-status-row"><div class="btn-group"><strong>VIP-01</strong><span class="tag">入店中</span></div><strong>HAYATO</strong></div>
+          <p class="mobile-list-meta">2名 / 指名あり</p>
+          <div class="btn-group"><a href="#" class="btn btn-secondary btn-sm">付け替え</a><a href="#" class="btn btn-secondary btn-sm">詳細</a></div>
+        </article>
+        <article class="mobile-card" style="border-left: 3px solid var(--color-accent);">
+          <div class="mobile-status-row"><div class="btn-group"><strong>VIP-02</strong><span class="tag">入店中</span></div><strong>YUKI</strong></div>
+          <p class="mobile-list-meta">3名 / 指名なし</p>
+          <div class="btn-group"><a href="#" class="btn btn-secondary btn-sm">付け替え</a><a href="#" class="btn btn-primary btn-sm">応援依頼</a></div>
+        </article>
+      </section>
+      <section class="mobile-section">
+        <h2 class="mobile-section-title">待機中ホスト</h2>
+        <article class="mobile-card">
+          <div class="mobile-list-item"><div class="mobile-status-row"><div><strong>KENTA</strong><p class="mobile-list-meta">待機 15分</p></div><a href="#" class="btn btn-primary btn-sm">アサイン</a></div></div>
+          <div class="mobile-list-item"><div class="mobile-status-row"><div><strong>RYOTA</strong><p class="mobile-list-meta">待機 8分</p></div><a href="#" class="btn btn-primary btn-sm">アサイン</a></div></div>
+          <div class="mobile-list-item"><div class="mobile-status-row"><div><strong>DAIKI</strong><p class="mobile-list-meta">待機 22分</p></div><a href="#" class="btn btn-primary btn-sm">アサイン</a></div></div>
+        </article>
+      </section>
+      <section class="mobile-section"><div class="mobile-btn-row"><a href="#" class="btn btn-secondary">全体更新</a><a href="#" class="btn btn-primary">一括付け替え</a></div></section>
+    </main>
+    <nav class="mobile-bottom-nav" aria-label="メインナビゲーション">
+      <a href="seat-management.html" class="mobile-bottom-nav-item mobile-nav-home">客席</a>
+      <a href="order.html" class="mobile-bottom-nav-item mobile-nav-list">注文</a>
+      <a href="host-assignment.html" class="mobile-bottom-nav-item mobile-nav-detail active">付け回し</a>
+      <a href="shift-register.html" class="mobile-bottom-nav-item mobile-nav-form">シフト</a>
+    </nav>
+  </div>
+</body>
+</html>

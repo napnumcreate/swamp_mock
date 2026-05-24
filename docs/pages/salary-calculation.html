@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>給料計算 - ホストクラブ店内業務システム</title>
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/mockup.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">店舗<span>管理</span></div>
+      <nav class="sidebar-nav">
+        <a href="../index.html" class="nav-link">← 一覧へ</a>
+        <div class="sidebar-section-label">管理メニュー</div>
+        <a href="customer-management.html" class="nav-link">顧客管理</a>
+        <a href="attendance.html" class="nav-link">勤怠管理</a>
+        <a href="salary-calculation.html" class="nav-link nav-link--active">給料計算</a>
+        <a href="analytics.html" class="nav-link">アナリティクス</a>
+      </nav>
+    </aside>
+    <div class="main-wrapper">
+      <header class="header"><span class="header-title">給料計算</span><div class="header-meta"><span class="tag">2026年5月</span><span class="label-provisional">静的モック</span></div></header>
+      <main class="main-content">
+        <div class="page-header"><h1 class="page-title">給料計算</h1><p class="page-subtitle">2026年5月分 給与・報酬の確認</p></div>
+        <div class="grid-4 section-gap">
+          <div class="kpi-card kpi-accent"><div class="kpi-label">給与総額</div><div class="kpi-value">&yen;4,280,000</div><div class="kpi-trend">支給予定総額</div></div>
+          <div class="kpi-card"><div class="kpi-label">ホスト報酬合計</div><div class="kpi-value">&yen;3,520,000</div><div class="kpi-trend">歩合・バック含む</div></div>
+          <div class="kpi-card"><div class="kpi-label">内勤給与合計</div><div class="kpi-value">&yen;760,000</div><div class="kpi-trend">手当含む</div></div>
+          <div class="kpi-card kpi-card--warning"><div class="kpi-label">未確定件数</div><div class="kpi-value">3名</div><div class="kpi-trend">確認待ち</div></div>
+        </div>
+        <div class="btn-group section-gap">
+          <span class="btn btn-secondary" style="background: var(--color-accent-light); border-bottom: 3px solid var(--color-accent); color: var(--color-accent-text);">ホスト報酬</span>
+          <span class="btn btn-secondary">内勤スタッフ給与</span>
+        </div>
+        <div class="card section-gap">
+          <div class="card-header"><span class="card-title">ホスト報酬</span><span class="note-sample-data">売上歩合・指名バック適用</span></div>
+          <div class="table-wrapper">
+            <table class="table">
+              <thead><tr><th>ホスト名</th><th>基本給</th><th>売上歩合</th><th>指名バック</th><th>控除</th><th>支給予定額</th><th>ステータス</th></tr></thead>
+              <tbody>
+                <tr><td class="cell-strong">REN</td><td class="cell-money">&yen;150,000</td><td class="cell-money">&yen;248,000</td><td class="cell-money">&yen;62,000</td><td class="cell-money">&yen;18,000</td><td class="cell-money">&yen;442,000</td><td><span class="badge badge-success">確定</span></td></tr>
+                <tr><td class="cell-strong">KAITO</td><td class="cell-money">&yen;120,000</td><td class="cell-money">&yen;192,000</td><td class="cell-money">&yen;48,000</td><td class="cell-money">&yen;15,000</td><td class="cell-money">&yen;345,000</td><td><span class="badge badge-success">確定</span></td></tr>
+                <tr><td class="cell-strong">HAYATO</td><td class="cell-money">&yen;130,000</td><td class="cell-money">&yen;285,000</td><td class="cell-money">&yen;71,000</td><td class="cell-money">&yen;20,000</td><td class="cell-money">&yen;466,000</td><td><span class="badge badge-success">確定</span></td></tr>
+                <tr><td class="cell-strong">SORA</td><td class="cell-money">&yen;100,000</td><td class="cell-money">&yen;128,000</td><td class="cell-money">&yen;32,000</td><td class="cell-money">&yen;12,000</td><td class="cell-money">&yen;248,000</td><td><span class="badge badge-success">確定</span></td></tr>
+                <tr><td class="cell-strong">RYU</td><td class="cell-money">&yen;110,000</td><td class="cell-money">&yen;165,000</td><td class="cell-money">&yen;41,000</td><td class="cell-money">&yen;14,000</td><td class="cell-money">&yen;302,000</td><td><span class="badge badge-success">確定</span></td></tr>
+                <tr><td class="cell-strong">YUKI</td><td class="cell-money">&yen;90,000</td><td class="cell-money">&yen;98,000</td><td class="cell-money">&yen;24,500</td><td class="cell-money">&yen;11,000</td><td class="cell-money">&yen;201,500</td><td><span class="badge badge-warning">未確定</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">内勤スタッフ給与</span><span class="note-sample-data">基本給・手当計算</span></div>
+          <div class="table-wrapper">
+            <table class="table">
+              <thead><tr><th>氏名</th><th>役職</th><th>基本給</th><th>手当</th><th>控除</th><th>支給予定額</th><th>ステータス</th></tr></thead>
+              <tbody>
+                <tr><td class="cell-strong">山田 花子</td><td>チーフ</td><td class="cell-money">&yen;250,000</td><td class="cell-money">&yen;30,000</td><td class="cell-money">&yen;25,000</td><td class="cell-money">&yen;255,000</td><td><span class="badge badge-success">確定</span></td></tr>
+                <tr><td class="cell-strong">田中 葵</td><td>スタッフ</td><td class="cell-money">&yen;200,000</td><td class="cell-money">&yen;15,000</td><td class="cell-money">&yen;18,000</td><td class="cell-money">&yen;197,000</td><td><span class="badge badge-success">確定</span></td></tr>
+                <tr><td class="cell-strong">佐々木 舞</td><td>アルバイト</td><td class="cell-money">&yen;120,000</td><td class="cell-money">&yen;5,000</td><td class="cell-money">&yen;8,000</td><td class="cell-money">&yen;117,000</td><td><span class="badge badge-warning">未確定</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
