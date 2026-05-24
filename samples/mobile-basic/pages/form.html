@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>入力 - Mobile Basic Sample</title>
+  <link rel="stylesheet" href="../../../docs/assets/css/reset.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/tokens.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/base.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/components.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/mockup.css">
+  <link rel="stylesheet" href="../../../docs/mobile/assets/css/mobile.css">
+</head>
+<body>
+  <div class="mobile-shell">
+    <header class="mobile-header">
+      <a href="../index.html" class="mobile-header-link">← 一覧</a>
+      <h1 class="mobile-header-title">入力<span class="label-provisional">静的モック</span></h1>
+      <span class="mobile-header-spacer"></span>
+    </header>
+
+    <main class="mobile-body">
+      <section class="mobile-section">
+        <div class="mobile-card">
+          <div class="mobile-form-group">
+            <label class="mobile-form-label" for="sample-title">件名</label>
+            <input id="sample-title" class="mobile-input" type="text" value="サンプル案件 B">
+          </div>
+          <div class="mobile-form-group">
+            <label class="mobile-form-label" for="sample-status">ステータス</label>
+            <select id="sample-status" class="mobile-select">
+              <option>確認中</option>
+              <option>進行中</option>
+              <option>完了</option>
+            </select>
+          </div>
+          <div class="mobile-form-group">
+            <label class="mobile-form-label" for="sample-note">メモ</label>
+            <textarea id="sample-note" class="mobile-textarea">確認事項を記載します。</textarea>
+          </div>
+          <div class="mobile-form-group">
+            <label>
+              <input type="checkbox" checked>
+              顧客確認済みとして表示する
+            </label>
+          </div>
+          <p class="mobile-helper">静的モックのため送信処理はありません。</p>
+        </div>
+      </section>
+
+      <section class="mobile-section">
+        <div class="mobile-btn-row">
+          <button class="btn btn-primary" type="button">保存</button>
+          <a href="detail.html" class="btn btn-secondary">戻る</a>
+        </div>
+      </section>
+
+      <section class="mobile-section">
+        <div class="note-card">
+          <strong>顧客確認ポイント</strong>
+          <p>入力項目の並び、ラベル、ボタン配置がスマートフォンで操作しやすいかを確認してください。</p>
+        </div>
+      </section>
+    </main>
+
+    <nav class="mobile-bottom-nav" aria-label="mobile sample navigation">
+      <a href="home.html" class="mobile-bottom-nav-item mobile-nav-home">ホーム</a>
+      <a href="list.html" class="mobile-bottom-nav-item mobile-nav-list">一覧</a>
+      <a href="detail.html" class="mobile-bottom-nav-item mobile-nav-detail">詳細</a>
+      <a href="form.html" class="mobile-bottom-nav-item mobile-nav-form active">フォーム</a>
+    </nav>
+  </div>
+</body>
+</html>

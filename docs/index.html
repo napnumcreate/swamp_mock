@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup Preview</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/mockup.css">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: var(--space-8);
+    }
+    .welcome-card {
+      max-width: 640px;
+      width: 100%;
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-10) var(--space-8);
+      box-shadow: var(--shadow-md);
+      text-align: center;
+    }
+    .welcome-icon {
+      width: 56px;
+      height: 56px;
+      background-color: var(--color-accent-light);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-5);
+      font-size: 24px;
+    }
+    .welcome-title {
+      font-size: var(--font-size-2xl);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: var(--space-3);
+    }
+    .welcome-desc {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: var(--space-8);
+    }
+    .page-links {
+      display: grid;
+      gap: var(--space-3);
+      text-align: left;
+    }
+    .page-link-item {
+      background-color: var(--color-surface-secondary);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-4);
+    }
+    .page-link-item a {
+      font-size: var(--font-size-sm);
+      font-weight: 600;
+      color: var(--color-accent);
+    }
+    .page-link-desc {
+      font-size: var(--font-size-xs);
+      color: var(--color-text-secondary);
+      margin-top: var(--space-1);
+      margin-bottom: 0;
+    }
+    .no-pages-note {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-muted);
+      background-color: var(--color-surface-secondary);
+      border: 1px dashed var(--color-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-4);
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome-card">
+    <div class="welcome-icon">📋</div>
+    <h1 class="welcome-title">Mockup Preview</h1>
+    <p class="welcome-desc">
+      本ページでは、画面イメージ確認用の静的モックを掲載しています。<br>
+      表示内容はご確認用のイメージです。実際の機能は動作しません。
+    </p>
+
+    <!-- 案件ごとにページリンクをここへ追加してください -->
+    <div class="page-links">
+      <!-- 例:
+      <div class="page-link-item">
+        <a href="pages/login.html">ログイン画面</a>
+        <p class="page-link-desc">メールアドレス・パスワードでのログイン画面イメージ</p>
+      </div>
+      -->
+      <div class="no-pages-note">
+        確認対象の画面へのリンクをこちらに掲載します。
+      </div>
+    </div>
+  </div>
+</body>
+</html>

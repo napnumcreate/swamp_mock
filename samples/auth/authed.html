@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auth Authed Sample</title>
+  <link rel="stylesheet" href="../../docs/assets/css/reset.css">
+  <link rel="stylesheet" href="../../docs/assets/css/tokens.css">
+  <link rel="stylesheet" href="../../docs/assets/css/base.css">
+  <link rel="stylesheet" href="../../docs/assets/css/components.css">
+  <link rel="stylesheet" href="../../docs/assets/css/mockup.css">
+  <style>
+    body {
+      min-height: 100vh;
+      background: var(--color-bg);
+    }
+
+    .auth-sample {
+      width: min(100% - 32px, 640px);
+      margin: 0 auto;
+      padding: var(--space-8) 0;
+    }
+
+    .auth-sample-card {
+      margin-top: var(--space-6);
+    }
+
+    .auth-sample-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-top: var(--space-5);
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <main class="auth-sample">
+    <section class="card auth-sample-card">
+      <div class="card-header">
+        <h1 class="card-title">認証済みです<span class="label-provisional">静的モック</span></h1>
+      </div>
+      <div class="card-body">
+        <p class="text-secondary">auth.js の利用例：requireAuth / logout の使い方を示すサンプルです。</p>
+        <p class="text-secondary">ログアウトを押すと login.html に戻ります。</p>
+        <div class="auth-sample-actions">
+          <button class="btn btn-secondary" id="logout-btn" type="button">ログアウト</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="authed.js"></script>
+</body>
+</html>

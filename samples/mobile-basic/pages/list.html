@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>一覧 - Mobile Basic Sample</title>
+  <link rel="stylesheet" href="../../../docs/assets/css/reset.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/tokens.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/base.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/components.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/mockup.css">
+  <link rel="stylesheet" href="../../../docs/mobile/assets/css/mobile.css">
+</head>
+<body>
+  <div class="mobile-shell">
+    <header class="mobile-header">
+      <a href="../index.html" class="mobile-header-link">← 一覧</a>
+      <h1 class="mobile-header-title">一覧<span class="label-provisional">静的モック</span></h1>
+      <span class="mobile-header-spacer"></span>
+    </header>
+
+    <main class="mobile-body">
+      <section class="mobile-section">
+        <div class="mobile-form-group">
+          <label class="mobile-form-label" for="sample-search">検索</label>
+          <input id="sample-search" class="mobile-input" type="search" placeholder="検索...">
+        </div>
+        <div class="mobile-btn-row">
+          <span class="badge badge-info">すべて</span>
+          <span class="badge badge-success">完了</span>
+          <span class="badge badge-warning">確認中</span>
+        </div>
+      </section>
+
+      <section class="mobile-section">
+        <div class="mobile-card">
+          <a href="detail.html" class="mobile-list-item">
+            <div class="mobile-list-title">サンプル案件 A <span class="badge badge-success">完了</span></div>
+            <p class="mobile-list-meta">最終更新：本日 10:20 / 担当：山田</p>
+          </a>
+          <a href="detail.html" class="mobile-list-item">
+            <div class="mobile-list-title">サンプル案件 B <span class="badge badge-warning">確認中</span></div>
+            <p class="mobile-list-meta">最終更新：本日 09:45 / 担当：佐藤</p>
+          </a>
+          <a href="detail.html" class="mobile-list-item">
+            <div class="mobile-list-title">サンプル案件 C <span class="badge badge-info">進行中</span></div>
+            <p class="mobile-list-meta">期限：明日 / 担当：鈴木</p>
+          </a>
+          <a href="detail.html" class="mobile-list-item">
+            <div class="mobile-list-title">サンプル案件 D <span class="badge badge-danger">要確認</span></div>
+            <p class="mobile-list-meta">コメント未確認の項目があります。</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="mobile-section">
+        <div class="note-card">
+          <strong>顧客確認ポイント</strong>
+          <p>検索、フィルター、一覧項目の情報量がスマートフォン幅で読みやすいかを確認してください。</p>
+        </div>
+      </section>
+    </main>
+
+    <nav class="mobile-bottom-nav" aria-label="mobile sample navigation">
+      <a href="home.html" class="mobile-bottom-nav-item mobile-nav-home">ホーム</a>
+      <a href="list.html" class="mobile-bottom-nav-item mobile-nav-list active">一覧</a>
+      <a href="detail.html" class="mobile-bottom-nav-item mobile-nav-detail">詳細</a>
+      <a href="form.html" class="mobile-bottom-nav-item mobile-nav-form">フォーム</a>
+    </nav>
+  </div>
+</body>
+</html>

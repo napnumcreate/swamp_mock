@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>フォーム — Basic Admin Sample</title>
+  <link rel="stylesheet" href="../../../docs/assets/css/reset.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/tokens.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/base.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/layout.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/components.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/mockup.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand"><span>Admin</span>Mock</div>
+      <nav class="sidebar-nav">
+        <a href="../index.html" class="nav-link">← サンプル一覧</a>
+        <div class="sidebar-section-label">基本画面</div>
+        <a href="dashboard.html" class="nav-link">📊 Dashboard</a>
+        <a href="list.html" class="nav-link">📋 一覧</a>
+        <a href="detail.html" class="nav-link">🔍 詳細</a>
+        <a href="form.html" class="nav-link nav-link--active">📝 フォーム</a>
+      </nav>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="header">
+        <span class="header-title">案件登録</span>
+        <div class="header-meta">
+          <span class="note-sample-data">サンプルデータ</span>
+          <span>山田 太郎</span>
+          <span class="label-provisional">静的モック</span>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <!-- 顧客確認ポイント -->
+        <div class="review-point section-gap">
+          <div class="review-point-label">顧客確認ポイント</div>
+          <div class="review-point-title">フォームの入力項目・必須項目の定義</div>
+          <div class="review-point-body">
+            <p>登録・編集フォームの入力項目・セクション構成・必須項目の定義をご確認ください。現在は「基本情報（件名・カテゴリ・優先度・担当者・期限）」「詳細設定（概要・説明・タグ）」「確認事項（通知設定）」の3セクション構成を仮置きしています。</p>
+          </div>
+        </div>
+
+        <form action="#" onsubmit="return false;">
+          <div class="card">
+            <!-- セクション 1: 基本情報 -->
+            <div class="form-section">
+              <div class="form-section-title">基本情報</div>
+              <div class="form-group">
+                <label class="form-label">件名 <span class="required">*</span></label>
+                <input type="text" class="form-input" placeholder="案件の件名を入力してください" value="ログイン機能の要件確認">
+                <p class="form-hint">顧客と共有する案件名を入力してください（最大100文字）</p>
+              </div>
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label">カテゴリ <span class="required">*</span></label>
+                  <select class="form-select">
+                    <option>要件定義</option>
+                    <option>設計</option>
+                    <option>実装</option>
+                    <option>テスト</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">
+                    優先度
+                    <span class="label-provisional">仮仕様</span>
+                  </label>
+                  <select class="form-select">
+                    <option>低</option>
+                    <option selected>中</option>
+                    <option>高</option>
+                    <option>緊急</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label">担当者 <span class="required">*</span></label>
+                  <select class="form-select">
+                    <option>山田 太郎</option>
+                    <option>鈴木 花子</option>
+                    <option>田中 次郎</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">期限</label>
+                  <input type="text" class="form-input" placeholder="YYYY-MM-DD" value="2026-05-20">
+                  <p class="form-hint">日付形式: YYYY-MM-DD</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- セクション 2: 詳細設定 -->
+            <div class="form-section">
+              <div class="form-section-title">詳細設定</div>
+              <div class="form-group">
+                <label class="form-label">概要</label>
+                <input type="text" class="form-input" placeholder="1〜2文で概要を入力" value="ログイン画面の要件を整理し、認証方式を確定する。">
+              </div>
+              <div class="form-group">
+                <label class="form-label">詳細説明</label>
+                <textarea class="form-textarea" rows="5">顧客要件として、メールアドレスとパスワードによる認証を基本とする。
+ソーシャルログイン（Google）の対応可否についても確認が必要。
+セキュリティ要件（パスワードポリシー・ロック機能）は別途確認する。</textarea>
+                <p class="form-hint">顧客との確認内容・前提条件・未確定事項を記載してください</p>
+              </div>
+              <div class="form-group">
+                <label class="form-label">タグ</label>
+                <input type="text" class="form-input" placeholder="カンマ区切りでタグを入力 例: 認証, セキュリティ" value="認証">
+                <p class="form-hint">複数のタグはカンマ（,）で区切ってください</p>
+              </div>
+            </div>
+
+            <!-- セクション 3: 確認事項 -->
+            <div class="form-section" style="margin-bottom:0;">
+              <div class="form-section-title">
+                確認事項
+                <span class="label-pending">確認待ち</span>
+              </div>
+              <div class="form-group">
+                <div class="form-checkbox">
+                  <input type="checkbox" id="notif1" checked>
+                  <label for="notif1">ステータス変更時にメール通知を送る</label>
+                </div>
+                <div class="form-checkbox">
+                  <input type="checkbox" id="notif2">
+                  <label for="notif2">コメントが追加されたときに通知する</label>
+                </div>
+                <div class="form-checkbox">
+                  <input type="checkbox" id="notif3" checked>
+                  <label for="notif3">期限3日前にリマインダーを送る</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- アクション -->
+            <div class="form-actions">
+              <a href="list.html" class="btn btn-ghost">← 戻る</a>
+              <div class="form-actions-right">
+                <span class="btn btn-secondary">下書き保存</span>
+                <span class="btn btn-primary">保存する</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 非機能注記 -->
+          <div class="form-no-action-note">
+            ⚠ このフォームは静的モックです。送信処理・保存処理は実装されていません。
+            <span class="note-non-prod">ボタンを押しても何も起きません。</span>
+          </div>
+        </form>
+
+        <!-- 戻る導線 -->
+        <div style="margin-top:var(--space-4);">
+          <a href="list.html" class="btn btn-ghost">← 一覧に戻る</a>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

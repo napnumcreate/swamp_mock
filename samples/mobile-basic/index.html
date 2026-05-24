@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Basic Mockup Sample</title>
+  <link rel="stylesheet" href="../../docs/assets/css/reset.css">
+  <link rel="stylesheet" href="../../docs/assets/css/tokens.css">
+  <link rel="stylesheet" href="../../docs/assets/css/base.css">
+  <link rel="stylesheet" href="../../docs/assets/css/components.css">
+  <link rel="stylesheet" href="../../docs/assets/css/mockup.css">
+  <link rel="stylesheet" href="../../docs/mobile/assets/css/mobile.css">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: var(--space-8);
+    }
+    .index-wrapper { width: 100%; max-width: 720px; }
+    .index-header { margin-bottom: var(--space-8); text-align: center; }
+    .index-title { margin-bottom: var(--space-3); color: var(--color-text); font-size: var(--font-size-2xl); font-weight: 700; }
+    .index-desc { color: var(--color-text-secondary); font-size: var(--font-size-sm); line-height: 1.7; }
+    .index-desc code { padding: 1px 5px; background: var(--color-surface-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-sm); color: var(--color-text); font-family: monospace; font-size: 11px; }
+    .sample-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); margin-bottom: var(--space-6); }
+    .sample-card {
+      display: block;
+      padding: var(--space-5);
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      text-decoration: none;
+      transition: box-shadow var(--transition-base), border-color var(--transition-base);
+    }
+    .sample-card:hover { border-color: var(--color-accent); box-shadow: var(--shadow-md); text-decoration: none; }
+    .sample-card-title { margin-bottom: var(--space-2); color: var(--color-text); font-size: var(--font-size-md); font-weight: 600; }
+    .sample-card-desc { margin-bottom: 0; color: var(--color-text-secondary); font-size: var(--font-size-sm); line-height: 1.5; }
+    .notice-box { padding: var(--space-4) var(--space-5); background-color: var(--color-surface-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-md); color: var(--color-text-secondary); font-size: var(--font-size-xs); line-height: 1.6; }
+    .notice-box code { font-family: monospace; }
+    @media (max-width: 600px) { .sample-cards { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="index-wrapper">
+    <div class="index-header">
+      <h1 class="index-title">Mobile Basic Mockup Sample</h1>
+      <span class="label-provisional">制作参照用</span>
+      <p class="index-desc">
+        mobile app-shell・bottom nav・1カラム画面構成の参考サンプルです。<br>
+        <code>docs/mobile/assets/css/mobile.css</code> を使った mobile 構造の実装例として使用します。
+      </p>
+    </div>
+
+    <div class="sample-cards">
+      <a href="pages/home.html" class="sample-card">
+        <div class="sample-card-title">Home</div>
+        <p class="sample-card-desc">KPI タイル、お知らせ、確認ポイントを配置したホーム画面サンプル</p>
+      </a>
+      <a href="pages/list.html" class="sample-card">
+        <div class="sample-card-title">List</div>
+        <p class="sample-card-desc">検索、フィルター、ステータス付きリストの一覧画面サンプル</p>
+      </a>
+      <a href="pages/detail.html" class="sample-card">
+        <div class="sample-card-title">Detail</div>
+        <p class="sample-card-desc">基本情報、履歴、アクションボタンを含む詳細画面サンプル</p>
+      </a>
+      <a href="pages/form.html" class="sample-card">
+        <div class="sample-card-title">Form</div>
+        <p class="sample-card-desc">入力欄、選択欄、チェック項目、ボタン行を含む入力画面サンプル</p>
+      </a>
+    </div>
+
+    <div class="notice-box">
+      <strong>制作参照用サンプルについて：</strong>
+      このサンプルは GitHub Pages では公開されません。実案件のモックは <code>docs/</code> または mobile 指定時の <code>docs/mobile/</code> 配下に作成してください。
+    </div>
+  </div>
+</body>
+</html>

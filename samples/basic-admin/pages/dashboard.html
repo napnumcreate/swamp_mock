@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Basic Admin Sample</title>
+  <link rel="stylesheet" href="../../../docs/assets/css/reset.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/tokens.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/base.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/layout.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/components.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/mockup.css">
+  <style>
+    .update-list { list-style: none; padding: 0; }
+    .update-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-3) 0;
+      border-bottom: 1px solid var(--color-border-light);
+      font-size: var(--font-size-sm);
+    }
+    .update-item:last-child { border-bottom: none; }
+    .update-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background-color: var(--color-accent);
+      flex-shrink: 0;
+    }
+    .update-dot--warning { background-color: var(--color-warning); }
+    .update-meta { margin-left: auto; font-size: var(--font-size-xs); color: var(--color-text-muted); white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand"><span>Admin</span>Mock</div>
+      <nav class="sidebar-nav">
+        <a href="../index.html" class="nav-link">← サンプル一覧</a>
+        <div class="sidebar-section-label">基本画面</div>
+        <a href="dashboard.html" class="nav-link nav-link--active">📊 Dashboard</a>
+        <a href="list.html" class="nav-link">📋 一覧</a>
+        <a href="detail.html" class="nav-link">🔍 詳細</a>
+        <a href="form.html" class="nav-link">📝 フォーム</a>
+      </nav>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="header">
+        <span class="header-title">Dashboard</span>
+        <div class="header-meta">
+          <span class="note-sample-data">サンプルデータ</span>
+          <span>山田 太郎</span>
+          <span class="label-provisional">静的モック</span>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <!-- 顧客確認ポイント -->
+        <div class="review-point section-gap">
+          <div class="review-point-label">顧客確認ポイント</div>
+          <div class="review-point-title">KPIカードの種類・並び順</div>
+          <div class="review-point-body">
+            <p>表示するKPIの種類・項目名・並び順をご確認ください。現在は「本日の対応件数・未処理件数・進行中案件・要確認件数」の4項目を仮置きしています。</p>
+            <p>ダッシュボードに表示するその他の情報（グラフ・カレンダーなど）についてもご確認ください。</p>
+          </div>
+        </div>
+
+        <!-- アラート -->
+        <div class="alert alert-warning section-gap">
+          <span class="alert-icon">⚠️</span>
+          <div class="alert-body">
+            <div class="alert-title">要確認: 未処理件数が閾値を超えています</div>
+            <span>現在 12 件の未処理案件があります。早めの対応をお願いします。</span>
+            <span class="note-non-prod">（この通知は静的モックのサンプル表示です）</span>
+          </div>
+        </div>
+
+        <!-- KPI カード -->
+        <div class="grid-4 section-gap">
+          <div class="kpi-card kpi-accent">
+            <div class="kpi-label">本日の対応件数</div>
+            <div class="kpi-value">24</div>
+            <div class="kpi-trend kpi-trend--up">▲ 前日比 +3件</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">未対応・申請</div>
+            <div class="kpi-value">12</div>
+            <div class="kpi-trend kpi-trend--down">▼ 要対応 (うち期限超過 3件)</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">進行中案件</div>
+            <div class="kpi-value">38</div>
+            <div class="kpi-trend">確認待ち 5件 含む</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label"><span class="badge badge-warning">承認待ち</span></div>
+            <div class="kpi-value">5</div>
+            <div class="kpi-trend kpi-trend--down">▼ 本日期限 2件</div>
+          </div>
+        </div>
+
+        <!-- 下段: 最近の更新 / 対応優先度 -->
+        <div class="grid-2">
+          <!-- 最近の更新 -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">最近の更新</span>
+              <a href="list.html" class="btn btn-ghost btn-sm">すべて見る</a>
+            </div>
+            <div class="card-body">
+              <ul class="update-list">
+                <li class="update-item">
+                  <span class="update-dot"></span>
+                  <span>案件 #1042 のステータスが「完了」に変更されました</span>
+                  <span class="update-meta">10分前</span>
+                </li>
+                <li class="update-item">
+                  <span class="update-dot update-dot--warning"></span>
+                  <span>案件 #1038 に新しいコメントが追加されました</span>
+                  <span class="update-meta">32分前</span>
+                </li>
+                <li class="update-item">
+                  <span class="update-dot"></span>
+                  <span>ユーザー「鈴木 花子」が新しい案件を登録しました</span>
+                  <span class="update-meta">1時間前</span>
+                </li>
+                <li class="update-item">
+                  <span class="update-dot"></span>
+                  <span>案件 #1035 の期限が本日に設定されています</span>
+                  <span class="update-meta">2時間前</span>
+                </li>
+                <li class="update-item">
+                  <span class="update-dot update-dot--warning"></span>
+                  <span>案件 #1030 が「要確認」に変更されました</span>
+                  <span class="update-meta">昨日</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 対応優先度 -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">対応優先度</span>
+              <span class="label-provisional">仮仕様</span>
+            </div>
+            <div class="card-body">
+              <ul class="update-list">
+                <li class="update-item">
+                  <span class="badge badge-danger">期限超過</span>
+                  <span>期限を過ぎている案件</span>
+                  <span class="update-meta">3件</span>
+                </li>
+                <li class="update-item">
+                  <span class="badge badge-warning">本日期限</span>
+                  <span>本日中に確認が必要な案件</span>
+                  <span class="update-meta">2件</span>
+                </li>
+                <li class="update-item">
+                  <span class="badge badge-info">確認待ち</span>
+                  <span>担当者または顧客確認待ち</span>
+                  <span class="update-meta">5件</span>
+                </li>
+                <li class="update-item">
+                  <span class="badge badge-neutral">未着手（新規）</span>
+                  <span>まだ対応を開始していない案件</span>
+                  <span class="update-meta">21件</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ステータス別件数 -->
+        <div class="grid-2 section-gap">
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">ステータス別件数</span>
+              <span class="label-provisional">仮仕様</span>
+            </div>
+            <div class="card-body">
+              <ul class="update-list">
+                <li class="update-item">
+                  <span class="badge badge-success">完了</span>
+                  <span>今月完了した案件</span>
+                  <span class="update-meta">86件</span>
+                </li>
+                <li class="update-item">
+                  <span class="badge badge-info">進行中</span>
+                  <span>現在対応中の案件</span>
+                  <span class="update-meta">38件</span>
+                </li>
+                <li class="update-item">
+                  <span class="badge badge-warning">保留</span>
+                  <span>ユーザー確認待ち</span>
+                  <span class="update-meta">12件</span>
+                </li>
+                <li class="update-item">
+                  <span class="badge badge-danger">要確認</span>
+                  <span>担当者確認が必要</span>
+                  <span class="update-meta">5件</span>
+                </li>
+                <li class="update-item">
+                  <span class="badge badge-neutral">未着手</span>
+                  <span>まだ対応していない案件</span>
+                  <span class="update-meta">21件</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ステータス別件数 -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">本日の対応状況</span>
+              <span class="label-provisional">仮仕様</span>
+            </div>
+            <div class="card-body">
+              <ul class="update-list">
+                <li class="update-item">
+                  <span class="badge badge-info">確認中</span>
+                  <span>内容確認を進めている案件</span>
+                  <span class="update-meta">8件</span>
+                </li>
+                <li class="update-item">
+                  <span class="badge badge-warning">差し戻し</span>
+                  <span>追加情報が必要な案件</span>
+                  <span class="update-meta">4件</span>
+                </li>
+                <li class="update-item">
+                  <span class="badge badge-success">処理済み</span>
+                  <span>本日対応を完了した案件</span>
+                  <span class="update-meta">12件</span>
+                </li>
+                <li class="update-item">
+                  <span class="badge badge-neutral">保留</span>
+                  <span>翌営業日以降に確認する案件</span>
+                  <span class="update-meta">2件</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

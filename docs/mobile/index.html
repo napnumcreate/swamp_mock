@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Mockup Preview</title>
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/mockup.css">
+  <link rel="stylesheet" href="assets/css/mobile.css">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: var(--space-8);
+    }
+    .preview-card {
+      max-width: 640px;
+      width: 100%;
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-10) var(--space-8);
+      box-shadow: var(--shadow-md);
+      text-align: center;
+    }
+    .preview-icon {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-5);
+      background-color: var(--color-accent-light);
+      border-radius: var(--radius-lg);
+      color: var(--color-accent-text);
+      font-size: 24px;
+    }
+    .preview-title {
+      margin-bottom: var(--space-3);
+      color: var(--color-text);
+      font-size: var(--font-size-2xl);
+      font-weight: 700;
+    }
+    .preview-desc {
+      margin-bottom: var(--space-8);
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-sm);
+      line-height: 1.7;
+    }
+    .page-links {
+      display: grid;
+      gap: var(--space-3);
+      text-align: left;
+    }
+    .page-link-item {
+      padding: var(--space-4);
+      background-color: var(--color-surface-secondary);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+    }
+    .page-link-item a {
+      color: var(--color-accent);
+      font-size: var(--font-size-sm);
+      font-weight: 600;
+    }
+    .page-link-desc {
+      margin-top: var(--space-1);
+      margin-bottom: 0;
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-xs);
+    }
+    .no-pages-note {
+      padding: var(--space-4);
+      color: var(--color-text-muted);
+      background-color: var(--color-surface-secondary);
+      border: 1px dashed var(--color-border);
+      border-radius: var(--radius-md);
+      font-size: var(--font-size-sm);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-card">
+    <div class="preview-icon" aria-hidden="true">M</div>
+    <h1 class="preview-title">Mobile Mockup Preview</h1>
+    <p class="preview-desc">
+      本ページでは、モバイル画面イメージ確認用の静的モックを掲載しています。<br>
+      表示内容は確認用のイメージです。実際の機能は動作しません。
+    </p>
+
+    <!-- 主要な mobile ページへのリンクをここに追加してください -->
+    <div class="page-links">
+      <!-- 例:
+      <div class="page-link-item">
+        <a href="pages/home.html">ホーム画面</a>
+        <p class="page-link-desc">モバイルホーム画面の確認用リンク</p>
+      </div>
+      -->
+      <div class="no-pages-note">確認対象のモバイル画面へのリンクをこちらに掲載します。</div>
+    </div>
+  </div>
+</body>
+</html>

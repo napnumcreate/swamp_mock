@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Admin Mockup Sample</title>
+  <link rel="stylesheet" href="../../docs/assets/css/reset.css">
+  <link rel="stylesheet" href="../../docs/assets/css/tokens.css">
+  <link rel="stylesheet" href="../../docs/assets/css/base.css">
+  <link rel="stylesheet" href="../../docs/assets/css/layout.css">
+  <link rel="stylesheet" href="../../docs/assets/css/components.css">
+  <link rel="stylesheet" href="../../docs/assets/css/mockup.css">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: var(--space-8);
+    }
+    .index-wrapper { max-width: 720px; width: 100%; }
+    .index-header  { text-align: center; margin-bottom: var(--space-8); }
+    .index-title   { font-size: var(--font-size-2xl); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-3); }
+    .index-desc    { font-size: var(--font-size-sm); color: var(--color-text-secondary); line-height: 1.7; }
+    .index-desc code { background: var(--color-surface-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 1px 5px; font-family: monospace; font-size: 11px; color: var(--color-text); }
+    .sample-cards  {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4);
+      margin-bottom: var(--space-6);
+    }
+    .sample-card {
+      display: block;
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      box-shadow: var(--shadow-sm);
+      text-decoration: none;
+      transition: box-shadow var(--transition-base), border-color var(--transition-base);
+    }
+    .sample-card:hover { box-shadow: var(--shadow-md); border-color: var(--color-accent); text-decoration: none; }
+    .sample-card-icon  { font-size: 24px; margin-bottom: var(--space-3); }
+    .sample-card-title { font-size: var(--font-size-md); font-weight: 600; color: var(--color-text); margin-bottom: var(--space-2); }
+    .sample-card-desc  { font-size: var(--font-size-sm); color: var(--color-text-secondary); line-height: 1.5; margin-bottom: 0; }
+    .notice-box {
+      background-color: var(--color-surface-secondary);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-4) var(--space-5);
+      font-size: var(--font-size-xs);
+      color: var(--color-text-secondary);
+    }
+    .notice-box code { font-family: monospace; }
+    @media (max-width: 600px) { .sample-cards { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="index-wrapper">
+    <div class="index-header">
+      <h1 class="index-title">Basic Admin Mockup Sample</h1>
+      <span class="label-provisional" style="font-size:var(--font-size-xs);vertical-align:middle;margin-left:var(--space-2);">制作参照用</span>
+      <p class="index-desc">
+        BtoB 向け管理画面モックの基本完成見本です。<br>
+        実案件で <code>docs/</code> 配下へ静的モックを実装する際の参考資料として使用します。<br>
+        <code>docs/assets/css/</code> のデザインシステムを共有しています。<br>
+        <strong>このサンプルは顧客公開物ではありません。</strong>
+      </p>
+    </div>
+
+    <div class="sample-cards">
+      <a href="pages/dashboard.html" class="sample-card">
+        <div class="sample-card-icon">📊</div>
+        <div class="sample-card-title">Dashboard</div>
+        <p class="sample-card-desc">KPI・本日の対応状況・ステータス別件数・更新情報を俯瞰するトップ画面例</p>
+      </a>
+      <a href="pages/list.html" class="sample-card">
+        <div class="sample-card-icon">📋</div>
+        <div class="sample-card-title">List</div>
+        <p class="sample-card-desc">高密度テーブル・件数表示・検索・絞り込み・ページネーション付きの一覧画面例</p>
+      </a>
+      <a href="pages/detail.html" class="sample-card">
+        <div class="sample-card-icon">🔍</div>
+        <div class="sample-card-title">Detail</div>
+        <p class="sample-card-desc">基本情報・関連情報・確認履歴タイムラインを整理した1件詳細画面例</p>
+      </a>
+      <a href="pages/form.html" class="sample-card">
+        <div class="sample-card-icon">📝</div>
+        <div class="sample-card-title">Form</div>
+        <p class="sample-card-desc">基本情報 / 詳細設定 / 確認事項のセクション分割された登録・編集フォーム例</p>
+      </a>
+    </div>
+
+    <div class="notice-box">
+      <strong>制作参照サンプルについて：</strong>
+      このサンプルは GitHub Pages では公開されません。リポジトリが Public の場合は GitHub 上から閲覧可能です。
+      実案件のモックは <code>docs/</code> 配下に作成してください。
+    </div>
+  </div>
+</body>
+</html>

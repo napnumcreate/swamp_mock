@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CodexReport",
+  "description": "Codex が実装完了後に返すレポートのスキーマ",
+  "type": "object",
+  "required": ["status", "summary", "files_changed"],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["completed", "blocked", "partial"],
+      "description": "実装の完了状態"
+    },
+    "summary": {
+      "type": "string",
+      "description": "実装内容の簡潔な説明"
+    },
+    "files_changed": {
+      "type": "array",
+      "description": "変更・作成したファイルのパス一覧",
+      "items": {
+        "type": "string"
+      }
+    },
+    "implementation_notes": {
+      "type": "array",
+      "description": "実装上の判断・工夫・注意点",
+      "items": {
+        "type": "string"
+      }
+    },
+    "checks_performed": {
+      "type": "array",
+      "description": "Codex が確認した Acceptance criteria の項目",
+      "items": {
+        "type": "string"
+      }
+    },
+    "skipped_checks": {
+      "type": "array",
+      "description": "確認できなかった・スキップした項目とその理由",
+      "items": {
+        "type": "string"
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "description": "判断できなかった点・ユーザーまたは ClaudeCode への確認事項",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

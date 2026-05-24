@@ -1,0 +1,12 @@
+# Agent 一時ファイル
+.codex-prompt.tmp.md
+.codex-report.tmp.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# エディタ
+.vscode/
+*.swp
+*.swo

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ホーム - Mobile Basic Sample</title>
+  <link rel="stylesheet" href="../../../docs/assets/css/reset.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/tokens.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/base.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/components.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/mockup.css">
+  <link rel="stylesheet" href="../../../docs/mobile/assets/css/mobile.css">
+</head>
+<body>
+  <div class="mobile-shell">
+    <header class="mobile-header">
+      <a href="../index.html" class="mobile-header-link">← 一覧</a>
+      <h1 class="mobile-header-title">ホーム<span class="label-provisional">静的モック</span></h1>
+      <span class="mobile-header-spacer"></span>
+    </header>
+
+    <main class="mobile-body">
+      <section class="mobile-section">
+        <div class="mobile-tile-grid">
+          <div class="mobile-tile">
+            <div class="mobile-tile-value">24</div>
+            <div class="mobile-tile-label">本日の確認件数</div>
+          </div>
+          <div class="mobile-tile">
+            <div class="mobile-tile-value">8</div>
+            <div class="mobile-tile-label">未対応</div>
+          </div>
+          <div class="mobile-tile">
+            <div class="mobile-tile-value">92%</div>
+            <div class="mobile-tile-label">処理率</div>
+          </div>
+          <div class="mobile-tile">
+            <div class="mobile-tile-value">3</div>
+            <div class="mobile-tile-label">要確認</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mobile-section">
+        <h2 class="mobile-section-title">今日の確認事項</h2>
+        <div class="mobile-card">
+          <div class="mobile-list-item">
+            <div class="mobile-list-title">午前中に確認が必要な項目があります</div>
+            <p class="mobile-list-meta">担当者と内容を確認し、対応方針を決めてください。</p>
+          </div>
+          <div class="mobile-list-item">
+            <div class="mobile-list-title">新しいお知らせが届いています</div>
+            <p class="mobile-list-meta">画面上の優先表示と通知文言の見え方を確認します。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mobile-section">
+        <div class="note-card">
+          <strong>顧客確認ポイント</strong>
+          <p>ホーム画面のレイアウトを確認してください。主要な数値とお知らせが見つけやすいかを確認します。</p>
+        </div>
+      </section>
+    </main>
+
+    <nav class="mobile-bottom-nav" aria-label="mobile sample navigation">
+      <a href="home.html" class="mobile-bottom-nav-item mobile-nav-home active">ホーム</a>
+      <a href="list.html" class="mobile-bottom-nav-item mobile-nav-list">一覧</a>
+      <a href="detail.html" class="mobile-bottom-nav-item mobile-nav-detail">詳細</a>
+      <a href="form.html" class="mobile-bottom-nav-item mobile-nav-form">フォーム</a>
+    </nav>
+  </div>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>一覧 — Basic Admin Sample</title>
+  <link rel="stylesheet" href="../../../docs/assets/css/reset.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/tokens.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/base.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/layout.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/components.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/mockup.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand"><span>Admin</span>Mock</div>
+      <nav class="sidebar-nav">
+        <a href="../index.html" class="nav-link">← サンプル一覧</a>
+        <div class="sidebar-section-label">基本画面</div>
+        <a href="dashboard.html" class="nav-link">📊 Dashboard</a>
+        <a href="list.html" class="nav-link nav-link--active">📋 一覧</a>
+        <a href="detail.html" class="nav-link">🔍 詳細</a>
+        <a href="form.html" class="nav-link">📝 フォーム</a>
+      </nav>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="header">
+        <span class="header-title">案件一覧</span>
+        <div class="header-meta">
+          <span class="note-sample-data">サンプルデータ</span>
+          <span>山田 太郎</span>
+          <span class="label-provisional">静的モック</span>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <!-- 顧客確認ポイント -->
+        <div class="review-point section-gap">
+          <div class="review-point-label">顧客確認ポイント</div>
+          <div class="review-point-title">テーブルの列構成・フィルター項目</div>
+          <div class="review-point-body">
+            <p>一覧に表示する列の種類・順序・金額項目の表示要否をご確認ください。現在は「案件番号・件名・区分・ステータス・優先度・担当者・更新日・概算金額・操作」を仮置きしています。フィルターの項目（ステータス・優先度・担当者）もご確認ください。</p>
+          </div>
+        </div>
+
+        <!-- ツールバー -->
+        <div class="table-toolbar">
+          <div class="filter-bar" style="margin-bottom:0;">
+            <div class="search-field">
+              <span>🔍</span>
+              <input type="text" placeholder="案件名・番号で検索" readonly>
+            </div>
+            <select class="filter-select">
+              <option>ステータス: すべて</option>
+              <option>進行中</option>
+              <option>完了</option>
+              <option>保留</option>
+              <option>要確認</option>
+              <option>未着手</option>
+            </select>
+            <select class="filter-select">
+              <option>優先度: すべて</option>
+              <option>高</option>
+              <option>中</option>
+              <option>低</option>
+            </select>
+            <select class="filter-select">
+              <option>担当者: すべて</option>
+              <option>山田 太郎</option>
+              <option>鈴木 花子</option>
+            </select>
+          </div>
+          <div class="btn-group">
+            <span class="label-pending">確認待ち</span>
+            <a href="form.html" class="btn btn-primary btn-sm">+ 新規登録</a>
+          </div>
+        </div>
+
+        <!-- テーブル -->
+        <div class="card">
+          <div class="table-toolbar">
+            <span class="pagination-info">全 42 件 ｜ 絞り込み中: 42 件 ｜ 選択中: 0 件</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>案件番号</th>
+                  <th>件名</th>
+                  <th>区分</th>
+                  <th>ステータス</th>
+                  <th>優先度</th>
+                  <th>担当者</th>
+                  <th>更新日</th>
+                  <th class="cell-num">概算金額</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="cell-nowrap"><span class="cell-code">#1042</span></td>
+                  <td>
+                    <a href="detail.html" class="table-link">ログイン機能の要件確認</a>
+                    <span class="label-provisional">仮仕様</span>
+                  </td>
+                  <td><span class="tag">要件定義</span></td>
+                  <td><span class="badge badge-success">完了</span></td>
+                  <td><span class="badge badge-danger">高</span></td>
+                  <td>山田 太郎</td>
+                  <td class="cell-nowrap">2026-05-19</td>
+                  <td class="cell-num">¥240,000</td>
+                  <td><a href="detail.html" class="btn btn-ghost btn-sm">詳細</a></td>
+                </tr>
+                <tr>
+                  <td class="cell-nowrap"><span class="cell-code">#1041</span></td>
+                  <td><a href="detail.html" class="table-link">ダッシュボード設計レビュー</a></td>
+                  <td><span class="tag">設計</span></td>
+                  <td><span class="badge badge-info">進行中</span></td>
+                  <td><span class="badge badge-warning">中</span></td>
+                  <td>鈴木 花子</td>
+                  <td class="cell-nowrap">2026-05-18</td>
+                  <td class="cell-num">¥180,000</td>
+                  <td><a href="detail.html" class="btn btn-ghost btn-sm">詳細</a></td>
+                </tr>
+                <tr>
+                  <td class="cell-nowrap"><span class="cell-code">#1040</span></td>
+                  <td><a href="detail.html" class="table-link">帳票出力機能の仕様確定</a></td>
+                  <td><span class="tag">実装</span></td>
+                  <td><span class="badge badge-warning">保留</span></td>
+                  <td><span class="badge badge-neutral">低</span></td>
+                  <td>田中 次郎</td>
+                  <td class="cell-nowrap">2026-05-17</td>
+                  <td class="cell-num">¥320,000</td>
+                  <td><a href="detail.html" class="btn btn-ghost btn-sm">詳細</a></td>
+                </tr>
+                <tr>
+                  <td class="cell-nowrap"><span class="cell-code">#1039</span></td>
+                  <td><a href="detail.html" class="table-link">外部API連携の検討</a></td>
+                  <td><span class="tag">設計</span></td>
+                  <td><span class="badge badge-danger">要確認</span></td>
+                  <td><span class="badge badge-danger">高</span></td>
+                  <td>山田 太郎</td>
+                  <td class="cell-nowrap">2026-05-16</td>
+                  <td class="cell-num">¥460,000</td>
+                  <td><a href="detail.html" class="btn btn-ghost btn-sm">詳細</a></td>
+                </tr>
+                <tr>
+                  <td class="cell-nowrap"><span class="cell-code">#1038</span></td>
+                  <td><a href="detail.html" class="table-link">権限管理の要件整理</a></td>
+                  <td><span class="tag">要件定義</span></td>
+                  <td><span class="badge badge-neutral">未着手</span></td>
+                  <td><span class="badge badge-warning">中</span></td>
+                  <td>鈴木 花子</td>
+                  <td class="cell-nowrap">2026-05-15</td>
+                  <td class="cell-num">¥120,000</td>
+                  <td><a href="detail.html" class="btn btn-ghost btn-sm">詳細</a></td>
+                </tr>
+                <tr>
+                  <td class="cell-nowrap"><span class="cell-code">#1037</span></td>
+                  <td><a href="detail.html" class="table-link">受入テスト観点の洗い出しと確認</a></td>
+                  <td><span class="tag">テスト</span></td>
+                  <td><span class="badge badge-info">進行中</span></td>
+                  <td><span class="badge badge-neutral">低</span></td>
+                  <td>田中 次郎</td>
+                  <td class="cell-nowrap">2026-05-14</td>
+                  <td class="cell-num">¥90,000</td>
+                  <td><a href="detail.html" class="btn btn-ghost btn-sm">詳細</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- ページネーション -->
+          <div class="pagination">
+            <span class="pagination-info">全 42 件中 1〜6 件を表示</span>
+            <div class="pagination-nav">
+              <span class="pagination-btn">‹</span>
+              <span class="pagination-btn pagination-btn--active">1</span>
+              <span class="pagination-btn">2</span>
+              <span class="pagination-btn">3</span>
+              <span class="pagination-btn">…</span>
+              <span class="pagination-btn">9</span>
+              <span class="pagination-btn">›</span>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(codex exec --skip-git-repo-check -s workspace-write *)"
+    ],
+    "deny": [
+      "Bash(git)",
+      "Bash(git *)",
+      "PowerShell(git)",
+      "PowerShell(git *)"
+    ]
+  }
+}

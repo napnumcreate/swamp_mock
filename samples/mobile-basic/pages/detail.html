@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>詳細 - Mobile Basic Sample</title>
+  <link rel="stylesheet" href="../../../docs/assets/css/reset.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/tokens.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/base.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/components.css">
+  <link rel="stylesheet" href="../../../docs/assets/css/mockup.css">
+  <link rel="stylesheet" href="../../../docs/mobile/assets/css/mobile.css">
+</head>
+<body>
+  <div class="mobile-shell">
+    <header class="mobile-header">
+      <a href="../index.html" class="mobile-header-link">← 一覧</a>
+      <h1 class="mobile-header-title">詳細<span class="label-provisional">静的モック</span></h1>
+      <span class="mobile-header-spacer"></span>
+    </header>
+
+    <main class="mobile-body">
+      <section class="mobile-section">
+        <div class="mobile-card">
+          <div class="mobile-status-row">
+            <div>
+              <h2 class="mobile-section-title">サンプル案件 B</h2>
+              <p class="mobile-list-meta">モバイル詳細画面の情報配置サンプル</p>
+            </div>
+            <span class="badge badge-warning">確認中</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="mobile-section">
+        <h2 class="mobile-section-title">基本情報</h2>
+        <div class="mobile-card">
+          <div class="mobile-key-value"><span class="mobile-key">受付番号</span><span class="mobile-value">MB-1024</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">担当者</span><span class="mobile-value">佐藤 花子</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">期限</span><span class="mobile-value">2026/05/22</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">優先度</span><span class="mobile-value">高</span></div>
+        </div>
+      </section>
+
+      <section class="mobile-section">
+        <h2 class="mobile-section-title">履歴</h2>
+        <div class="mobile-card">
+          <div class="mobile-timeline-item">
+            <div class="mobile-timeline-time">10:20</div>
+            <div class="mobile-timeline-body">ステータスを確認中に更新しました。</div>
+          </div>
+          <div class="mobile-timeline-item">
+            <div class="mobile-timeline-time">09:45</div>
+            <div class="mobile-timeline-body">担当者コメントを追加しました。</div>
+          </div>
+          <div class="mobile-timeline-item">
+            <div class="mobile-timeline-time">昨日</div>
+            <div class="mobile-timeline-body">初回登録を行いました。</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mobile-section">
+        <div class="mobile-btn-row">
+          <a href="form.html" class="btn btn-primary">編集</a>
+          <a href="list.html" class="btn btn-secondary">戻る</a>
+        </div>
+      </section>
+
+      <section class="mobile-section">
+        <div class="note-card">
+          <strong>顧客確認ポイント</strong>
+          <p>詳細情報の優先順位、履歴の見え方、主要アクションの配置を確認してください。</p>
+        </div>
+      </section>
+    </main>
+
+    <nav class="mobile-bottom-nav" aria-label="mobile sample navigation">
+      <a href="home.html" class="mobile-bottom-nav-item mobile-nav-home">ホーム</a>
+      <a href="list.html" class="mobile-bottom-nav-item mobile-nav-list">一覧</a>
+      <a href="detail.html" class="mobile-bottom-nav-item mobile-nav-detail active">詳細</a>
+      <a href="form.html" class="mobile-bottom-nav-item mobile-nav-form">フォーム</a>
+    </nav>
+  </div>
+</body>
+</html>
