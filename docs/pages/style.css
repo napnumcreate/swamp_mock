@@ -1,0 +1,267 @@
+#customer-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+#customer-modal.is-open {
+  display: flex;
+}
+
+#customer-modal .customer-modal-card {
+  min-width: 320px;
+  max-width: 460px;
+  width: 100%;
+  margin: var(--space-5);
+}
+
+.pagination-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-4);
+}
+
+.calendar-card {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 固定ヘッダー行（スタッフ名） */
+.calendar-header-row {
+  display: grid;
+  /* grid-template-columns は JS で設定 */
+  border-bottom: 2px solid var(--color-border, #e2e8f0);
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.calendar-header-gutter {
+  width: 64px;
+  min-width: 64px;
+  position: sticky;
+  left: 0;
+  z-index: 6;
+  background: #fff;
+}
+
+.calendar-staff-name {
+  padding: 10px 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  border-left: 1px solid var(--color-border, #e2e8f0);
+}
+
+.calendar-staff-role {
+  font-size: 11px;
+  font-weight: 400;
+  color: #888;
+  display: block;
+}
+
+/* スクロール可能エリア */
+.calendar-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-height: calc(100vh - 260px);
+  min-height: 400px;
+}
+
+/* カレンダーグリッド本体 */
+.calendar-body {
+  display: grid;
+  /* grid-template-columns は JS で設定 */
+  grid-template-rows: repeat(96, 24px);
+  min-width: 600px;
+}
+
+/* 時刻ラベル */
+.time-label {
+  grid-column: 1;
+  width: 64px;
+  min-width: 64px;
+  font-size: 11px;
+  color: #999;
+  text-align: right;
+  padding-right: 8px;
+  line-height: 24px;
+  margin-top: -10px; /* テキストを境界線に合わせる */
+  pointer-events: none;
+  user-select: none;
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  background: #fff;
+}
+
+/* 1時間ごとの境界線 */
+.hour-line {
+  /* grid-column と grid-row は JS で設定 */
+  border-top: 1px solid #e9ecef;
+  pointer-events: none;
+}
+
+/* 30分ごとの補助線 */
+.half-line {
+  /* grid-column と grid-row は JS で設定 */
+  border-top: 1px dashed #f1f3f4;
+  pointer-events: none;
+}
+
+/* シフトブロック */
+.shift-block {
+  margin: 1px 3px;
+  border-radius: 4px;
+  padding: 3px 6px;
+  font-size: 11px;
+  line-height: 1.4;
+  overflow: hidden;
+  cursor: default;
+  border-left: 3px solid transparent;
+}
+
+.shift-block--active {
+  background: #d4edda;
+  color: #155724;
+  border-left-color: #28a745;
+  position: relative;
+  z-index: 30;
+  margin-left: 25%;
+}
+
+.shift-block--late {
+  background: #fff3cd;
+  color: #856404;
+  border-left-color: #ffc107;
+  position: relative;
+  z-index: 30;
+  margin-left: 25%;
+}
+
+.shift-block--missing {
+  background: #f8d7da;
+  color: #721c24;
+  border-left-color: #dc3545;
+}
+
+.shift-block--scheduled {
+  background: #f0f4f8;
+  color: #4a5568;
+  border-left-color: #cbd5e0;
+  position: relative;
+  z-index: 10;
+}
+
+.shift-block:hover {
+  z-index: 20;
+  opacity: 0.85;
+}
+
+.shift-block--active:hover,
+.shift-block--late:hover {
+  z-index: 40;
+}
+
+.shift-time {
+  display: block;
+  font-weight: 600;
+}
+
+.shift-status {
+  display: block;
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+/* スタッフ列の縦境界線 */
+.col-divider {
+  /* grid-column と grid-row は JS で設定 */
+  border-left: 1px solid #e9ecef;
+  pointer-events: none;
+}
+
+/* 日付ナビゲーション */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.date-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.date-nav-label {
+  font-size: 15px;
+  font-weight: 600;
+  min-width: 100px;
+  text-align: center;
+}
+
+.time-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.time-filter-label {
+  font-size: 13px;
+  color: #666;
+}
+
+.time-filter-sep {
+  font-size: 13px;
+  color: #666;
+}
+
+.select-sm {
+  font-size: 13px;
+  padding: 4px 8px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+}
+
+/* フィルターカード */
+.filter-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter-row-label {
+  font-size: 13px;
+  color: #666;
+  min-width: 72px;
+  font-weight: 500;
+}
+
+.filter-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.main-wrapper {
+  min-width: 0;
+}

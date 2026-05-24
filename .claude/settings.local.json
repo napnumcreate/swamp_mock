@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(Get-Content \"C:\\\\VikitSystem_workspace\\\\swamp_mock\\\\docs\\\\mobile\\\\pages\\\\seat-management.html\")",
-      "Bash(Select-Object -Last 10)"
+      "Bash(Select-Object -Last 10)",
+      "Bash(Test-Path *)"
     ]
   }
 }
