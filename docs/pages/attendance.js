@@ -7,6 +7,40 @@ document.addEventListener('DOMContentLoaded', function () {
   var currentRoleFilter = 'all';
   var header = document.getElementById('calendar-header');
   var body = document.getElementById('calendar-body');
+  var shiftTooltip = document.createElement('div');
+  shiftTooltip.className = 'shift-tooltip';
+  shiftTooltip.style.display = 'none';
+  document.body.appendChild(shiftTooltip);
+
+  document.addEventListener('mouseover', function(e) {
+    var block = e.target.closest && e.target.closest('.shift-block');
+    if (!block) return;
+    var name = block.dataset.tooltipName || '';
+    var type = block.dataset.tooltipType || '';
+    var time = block.dataset.tooltipTime || '';
+    var label = block.dataset.tooltipLabel || '';
+    shiftTooltip.innerHTML =
+      '<div class="shift-tooltip-name">' + name + '</div>' +
+      '<div class="shift-tooltip-type">' + type + '</div>' +
+      '<div class="shift-tooltip-time">' + time + '</div>' +
+      (label ? '<div class="shift-tooltip-label">' + label + '</div>' : '');
+    shiftTooltip.style.display = 'block';
+  });
+
+  document.addEventListener('mouseout', function(e) {
+    var block = e.target.closest && e.target.closest('.shift-block');
+    if (!block) return;
+    if (!e.relatedTarget || !(e.relatedTarget.closest && e.relatedTarget.closest('.shift-block'))) {
+      shiftTooltip.style.display = 'none';
+    }
+  });
+
+  document.addEventListener('mousemove', function(e) {
+    if (shiftTooltip.style.display !== 'none') {
+      shiftTooltip.style.left = (e.clientX + 14) + 'px';
+      shiftTooltip.style.top = (e.clientY + 14) + 'px';
+    }
+  });
 
   function parseTime(str) {
     var parts = str.split(':');
@@ -60,12 +94,12 @@ document.addEventListener('DOMContentLoaded', function () {
     body.innerHTML = '';
 
     var timeBg = document.createElement('div');
-    timeBg.style.gridColumn = '1';
+    timeBg.style.gridColumn = '1 / -1';
     timeBg.style.gridRow = '1 / ' + (TOTAL_SLOTS + 1);
     timeBg.style.position = 'sticky';
     timeBg.style.left = '0';
     timeBg.style.width = '64px';
-    timeBg.style.zIndex = '4';
+    timeBg.style.zIndex = '9';
     timeBg.style.background = '#fff';
     timeBg.style.pointerEvents = 'none';
     body.appendChild(timeBg);
@@ -92,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       var label = document.createElement('div');
       label.className = 'time-label';
-      label.style.gridColumn = '1';
+      label.style.gridColumn = '1 / -1';
       label.style.gridRow = String(row);
       label.textContent = (hourValue < 10 ? '0' : '') + hourValue + ':00';
       body.appendChild(label);
@@ -135,6 +169,10 @@ document.addEventListener('DOMContentLoaded', function () {
         bgBlock.style.gridRow = rowStart + ' / ' + rowEnd;
         bgBlock.dataset.rowStart = String(rowStart);
         bgBlock.dataset.rowEnd = String(rowEnd);
+        bgBlock.dataset.tooltipName = staffList[colIndex].name;
+        bgBlock.dataset.tooltipType = 'シフト';
+        bgBlock.dataset.tooltipTime = shift.scheduledStart + '〜' + shift.scheduledEnd;
+        bgBlock.dataset.tooltipLabel = '';
         bgBlock.innerHTML = '<span class="shift-time">' + shift.scheduledStart + '〜' + shift.scheduledEnd + '</span>';
         body.appendChild(bgBlock);
 
@@ -146,6 +184,10 @@ document.addEventListener('DOMContentLoaded', function () {
         fgBlock.style.gridRow = actRowStart + ' / ' + rowEnd;
         fgBlock.dataset.rowStart = String(actRowStart);
         fgBlock.dataset.rowEnd = String(rowEnd);
+        fgBlock.dataset.tooltipName = staffList[colIndex].name;
+        fgBlock.dataset.tooltipType = '出勤';
+        fgBlock.dataset.tooltipTime = shift.actualStart + '〜' + shift.scheduledEnd;
+        fgBlock.dataset.tooltipLabel = shift.status === 'late' ? '遅刻' : '';
         var statusLabel = shift.status === 'late' ? '遅刻' : '';
         fgBlock.innerHTML =
           '<span class="shift-time">' + shift.actualStart + '〜' + shift.scheduledEnd + '</span>' +
@@ -158,6 +200,10 @@ document.addEventListener('DOMContentLoaded', function () {
         block.style.gridRow = rowStart + ' / ' + rowEnd;
         block.dataset.rowStart = String(rowStart);
         block.dataset.rowEnd = String(rowEnd);
+        block.dataset.tooltipName = staffList[colIndex].name;
+        block.dataset.tooltipType = 'シフト';
+        block.dataset.tooltipTime = shift.scheduledStart + '〜' + shift.scheduledEnd;
+        block.dataset.tooltipLabel = '未打刻';
         block.innerHTML =
           '<span class="shift-time">' + shift.scheduledStart + '〜' + shift.scheduledEnd + '</span>' +
           '<span class="shift-status">未打刻</span>';
