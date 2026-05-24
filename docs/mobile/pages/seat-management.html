@@ -13,11 +13,7 @@
 </head>
 <body>
   <div class="mobile-shell">
-    <header class="mobile-header">
-      <a href="../index.html" class="mobile-header-link">← 戻る</a>
-      <h1 class="mobile-header-title">客席管理</h1>
-      <span class="tag">営業中</span>
-    </header>
+    <header class="mobile-header" data-title="客席管理" data-tag-class="tag" data-tag-text="営業中"></header>
 
     <main class="mobile-body">
       <section class="mobile-section" aria-label="客席サマリー">
@@ -188,13 +184,9 @@
       </section>
     </main>
 
-    <nav class="mobile-bottom-nav" aria-label="メインナビゲーション">
-      <a href="seat-management.html" class="mobile-bottom-nav-item mobile-nav-home active">客席</a>
-      <a href="order.html" class="mobile-bottom-nav-item mobile-nav-list">注文</a>
-      <a href="host-assignment.html" class="mobile-bottom-nav-item mobile-nav-detail">付け回し</a>
-      <a href="shift-register.html" class="mobile-bottom-nav-item mobile-nav-form">シフト</a>
-    </nav>
+    <nav class="mobile-bottom-nav" aria-label="メインナビゲーション"></nav>
   </div>
+  <script src="../assets/js/shared-mobile-layout.js"></script>
   <script type="module">
     import { requireAuth } from '../../assets/js/auth.js';
     requireAuth('login.html');
