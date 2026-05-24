@@ -13,19 +13,9 @@
 </head>
 <body>
   <div class="app-shell">
-    <aside class="sidebar">
-      <div class="sidebar-brand">店舗<span>管理</span></div>
-      <nav class="sidebar-nav">
-        <a href="../index.html" class="nav-link">← 一覧へ</a>
-        <div class="sidebar-section-label">管理メニュー</div>
-        <a href="customer-management.html" class="nav-link nav-link--active">顧客管理</a>
-        <a href="attendance.html" class="nav-link">勤怠管理</a>
-        <a href="salary-calculation.html" class="nav-link">給料計算</a>
-        <a href="analytics.html" class="nav-link">アナリティクス</a>
-      </nav>
-    </aside>
+    <aside class="sidebar"></aside>
     <div class="main-wrapper">
-      <header class="header"><span class="header-title">顧客管理</span><div class="header-meta"><span class="tag">営業管理</span><span class="label-provisional">静的モック</span></div></header>
+      <header class="header" data-title="顧客管理" data-tag="営業管理"></header>
       <main class="main-content">
         <div class="page-header"><h1 class="page-title">顧客管理</h1><p class="page-subtitle">来店顧客の情報を管理します</p></div>
         <div class="grid-4 section-gap">
@@ -110,5 +100,10 @@
       </main>
     </div>
   </div>
+  <script type="module">
+    import { requireAuth } from '../assets/js/auth.js';
+    requireAuth('login.html');
+  </script>
+  <script src="../assets/js/shared-layout.js"></script>
 </body>
 </html>

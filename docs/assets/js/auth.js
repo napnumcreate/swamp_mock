@@ -1,7 +1,7 @@
+import { ACCESS_CODE, PASSWORD } from '../mock/auth-config.js';
+
 // 静的モック専用の軽量認証表現ユーティリティです。
 const SESSION_KEY = 'mock_authed';
-const ACCESS_CODE = 'demo123';
-const PASSWORD = 'mock2026';
 const LOGIN_PATH = 'login.html';
 const DEFAULT_REDIRECT = 'index.html';
 

@@ -13,19 +13,9 @@
 </head>
 <body>
   <div class="app-shell">
-    <aside class="sidebar">
-      <div class="sidebar-brand">店舗<span>管理</span></div>
-      <nav class="sidebar-nav">
-        <a href="../index.html" class="nav-link">← 一覧へ</a>
-        <div class="sidebar-section-label">管理メニュー</div>
-        <a href="customer-management.html" class="nav-link">顧客管理</a>
-        <a href="attendance.html" class="nav-link">勤怠管理</a>
-        <a href="salary-calculation.html" class="nav-link nav-link--active">給料計算</a>
-        <a href="analytics.html" class="nav-link">アナリティクス</a>
-      </nav>
-    </aside>
+    <aside class="sidebar"></aside>
     <div class="main-wrapper">
-      <header class="header"><span class="header-title">給料計算</span><div class="header-meta"><span class="tag">2026年5月</span><span class="label-provisional">静的モック</span></div></header>
+      <header class="header" data-title="給料計算" data-tag="2026年5月"></header>
       <main class="main-content">
         <div class="page-header"><h1 class="page-title">給料計算</h1><p class="page-subtitle">2026年5月分 給与・報酬の確認</p></div>
         <div class="grid-4 section-gap">
@@ -70,5 +60,10 @@
       </main>
     </div>
   </div>
+  <script type="module">
+    import { requireAuth } from '../assets/js/auth.js';
+    requireAuth('login.html');
+  </script>
+  <script src="../assets/js/shared-layout.js"></script>
 </body>
 </html>

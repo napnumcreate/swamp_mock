@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ログイン - 店舗管理システム（モバイル）</title>
+  <link rel="stylesheet" href="../../assets/css/reset.css">
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/mockup.css">
+  <link rel="stylesheet" href="../assets/css/mobile.css">
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background: var(--color-surface);
+    }
+
+    .mobile-login {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .login-brand {
+      position: relative;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: center;
+      padding: var(--space-12) var(--space-6) var(--space-8);
+      background: var(--color-accent-light);
+    }
+
+    .login-brand .label-provisional {
+      position: absolute;
+      top: var(--space-5);
+      left: var(--space-5);
+      margin-left: 0;
+    }
+
+    .login-brand-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      margin-bottom: var(--space-5);
+      background: var(--color-accent);
+      border-radius: var(--radius-lg);
+      color: #fff;
+      font-size: var(--font-size-xl);
+      font-weight: 700;
+    }
+
+    .login-brand-title {
+      margin: 0;
+      color: var(--color-text);
+      font-size: var(--font-size-xl);
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .login-form-area {
+      padding: var(--space-6) var(--space-5) var(--space-8);
+      background: var(--color-surface);
+    }
+
+    .login-form-title {
+      margin-bottom: var(--space-2);
+      color: var(--color-text);
+      font-size: var(--font-size-lg);
+      font-weight: 700;
+    }
+
+    .login-form-subtitle {
+      margin-bottom: var(--space-5);
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-sm);
+    }
+
+    .login-card {
+      padding: var(--space-5);
+    }
+
+    .login-actions {
+      margin-top: var(--space-6);
+    }
+
+    .login-actions .btn {
+      width: 100%;
+    }
+
+    .login-error[hidden] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <main class="mobile-login">
+    <section class="login-brand" aria-label="ブランド">
+      <span class="label-provisional">静的モック</span>
+      <div class="login-brand-icon" aria-hidden="true">店</div>
+      <h1 class="login-brand-title">店舗管理システム（モバイル）</h1>
+    </section>
+
+    <section class="login-form-area">
+      <h2 class="login-form-title">ログイン</h2>
+      <p class="login-form-subtitle">アクセスコードとパスワードを入力してください。</p>
+      <form class="card login-card" id="login-form">
+        <div class="form-group">
+          <label class="form-label" for="access-code">アクセスコード</label>
+          <input class="form-input" id="access-code" name="access-code" type="password" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">パスワード</label>
+          <input class="form-input" id="password" name="password" type="password" autocomplete="off">
+        </div>
+
+        <div class="alert alert-danger login-error" id="login-error" hidden>
+          <div class="alert-body">アクセスコードまたはパスワードが一致しません。</div>
+        </div>
+
+        <div class="login-actions">
+          <button class="btn btn-primary" type="submit">ログイン</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script type="module" src="login.js"></script>
+</body>
+</html>
