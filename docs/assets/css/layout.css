@@ -51,6 +51,14 @@
   padding: var(--space-3) var(--space-3) var(--space-2);
 }
 
+.sidebar-subsection-label {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  padding: var(--space-3) var(--space-3) var(--space-1) var(--space-5);
+  margin-top: var(--space-2);
+}
+
 /* ==================== Main Wrapper ==================== */
 .main-wrapper {
   flex: 1;

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>顧客管理 - ホストクラブ店内業務システム</title>
+  <link rel="stylesheet" href="../../assets/css/reset.css">
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/mockup.css">
+  <link rel="stylesheet" href="../assets/css/mobile.css">
+</head>
+<body>
+  <div class="mobile-shell">
+    <header class="mobile-header" data-title="顧客管理" data-tag-class="tag" data-tag-text="一覧"></header>
+
+    <main class="mobile-body">
+      <section class="mobile-section" aria-label="顧客検索">
+        <label class="mobile-form-label" for="customer-search">顧客検索</label>
+        <input class="mobile-input" id="customer-search" type="text" placeholder="顧客名・電話番号">
+      </section>
+
+      <section class="mobile-section">
+        <h2 class="mobile-section-title">顧客一覧</h2>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>高橋 美優</span><span class="tag">VIP</span></div>
+          <p class="mobile-list-meta">最終来店日：2026/05/23 / 来店回数：28回</p>
+          <p class="mobile-list-meta">担当ホスト：REN</p>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>山本 沙羅</span><span class="badge badge-info">レギュラー</span></div>
+          <p class="mobile-list-meta">最終来店日：2026/05/20 / 来店回数：12回</p>
+          <p class="mobile-list-meta">担当ホスト：KAITO</p>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>小林 杏奈</span><span class="badge badge-neutral">新規</span></div>
+          <p class="mobile-list-meta">最終来店日：2026/05/24 / 来店回数：1回</p>
+          <p class="mobile-list-meta">担当ホスト：YUKI</p>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>伊藤 玲奈</span><span class="tag">VIP</span></div>
+          <p class="mobile-list-meta">最終来店日：2026/05/18 / 来店回数：41回</p>
+          <p class="mobile-list-meta">担当ホスト：HAYATO</p>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>中村 愛</span><span class="badge badge-info">レギュラー</span></div>
+          <p class="mobile-list-meta">最終来店日：2026/05/22 / 来店回数：8回</p>
+          <p class="mobile-list-meta">担当ホスト：SORA</p>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>斉藤 ひかり</span><span class="badge badge-neutral">新規</span></div>
+          <p class="mobile-list-meta">最終来店日：2026/05/25 / 来店回数：1回</p>
+          <p class="mobile-list-meta">担当ホスト：KENTA</p>
+        </article>
+      </section>
+
+      <section class="mobile-section">
+        <div class="mobile-btn-row">
+          <a href="#" class="btn btn-primary">新規顧客登録</a>
+        </div>
+      </section>
+    </main>
+
+    <nav class="mobile-bottom-nav" aria-label="メインナビゲーション"></nav>
+  </div>
+  <script src="../assets/js/shared-mobile-layout.js"></script>
+  <script type="module">
+    import { requireAuth } from '../../assets/js/auth.js';
+    requireAuth('login.html');
+  </script>
+</body>
+</html>

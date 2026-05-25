@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>売上管理 - ホストクラブ店内業務システム</title>
+  <link rel="stylesheet" href="../../assets/css/reset.css">
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/mockup.css">
+  <link rel="stylesheet" href="../assets/css/mobile.css">
+</head>
+<body>
+  <div class="mobile-shell">
+    <header class="mobile-header" data-title="売上管理" data-tag-class="tag" data-tag-text="本日"></header>
+
+    <main class="mobile-body">
+      <section class="mobile-section" aria-label="売上サマリー">
+        <div class="mobile-tile-grid">
+          <div class="mobile-tile kpi-accent">
+            <div class="mobile-tile-value">&yen;684,500</div>
+            <div class="mobile-tile-label">本日売上合計</div>
+          </div>
+          <div class="mobile-tile">
+            <div class="mobile-tile-value">32名</div>
+            <div class="mobile-tile-label">客数</div>
+          </div>
+          <div class="mobile-tile">
+            <div class="mobile-tile-value">14件</div>
+            <div class="mobile-tile-label">本指名数</div>
+          </div>
+          <div class="mobile-tile">
+            <div class="mobile-tile-value">&yen;21,390</div>
+            <div class="mobile-tile-label">平均単価</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mobile-section">
+        <h2 class="mobile-section-title">ホスト別売上</h2>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>REN</span><strong>&yen;185,000</strong></div>
+          <p class="mobile-list-meta">担当客数：7名 / 本指名数：4件</p>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>KAITO</span><strong>&yen;142,500</strong></div>
+          <p class="mobile-list-meta">担当客数：6名 / 本指名数：3件</p>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>HAYATO</span><strong>&yen;118,000</strong></div>
+          <p class="mobile-list-meta">担当客数：5名 / 本指名数：2件</p>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>SORA</span><strong>&yen;96,000</strong></div>
+          <p class="mobile-list-meta">担当客数：5名 / 本指名数：2件</p>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>YUKI</span><strong>&yen;83,000</strong></div>
+          <p class="mobile-list-meta">担当客数：4名 / 本指名数：2件</p>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>KENTA</span><strong>&yen;60,000</strong></div>
+          <p class="mobile-list-meta">担当客数：5名 / 本指名数：1件</p>
+        </article>
+      </section>
+
+      <section class="mobile-section">
+        <div class="mobile-btn-row">
+          <a href="#" class="btn btn-primary">本日</a>
+          <a href="#" class="btn btn-secondary">昨日</a>
+          <a href="#" class="btn btn-secondary">今週</a>
+        </div>
+      </section>
+    </main>
+
+    <nav class="mobile-bottom-nav" aria-label="メインナビゲーション"></nav>
+  </div>
+  <script src="../assets/js/shared-mobile-layout.js"></script>
+  <script type="module">
+    import { requireAuth } from '../../assets/js/auth.js';
+    requireAuth('login.html');
+  </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>出勤管理 - ホストクラブ店内業務システム</title>
+  <link rel="stylesheet" href="../../assets/css/reset.css">
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/mockup.css">
+  <link rel="stylesheet" href="../assets/css/mobile.css">
+</head>
+<body>
+  <div class="mobile-shell">
+    <header class="mobile-header" data-title="出勤管理" data-tag-class="tag" data-tag-text="本日"></header>
+
+    <main class="mobile-body">
+      <section class="mobile-section" aria-label="出勤サマリー">
+        <div class="mobile-tile-grid">
+          <div class="mobile-tile kpi-accent">
+            <div class="mobile-tile-value">18名</div>
+            <div class="mobile-tile-label">出勤済み人数</div>
+          </div>
+          <div class="mobile-tile">
+            <div class="mobile-tile-value">4名</div>
+            <div class="mobile-tile-label">未出勤</div>
+          </div>
+          <div class="mobile-tile">
+            <div class="mobile-tile-value">1名</div>
+            <div class="mobile-tile-label">欠勤</div>
+          </div>
+          <div class="mobile-tile">
+            <div class="mobile-tile-value">23名</div>
+            <div class="mobile-tile-label">総スタッフ数</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mobile-section">
+        <h2 class="mobile-section-title">スタッフ一覧</h2>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>REN <span class="mobile-list-meta">ホスト</span></span><span class="tag">出勤済み</span></div>
+          <p class="mobile-list-meta">出勤予定時刻：18:00</p>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>KAITO <span class="mobile-list-meta">ホスト</span></span><span class="tag">出勤済み</span></div>
+          <p class="mobile-list-meta">出勤予定時刻：18:30</p>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>YUKI <span class="mobile-list-meta">ホスト</span></span><span class="badge badge-neutral">未出勤</span></div>
+          <p class="mobile-list-meta">出勤予定時刻：20:00</p>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>佐藤 美咲 <span class="mobile-list-meta">内勤</span></span><span class="tag">出勤済み</span></div>
+          <p class="mobile-list-meta">出勤予定時刻：17:00</p>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>HAYATO <span class="mobile-list-meta">ホスト</span></span><span class="badge badge-warning">欠勤</span></div>
+          <p class="mobile-list-meta">出勤予定時刻：19:00</p>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>鈴木 大輔 <span class="mobile-list-meta">内勤</span></span><span class="badge badge-neutral">未出勤</span></div>
+          <p class="mobile-list-meta">出勤予定時刻：21:00</p>
+        </article>
+      </section>
+
+      <section class="mobile-section">
+        <div class="mobile-btn-row">
+          <a href="#" class="btn btn-primary">出勤登録</a>
+          <a href="#" class="btn btn-secondary">欠勤登録</a>
+        </div>
+      </section>
+    </main>
+
+    <nav class="mobile-bottom-nav" aria-label="メインナビゲーション"></nav>
+  </div>
+  <script src="../assets/js/shared-mobile-layout.js"></script>
+  <script type="module">
+    import { requireAuth } from '../../assets/js/auth.js';
+    requireAuth('login.html');
+  </script>
+</body>
+</html>

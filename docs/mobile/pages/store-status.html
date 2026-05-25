@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>店舗状況 - ホストクラブ店内業務システム</title>
+  <link rel="stylesheet" href="../../assets/css/reset.css">
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/mockup.css">
+  <link rel="stylesheet" href="../assets/css/mobile.css">
+</head>
+<body>
+  <div class="mobile-shell">
+    <header class="mobile-header" data-title="店舗状況" data-tag-class="tag" data-tag-text="営業中"></header>
+
+    <main class="mobile-body">
+      <section class="mobile-section" aria-label="店舗サマリー">
+        <div class="mobile-tile-grid">
+          <div class="mobile-tile kpi-accent">
+            <div class="mobile-tile-value">8席</div>
+            <div class="mobile-tile-label">稼働席数</div>
+          </div>
+          <div class="mobile-tile">
+            <div class="mobile-tile-value">4席</div>
+            <div class="mobile-tile-label">空席数</div>
+          </div>
+          <div class="mobile-tile">
+            <div class="mobile-tile-value">21名</div>
+            <div class="mobile-tile-label">総客数</div>
+          </div>
+          <div class="mobile-tile">
+            <div class="mobile-tile-value">5名</div>
+            <div class="mobile-tile-label">待機ホスト数</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mobile-section">
+        <h2 class="mobile-section-title">席一覧</h2>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>A-01</span><span class="tag">入店中</span></div>
+          <p class="mobile-list-meta">客数：3名 / 担当ホスト：REN</p>
+          <p class="mobile-list-meta">売上金額：&yen;48,000</p>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>A-02</span><span class="tag">入店中</span></div>
+          <p class="mobile-list-meta">客数：4名 / 担当ホスト：KAITO</p>
+          <p class="mobile-list-meta">売上金額：&yen;72,000</p>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>B-01</span><span class="tag">入店中</span></div>
+          <p class="mobile-list-meta">客数：2名 / 担当ホスト：SORA</p>
+          <p class="mobile-list-meta">売上金額：&yen;18,500</p>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>B-02</span><span class="badge badge-warning">会計待ち</span></div>
+          <p class="mobile-list-meta">客数：5名 / 担当ホスト：RYU</p>
+          <p class="mobile-list-meta">売上金額：&yen;135,000</p>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>C-01</span><span class="badge badge-neutral">空席</span></div>
+          <p class="mobile-list-meta">客数：0名 / 担当ホスト：なし</p>
+          <p class="mobile-list-meta">売上金額：-</p>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-list-title"><span>VIP-01</span><span class="tag">入店中</span></div>
+          <p class="mobile-list-meta">客数：2名 / 担当ホスト：HAYATO</p>
+          <p class="mobile-list-meta">売上金額：&yen;95,000</p>
+        </article>
+      </section>
+
+      <section class="mobile-section">
+        <div class="mobile-btn-row">
+          <a href="#" class="btn btn-primary">新規案内</a>
+          <a href="#" class="btn btn-secondary">更新</a>
+        </div>
+      </section>
+    </main>
+
+    <nav class="mobile-bottom-nav" aria-label="メインナビゲーション"></nav>
+  </div>
+  <script src="../assets/js/shared-mobile-layout.js"></script>
+  <script type="module">
+    import { requireAuth } from '../../assets/js/auth.js';
+    requireAuth('login.html');
+  </script>
+</body>
+</html>
