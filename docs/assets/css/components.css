@@ -75,6 +75,12 @@
   flex-wrap: wrap;
 }
 
+.btn-tab--active {
+  background: var(--color-accent-light);
+  border-bottom: 3px solid var(--color-accent);
+  color: var(--color-accent-text);
+}
+
 /* ==================== Cards ==================== */
 .card {
   background-color: var(--color-surface);
@@ -607,7 +613,7 @@
 }
 
 .cell-money {
-  text-align: right;
+  text-align: left;
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
   color: var(--color-text);
