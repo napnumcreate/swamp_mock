@@ -308,19 +308,19 @@ document.addEventListener('DOMContentLoaded', function () {
   var filterStart = document.getElementById('filter-start');
   var filterEnd = document.getElementById('filter-end');
 
-  for (var fh = DAY_START_HOUR; fh <= 29; fh++) {
+  for (var filterStartH = DAY_START_HOUR; filterStartH <= 29; filterStartH++) {
     var optS = document.createElement('option');
-    optS.value = String(fh);
-    optS.textContent = adjHourToLabel(fh);
-    if (fh === 18) { optS.selected = true; }
+    optS.value = String(filterStartH);
+    optS.textContent = adjHourToLabel(filterStartH);
+    if (filterStartH === 18) { optS.selected = true; }
     filterStart.appendChild(optS);
   }
 
-  for (var fh = DAY_START_HOUR + 1; fh <= 30; fh++) {
+  for (var filterEndH = DAY_START_HOUR + 1; filterEndH <= 30; filterEndH++) {
     var optE = document.createElement('option');
-    optE.value = String(fh);
-    optE.textContent = adjHourToLabel(fh);
-    if (fh === 26) { optE.selected = true; }
+    optE.value = String(filterEndH);
+    optE.textContent = adjHourToLabel(filterEndH);
+    if (filterEndH === 26) { optE.selected = true; }
     filterEnd.appendChild(optE);
   }
 

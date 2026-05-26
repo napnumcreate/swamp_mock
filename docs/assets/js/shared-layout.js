@@ -38,7 +38,7 @@
         var logoutBtn = document.getElementById('logout-btn');
         if (logoutBtn) {
           logoutBtn.addEventListener('click', function () {
-            sessionStorage.removeItem('mock_authed');
+            sessionStorage.removeItem(window.MOCK_SESSION_KEY || 'mock_authed');
             window.location.href = base + 'login.html';
           });
         }

@@ -15,7 +15,7 @@
     var title = header.dataset.title || '';
     var tagClass = header.dataset.tagClass || 'tag';
     var tagText = header.dataset.tagText || '';
-    fetch('header/header-' + layoutType + '.html')
+    fetch('header/header.html')
       .then(function (r) { return r.text(); })
       .then(function (html) {
         header.innerHTML = html
@@ -25,7 +25,7 @@
         var logoutBtn = document.getElementById('mobile-logout-btn');
         if (logoutBtn) {
           logoutBtn.addEventListener('click', function () {
-            sessionStorage.removeItem('mock_authed');
+            sessionStorage.removeItem(window.MOCK_SESSION_KEY || 'mock_authed');
             window.location.href = 'login.html';
           });
         }

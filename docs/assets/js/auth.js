@@ -33,3 +33,5 @@ export function requireAuth(redirectPath = LOGIN_PATH) {
   redirectUrl.searchParams.set('redirect', currentPath || DEFAULT_REDIRECT);
   window.location.href = redirectUrl.href;
 }
+
+window.MOCK_SESSION_KEY = SESSION_KEY;

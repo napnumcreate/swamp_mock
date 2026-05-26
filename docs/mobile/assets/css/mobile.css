@@ -19,6 +19,8 @@
   --color-accent-hover: #6D28D9;
   --color-accent-light: #F5F3FF;
   --color-accent-text: #4C1D95;
+  --color-accent-shadow: rgba(124, 58, 237, 0.22);
+  --color-accent-shadow-hover: rgba(124, 58, 237, 0.28);
 }
 
 .mobile-shell--staff {
@@ -26,6 +28,8 @@
   --color-accent-hover: #1D4ED8;
   --color-accent-light: #EFF6FF;
   --color-accent-text: #1E3A8A;
+  --color-accent-shadow: rgba(37, 99, 235, 0.22);
+  --color-accent-shadow-hover: rgba(37, 99, 235, 0.28);
 }
 
 .mobile-header {

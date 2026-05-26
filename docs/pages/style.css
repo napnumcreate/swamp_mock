@@ -8,10 +8,6 @@
   justify-content: center;
 }
 
-#customer-modal.is-open {
-  display: flex;
-}
-
 #customer-modal .customer-modal-card {
   min-width: 320px;
   max-width: 460px;
@@ -187,15 +183,6 @@
   /* grid-column と grid-row は JS で設定 */
   border-left: 1px solid #e9ecef;
   pointer-events: none;
-}
-
-/* 日付ナビゲーション */
-.page-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 8px;
 }
 
 .date-nav {

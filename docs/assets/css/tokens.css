@@ -19,6 +19,10 @@
   --color-accent-light: #FFF7E0;
   --color-accent-text: #6F5416;
 
+  /* Button shadow — accent-tinted */
+  --color-accent-shadow: rgba(201, 168, 76, 0.22);
+  --color-accent-shadow-hover: rgba(201, 168, 76, 0.28);
+
   /* Semantic */
   --color-success: #16a34a;
   --color-success-bg: #f0fdf4;
