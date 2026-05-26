@@ -3,113 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mockup Preview</title>
+  <title>ダッシュボード - ホストクラブ店内業務システム</title>
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/mockup.css">
-  <style>
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: var(--space-8);
-    }
-    .welcome-card {
-      max-width: 640px;
-      width: 100%;
-      background-color: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      padding: var(--space-10) var(--space-8);
-      box-shadow: var(--shadow-md);
-      text-align: center;
-    }
-    .welcome-icon {
-      width: 56px;
-      height: 56px;
-      background-color: var(--color-accent-light);
-      border-radius: var(--radius-lg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto var(--space-5);
-      font-size: 24px;
-    }
-    .welcome-title {
-      font-size: var(--font-size-2xl);
-      font-weight: 700;
-      color: var(--color-text);
-      margin-bottom: var(--space-3);
-    }
-    .welcome-desc {
-      font-size: var(--font-size-sm);
-      color: var(--color-text-secondary);
-      line-height: 1.7;
-      margin-bottom: var(--space-8);
-    }
-    .page-links {
-      display: grid;
-      gap: var(--space-3);
-      text-align: left;
-    }
-    .page-link-item {
-      background-color: var(--color-surface-secondary);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      padding: var(--space-4);
-    }
-    .page-link-item a {
-      font-size: var(--font-size-sm);
-      font-weight: 600;
-      color: var(--color-accent);
-    }
-    .page-link-desc {
-      font-size: var(--font-size-xs);
-      color: var(--color-text-secondary);
-      margin-top: var(--space-1);
-      margin-bottom: 0;
-    }
-  </style>
+  <link rel="stylesheet" href="pages/style.css">
 </head>
 <body>
-  <div class="welcome-card">
-    <div class="welcome-icon">📋</div>
-    <h1 class="welcome-title">Mockup Preview</h1>
-    <p class="welcome-desc">
-      本ページでは、画面イメージ確認用の静的モックを掲載しています。<br>
-      表示内容はご確認用のイメージです。実際の機能は動作しません。
-    </p>
-
-    <div class="page-links">
-      <div class="page-link-item">
-        <a href="pages/customer-management.html">顧客管理</a>
-        <p class="page-link-desc">来店顧客の情報・来店履歴・ランク管理</p>
-      </div>
-      <div class="page-link-item">
-        <a href="pages/attendance.html">勤怠管理</a>
-        <p class="page-link-desc">スタッフの出退勤・勤務時間の確認</p>
-      </div>
-      <div class="page-link-item">
-        <a href="pages/salary-calculation.html">給料計算</a>
-        <p class="page-link-desc">ホスト報酬・内勤給与の確認（2026年5月分）</p>
-      </div>
-      <div class="page-link-item">
-        <a href="pages/analytics.html">アナリティクス</a>
-        <p class="page-link-desc">売上・来店・ホスト別実績の確認</p>
-      </div>
-      <div class="page-link-item">
-        <a href="mobile/index.html">スマホ画面 (Mobile Mock)</a>
-        <p class="page-link-desc">スタッフ向けスマホ画面（客席・付け回し・注文・シフト）</p>
-      </div>
+  <div class="app-shell">
+    <aside class="sidebar"></aside>
+    <div class="main-wrapper">
+      <header class="header" data-title="ダッシュボード" data-tag="本日"></header>
+      <main class="main-content">
+        <div class="page-header"><h1 class="page-title">ダッシュボード</h1></div>
+        <div class="grid-4 section-gap">
+          <div class="kpi-card kpi-accent"><div class="kpi-label">本日売上</div><div class="kpi-value">&yen;840,000</div><div class="kpi-trend kpi-trend--up">営業速報</div></div>
+          <div class="kpi-card"><div class="kpi-label">今月売上</div><div class="kpi-value">&yen;18,240,000</div><div class="kpi-trend">5月累計</div></div>
+          <div class="kpi-card"><div class="kpi-label">今月来店数</div><div class="kpi-value">186組</div><div class="kpi-trend">来店実績</div></div>
+          <div class="kpi-card"><div class="kpi-label">客単価</div><div class="kpi-value">&yen;98,000</div><div class="kpi-trend">平均金額</div></div>
+        </div>
+        <div class="card section-gap">
+          <div class="card-header"><span class="card-title">店舗状況</span><div class="btn-group"><span class="tag filter-btn" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-filter="all">すべて (20)</span><span class="tag tag-gray filter-btn" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-filter="active">在店中 (18)</span><span class="tag tag-gray filter-btn" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-filter="exited">退店済み (2)</span></div></div>
+          <div class="table-wrapper">
+            <table class="table" id="visit-table">
+              <thead><tr><th>顧客名</th><th>担当ホスト</th><th>座席</th><th>入店時間</th><th>退店時間</th><th>現在の売上</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card section-gap filter-card">
+          <div class="filter-row">
+            <span class="filter-row-label">日付</span>
+            <div class="date-nav">
+              <button type="button" class="btn btn-secondary btn-sm" id="prev-day">前日</button>
+              <span class="date-nav-label" id="date-label">2026/05/26</span>
+              <button type="button" class="btn btn-secondary btn-sm" id="today-btn">本日</button>
+              <button type="button" class="btn btn-secondary btn-sm" id="next-day">翌日</button>
+            </div>
+          </div>
+          <div class="filter-row">
+            <span class="filter-row-label">表示時間</span>
+            <div class="time-filter-bar">
+              <select id="filter-start" class="select-sm"></select>
+              <span class="time-filter-sep">〜</span>
+              <select id="filter-end" class="select-sm"></select>
+            </div>
+          </div>
+          <div class="filter-row">
+            <span class="filter-row-label">スタッフ</span>
+            <div class="filter-badges" id="staff-display-filter">
+              <span class="tag filter-badge" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-staff="all">全スタッフ</span>
+              <span class="tag tag-gray filter-badge" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-staff="scheduled">本日出勤予定</span>
+              <span class="tag tag-gray filter-badge" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-staff="working">現在出勤中</span>
+            </div>
+          </div>
+          <div class="filter-row">
+            <span class="filter-row-label">役職</span>
+            <div class="filter-badges" id="role-filter">
+              <span class="tag filter-badge" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-role="all">すべて</span>
+              <span class="tag tag-gray filter-badge" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-role="with-title">役職あり</span>
+              <span class="tag tag-gray filter-badge" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-role="no-title">役職なし</span>
+              <span class="tag tag-gray filter-badge" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-role="naikan">内勤</span>
+            </div>
+          </div>
+        </div>
+        <div class="card section-gap calendar-card">
+          <div class="calendar-scroll">
+            <div class="calendar-header-row" id="calendar-header">
+              <!-- JS が挿入 -->
+            </div>
+            <div class="calendar-body" id="calendar-body">
+              <!-- JS が挿入 -->
+            </div>
+          </div>
+        </div>
+        <div id="customer-modal">
+          <div class="card customer-modal-card">
+            <div class="card-header">
+              <span class="card-title" id="modal-title">顧客詳細</span>
+              <button id="modal-close" class="btn btn-ghost btn-sm" type="button">✕</button>
+            </div>
+            <div class="card-body">
+              <div class="detail-row"><span class="detail-label">顧客名</span><span class="detail-value" id="modal-name"></span></div>
+              <div class="detail-row"><span class="detail-label">担当</span><span class="detail-value" id="modal-host"></span></div>
+              <div class="detail-row"><span class="detail-label">初来店日</span><span class="detail-value" id="modal-first-visit"></span></div>
+              <div class="detail-row"><span class="detail-label">初リピート日</span><span class="detail-value" id="modal-first-repeat"></span></div>
+              <div class="detail-row"><span class="detail-label">来店回数</span><span class="detail-value" id="modal-visit-count"></span></div>
+              <div class="detail-row"><span class="detail-label">平均来店頻度</span><span class="detail-value" id="modal-visit-freq"></span></div>
+              <div class="detail-row"><span class="detail-label">今月の売上</span><span class="detail-value" id="modal-monthly-sales"></span></div>
+              <div class="detail-row"><span class="detail-label">総売上</span><span class="detail-value" id="modal-total-sales"></span></div>
+              <div class="detail-row"><span class="detail-label">備考</span><span class="detail-value" id="modal-notes"></span></div>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
   </div>
-<script type="module">
-  import { requireAuth } from 'assets/js/auth.js';
-  requireAuth('pages/login.html');
-</script>
+  <script src="assets/mock/attendance.js"></script>
+  <script src="pages/attendance.js"></script>
+  <script src="pages/script.js"></script>
+  <script src="assets/mock/customer.js"></script>
+  <script src="pages/dashboard.js"></script>
+  <script type="module">
+    import { requireAuth } from 'assets/js/auth.js';
+    requireAuth('pages/login.html');
+  </script>
+  <script src="assets/js/shared-layout.js"></script>
 </body>
 </html>

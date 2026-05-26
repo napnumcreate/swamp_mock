@@ -15,59 +15,82 @@
   <div class="mobile-shell">
     <header class="mobile-header" data-title="注文管理" data-tag-class="tag" data-tag-text="A-01"></header>
     <main class="mobile-body">
-      <section class="mobile-section" aria-label="注文サマリー">
-        <div class="mobile-tile-grid">
-          <div class="mobile-tile kpi-accent"><div class="mobile-tile-value">8件</div><div class="mobile-tile-label">選択席注文数</div></div>
-          <div class="mobile-tile"><div class="mobile-tile-value">&yen;48,000</div><div class="mobile-tile-label">合計金額</div></div>
-          <div class="mobile-tile"><div class="mobile-tile-value">3件</div><div class="mobile-tile-label">未提供</div></div>
-          <div class="mobile-tile"><div class="mobile-tile-value">5件</div><div class="mobile-tile-label">提供済み</div></div>
-        </div>
-      </section>
-      <section class="mobile-section" aria-label="注文状況フィルター">
-        <div class="btn-group"><span class="tag">すべて</span><span class="badge badge-warning">未提供 (3)</span><span class="badge badge-success">提供済み (5)</span></div>
-      </section>
-      <section class="mobile-section">
-        <h2 class="mobile-section-title">注文履歴</h2>
-        <article class="mobile-card">
-          <div class="mobile-key-value"><span class="mobile-key">商品名</span><span class="mobile-value">シャンパン タワー</span></div>
-          <div class="mobile-key-value"><span class="mobile-key">数量 / 金額</span><span class="mobile-value">1本 / &yen;28,000</span></div>
-          <div class="mobile-key-value"><span class="mobile-key">ステータス</span><span class="badge badge-success">提供済み</span></div>
+      <section class="mobile-section" aria-label="席一覧">
+        <h2 class="mobile-section-title">席一覧</h2>
+        <article class="mobile-card" data-modal-trigger data-modal-title="A-01 注文登録" style="cursor:pointer;">
+          <div class="mobile-list-title"><span>A-01</span><span class="tag">選択中</span></div>
+          <p class="mobile-list-meta">客数：3名 / 担当ホスト：REN</p>
         </article>
-        <article class="mobile-card">
-          <div class="mobile-key-value"><span class="mobile-key">商品名</span><span class="mobile-value">ウイスキー ボトル</span></div>
-          <div class="mobile-key-value"><span class="mobile-key">数量 / 金額</span><span class="mobile-value">1本 / &yen;8,000</span></div>
-          <div class="mobile-key-value"><span class="mobile-key">ステータス</span><span class="badge badge-warning">未提供</span></div>
+        <article class="mobile-card" data-modal-trigger data-modal-title="A-02 注文登録" style="cursor:pointer;">
+          <div class="mobile-list-title"><span>A-02</span><span class="badge badge-neutral">入店中</span></div>
+          <p class="mobile-list-meta">客数：4名 / 担当ホスト：KAITO</p>
         </article>
-        <article class="mobile-card">
-          <div class="mobile-key-value"><span class="mobile-key">商品名</span><span class="mobile-value">フルーツ盛り合わせ</span></div>
-          <div class="mobile-key-value"><span class="mobile-key">数量 / 金額</span><span class="mobile-value">1皿 / &yen;3,500</span></div>
-          <div class="mobile-key-value"><span class="mobile-key">ステータス</span><span class="badge badge-warning">未提供</span></div>
+        <article class="mobile-card" data-modal-trigger data-modal-title="B-01 注文登録" style="cursor:pointer;">
+          <div class="mobile-list-title"><span>B-01</span><span class="badge badge-neutral">入店中</span></div>
+          <p class="mobile-list-meta">客数：2名 / 担当ホスト：SORA</p>
         </article>
-        <article class="mobile-card">
-          <div class="mobile-key-value"><span class="mobile-key">商品名</span><span class="mobile-value">ソフトドリンク</span></div>
-          <div class="mobile-key-value"><span class="mobile-key">数量 / 金額</span><span class="mobile-value">4杯 / &yen;2,400</span></div>
-          <div class="mobile-key-value"><span class="mobile-key">ステータス</span><span class="badge badge-success">提供済み</span></div>
+        <article class="mobile-card" data-modal-trigger data-modal-title="B-02 注文登録" style="cursor:pointer;">
+          <div class="mobile-list-title"><span>B-02</span><span class="badge badge-warning">会計待ち</span></div>
+          <p class="mobile-list-meta">客数：5名 / 担当ホスト：RYU</p>
         </article>
-        <article class="mobile-card">
-          <div class="mobile-key-value"><span class="mobile-key">商品名</span><span class="mobile-value">カクテル各種</span></div>
-          <div class="mobile-key-value"><span class="mobile-key">数量 / 金額</span><span class="mobile-value">3杯 / &yen;6,000</span></div>
-          <div class="mobile-key-value"><span class="mobile-key">ステータス</span><span class="badge badge-warning">未提供</span></div>
+        <article class="mobile-card" data-modal-trigger data-modal-title="C-01 注文登録" style="cursor:pointer;">
+          <div class="mobile-list-title"><span>C-01</span><span class="badge badge-neutral">空席</span></div>
+          <p class="mobile-list-meta">客数：0名 / 担当ホスト：なし</p>
+        </article>
+        <article class="mobile-card" data-modal-trigger data-modal-title="VIP-01 注文登録" style="cursor:pointer;">
+          <div class="mobile-list-title"><span>VIP-01</span><span class="badge badge-neutral">入店中</span></div>
+          <p class="mobile-list-meta">客数：2名 / 担当ホスト：HAYATO</p>
         </article>
       </section>
-      <section class="mobile-section">
-        <h2 class="mobile-section-title">メニュー追加</h2>
-        <div class="btn-group" style="margin-bottom: var(--space-3);"><span class="tag">ボトル</span><span class="badge badge-neutral">グラス</span><span class="badge badge-neutral">フード</span><span class="badge badge-neutral">その他</span></div>
-        <article class="mobile-card">
-          <div class="mobile-list-item"><div class="mobile-status-row"><div><strong>ドンペリ</strong><p class="mobile-list-meta">&yen;35,000</p></div><a href="#" class="btn btn-primary btn-sm">追加</a></div></div>
-          <div class="mobile-list-item"><div class="mobile-status-row"><div><strong>ジャックダニエル</strong><p class="mobile-list-meta">&yen;8,000</p></div><a href="#" class="btn btn-primary btn-sm">追加</a></div></div>
-          <div class="mobile-list-item"><div class="mobile-status-row"><div><strong>フルーツ盛り合わせ</strong><p class="mobile-list-meta">&yen;3,500</p></div><a href="#" class="btn btn-primary btn-sm">追加</a></div></div>
-          <div class="mobile-list-item"><div class="mobile-status-row"><div><strong>カクテル</strong><p class="mobile-list-meta">&yen;2,000</p></div><a href="#" class="btn btn-primary btn-sm">追加</a></div></div>
-        </article>
-      </section>
-      <section class="mobile-section"><div class="mobile-btn-row"><a href="#" class="btn btn-primary">注文確定</a><a href="#" class="btn btn-secondary">伝票確認</a><a href="#" class="btn btn-secondary">席変更</a></div></section>
+
     </main>
+    <div class="mobile-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="mobile-modal">
+        <div class="mobile-modal-header">
+          <h2 class="mobile-modal-title" id="modal-title"></h2>
+          <button class="mobile-modal-close" aria-label="閉じる">&times;</button>
+        </div>
+        <div class="mobile-modal-body">
+          <div class="mobile-btn-row" style="margin-bottom: var(--space-4);">
+            <a href="#" class="btn btn-primary">ボトル</a>
+            <a href="#" class="btn btn-secondary">グラス</a>
+            <a href="#" class="btn btn-secondary">フード</a>
+          </div>
+          <article class="mobile-card">
+            <div class="mobile-list-item">
+              <div class="mobile-status-row">
+                <div><strong>ドンペリ</strong><p class="mobile-list-meta">&yen;35,000</p></div>
+                <a href="#" class="btn btn-primary btn-sm">追加</a>
+              </div>
+            </div>
+            <div class="mobile-list-item">
+              <div class="mobile-status-row">
+                <div><strong>ジャックダニエル</strong><p class="mobile-list-meta">&yen;8,000</p></div>
+                <a href="#" class="btn btn-primary btn-sm">追加</a>
+              </div>
+            </div>
+            <div class="mobile-list-item">
+              <div class="mobile-status-row">
+                <div><strong>フルーツ盛り合わせ</strong><p class="mobile-list-meta">&yen;3,500</p></div>
+                <a href="#" class="btn btn-primary btn-sm">追加</a>
+              </div>
+            </div>
+            <div class="mobile-list-item">
+              <div class="mobile-status-row">
+                <div><strong>カクテル</strong><p class="mobile-list-meta">&yen;2,000</p></div>
+                <a href="#" class="btn btn-primary btn-sm">追加</a>
+              </div>
+            </div>
+          </article>
+          <div class="mobile-btn-row" style="margin-top: var(--space-4);">
+            <a href="#" class="btn btn-primary">注文確定</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <nav class="mobile-bottom-nav" aria-label="メインナビゲーション"></nav>
   </div>
+  <script src="../assets/js/mobile-modal.js"></script>
   <script src="../assets/js/shared-mobile-layout.js"></script>
   <script type="module">
     import { requireAuth } from '../../assets/js/auth.js';

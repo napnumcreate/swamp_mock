@@ -342,3 +342,65 @@
     box-shadow: none;
   }
 }
+
+/* --- Modal --- */
+.mobile-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  max-width: var(--mobile-width);
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.mobile-modal-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-modal {
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: var(--color-surface);
+  border-radius: 12px 12px 0 0;
+  transform: translateY(100%);
+  transition: transform 0.25s ease;
+}
+
+.mobile-modal-overlay.is-open .mobile-modal {
+  transform: translateY(0);
+}
+
+.mobile-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobile-modal-title {
+  margin: 0;
+  font-size: var(--font-size-md);
+  font-weight: 700;
+}
+
+.mobile-modal-close {
+  padding: 0 var(--space-2);
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xl);
+  line-height: 1;
+  cursor: pointer;
+}
+
+.mobile-modal-body {
+  padding: var(--space-4);
+}

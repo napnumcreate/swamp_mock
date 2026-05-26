@@ -8,7 +8,7 @@ form.addEventListener('submit', (e) => {
   const code = document.getElementById('access-code').value;
   const pass = document.getElementById('password').value;
   if (login(code, pass)) {
-    window.location.href = 'seat-management.html';
+    window.location.href = 'attendance-host.html';
     return;
   }
   error.hidden = false;

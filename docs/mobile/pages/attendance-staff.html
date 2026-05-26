@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>出勤管理（内勤向け）- ホストクラブ店内業務システム</title>
+  <link rel="stylesheet" href="../../assets/css/reset.css">
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/mockup.css">
+  <link rel="stylesheet" href="../assets/css/mobile.css">
+</head>
+<body>
+  <div class="mobile-shell">
+    <header class="mobile-header" data-title="出勤管理（内勤向け）" data-tag-class="tag" data-tag-text="本日"></header>
+
+    <main class="mobile-body">
+      <section class="mobile-section" aria-label="本日のステータス">
+        <div class="mobile-tile-grid">
+          <div class="mobile-tile kpi-accent">
+            <div class="mobile-tile-value">佐藤 美咲</div>
+            <div class="mobile-tile-label">ログイン中のスタッフ</div>
+          </div>
+          <div class="mobile-tile">
+            <div class="mobile-tile-value">出勤前</div>
+            <div class="mobile-tile-label">本日のステータス</div>
+          </div>
+        </div>
+        <article class="mobile-card">
+          <div class="mobile-key-value"><span class="mobile-key">予定出勤時刻</span><span class="mobile-value">17:00</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">予定退勤時刻</span><span class="mobile-value">24:00</span></div>
+        </article>
+      </section>
+
+      <section class="mobile-section" aria-label="出勤・退勤登録">
+        <div class="mobile-btn-row">
+          <a href="#" class="btn btn-primary">出勤する</a>
+          <a href="#" class="btn btn-secondary">退勤する</a>
+        </div>
+      </section>
+
+      <section class="mobile-section">
+        <h2 class="mobile-section-title">出勤履歴</h2>
+        <article class="mobile-card">
+          <div class="mobile-key-value"><span class="mobile-key">日付</span><span class="mobile-value">2026/05/24 (日)</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">出勤時刻</span><span class="mobile-value">17:02</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">退勤時刻</span><span class="mobile-value">24:10</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">勤務時間</span><span class="mobile-value">7h 08m</span></div>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-key-value"><span class="mobile-key">日付</span><span class="mobile-value">2026/05/23 (土)</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">出勤時刻</span><span class="mobile-value">16:58</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">退勤時刻</span><span class="mobile-value">00:30</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">勤務時間</span><span class="mobile-value">7h 32m</span></div>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-key-value"><span class="mobile-key">日付</span><span class="mobile-value">2026/05/22 (金)</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">出勤時刻</span><span class="mobile-value">17:05</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">退勤時刻</span><span class="mobile-value">23:50</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">勤務時間</span><span class="mobile-value">6h 45m</span></div>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-key-value"><span class="mobile-key">日付</span><span class="mobile-value">2026/05/21 (木) <span class="badge badge-neutral">欠勤</span></span></div>
+          <div class="mobile-key-value"><span class="mobile-key">出勤時刻</span><span class="mobile-value">出勤なし</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">退勤時刻</span><span class="mobile-value">—</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">勤務時間</span><span class="mobile-value">—</span></div>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-key-value"><span class="mobile-key">日付</span><span class="mobile-value">2026/05/20 (水)</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">出勤時刻</span><span class="mobile-value">17:00</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">退勤時刻</span><span class="mobile-value">23:45</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">勤務時間</span><span class="mobile-value">6h 45m</span></div>
+        </article>
+        <article class="mobile-card">
+          <div class="mobile-key-value"><span class="mobile-key">日付</span><span class="mobile-value">2026/05/19 (火)</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">出勤時刻</span><span class="mobile-value">17:10</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">退勤時刻</span><span class="mobile-value">00:05</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">勤務時間</span><span class="mobile-value">6h 55m</span></div>
+        </article>
+      </section>
+    </main>
+
+    <nav class="mobile-bottom-nav" aria-label="メインナビゲーション"></nav>
+  </div>
+  <script src="../assets/js/shared-mobile-layout.js"></script>
+  <script type="module">
+    import { requireAuth } from '../../assets/js/auth.js';
+    requireAuth('login.html');
+  </script>
+</body>
+</html>

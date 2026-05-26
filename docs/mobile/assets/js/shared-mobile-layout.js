@@ -1,11 +1,21 @@
 (function () {
-  function loadMobileHeader() {
+  var HOST_PAGES = ['attendance-host', 'sales', 'customer'];
+  var STAFF_PAGES = ['attendance-staff', 'store-status', 'order'];
+
+  function getLayoutType() {
+    var page = location.pathname.split('/').pop().replace('.html', '');
+    if (HOST_PAGES.includes(page)) return 'host';
+    if (STAFF_PAGES.includes(page)) return 'staff';
+    return null;
+  }
+
+  function loadMobileHeader(layoutType) {
     var header = document.querySelector('header.mobile-header');
     if (!header) return;
     var title = header.dataset.title || '';
     var tagClass = header.dataset.tagClass || 'tag';
     var tagText = header.dataset.tagText || '';
-    fetch('header/header.html')
+    fetch('header/header-' + layoutType + '.html')
       .then(function (r) { return r.text(); })
       .then(function (html) {
         header.innerHTML = html
@@ -22,10 +32,10 @@
       });
   }
 
-  function loadMobileFooter() {
+  function loadMobileFooter(layoutType) {
     var nav = document.querySelector('nav.mobile-bottom-nav');
     if (!nav) return;
-    fetch('footer/footer.html')
+    fetch('footer/footer-' + layoutType + '.html')
       .then(function (r) { return r.text(); })
       .then(function (html) {
         nav.innerHTML = html;
@@ -36,7 +46,9 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    loadMobileHeader();
-    loadMobileFooter();
+    var layoutType = getLayoutType();
+    if (!layoutType) return;
+    loadMobileHeader(layoutType);
+    loadMobileFooter(layoutType);
   });
 })();
