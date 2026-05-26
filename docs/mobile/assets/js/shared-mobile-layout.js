@@ -1,6 +1,6 @@
 (function () {
-  var HOST_PAGES = ['attendance-host', 'sales', 'customer'];
-  var STAFF_PAGES = ['attendance-staff', 'store-status', 'order'];
+  var HOST_PAGES = ['attendance-host', 'sales', 'customer', 'settings-host'];
+  var STAFF_PAGES = ['attendance-staff', 'store-status', 'order', 'settings-staff'];
 
   function getLayoutType() {
     var page = location.pathname.split('/').pop().replace('.html', '');

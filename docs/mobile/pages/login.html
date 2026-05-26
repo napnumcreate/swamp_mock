@@ -26,7 +26,6 @@
     .login-brand {
       position: relative;
       display: flex;
-      flex: 1;
       flex-direction: column;
       justify-content: center;
       padding: var(--space-12) var(--space-6) var(--space-8);
@@ -80,10 +79,6 @@
       font-size: var(--font-size-sm);
     }
 
-    .login-card {
-      padding: var(--space-5);
-    }
-
     .login-actions {
       margin-top: var(--space-6);
     }
@@ -98,7 +93,8 @@
   </style>
 </head>
 <body>
-  <main class="mobile-login">
+  <div class="mobile-shell">
+    <main class="mobile-login">
     <section class="login-brand" aria-label="ブランド">
       <span class="label-provisional">静的モック</span>
       <div class="login-brand-icon" aria-hidden="true">店</div>
@@ -108,15 +104,15 @@
     <section class="login-form-area">
       <h2 class="login-form-title">ログイン</h2>
       <p class="login-form-subtitle">アクセスコードとパスワードを入力してください。</p>
-      <form class="card login-card" id="login-form">
-        <div class="form-group">
-          <label class="form-label" for="access-code">アクセスコード</label>
-          <input class="form-input" id="access-code" name="access-code" type="text" autocomplete="off">
+      <form class="mobile-card" id="login-form">
+        <div class="mobile-form-group">
+          <label class="mobile-form-label" for="access-code">アクセスコード</label>
+          <input class="mobile-input" id="access-code" name="access-code" type="text" autocomplete="off">
         </div>
 
-        <div class="form-group">
-          <label class="form-label" for="password">パスワード</label>
-          <input class="form-input" id="password" name="password" type="password" autocomplete="off">
+        <div class="mobile-form-group">
+          <label class="mobile-form-label" for="password">パスワード</label>
+          <input class="mobile-input" id="password" name="password" type="password" autocomplete="off">
         </div>
 
         <div class="alert alert-danger login-error" id="login-error" hidden>
@@ -128,7 +124,8 @@
         </div>
       </form>
     </section>
-  </main>
+    </main>
+  </div>
 
   <script type="module" src="login.js"></script>
 </body>

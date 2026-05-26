@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>所属ホスト一覧 - ホストクラブ店内業務システム</title>
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/mockup.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar"></aside>
+    <div class="main-wrapper">
+      <header class="header" data-title="所属ホスト一覧" data-tag="スタッフ管理"></header>
+      <main class="main-content">
+        <div class="page-header"><h1 class="page-title">所属ホスト一覧</h1></div>
+        <div class="grid-4 section-gap">
+          <div class="kpi-card kpi-accent"><div class="kpi-label">在籍ホスト数</div><div class="kpi-value">18名</div><div class="kpi-trend">現在在籍中</div></div>
+          <div class="kpi-card"><div class="kpi-label">今月出勤数</div><div class="kpi-value">15名</div><div class="kpi-trend">2026年5月</div></div>
+          <div class="kpi-card"><div class="kpi-label">今月売上トップ</div><div class="kpi-value">山田 太郎</div><div class="kpi-trend">¥1,850,000</div></div>
+          <div class="kpi-card"><div class="kpi-label">今月新人</div><div class="kpi-value">2名</div><div class="kpi-trend">今月入店</div></div>
+        </div>
+        <div class="card section-gap">
+          <div class="card-header">
+            <span class="card-title">ホスト一覧</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>ホスト名</th>
+                  <th>ランク</th>
+                  <th>今月売上</th>
+                  <th>今月出勤日数</th>
+                  <th>シフト状況</th>
+                  <th>備考</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script type="module">
+    import { requireAuth } from '../assets/js/auth.js';
+    requireAuth('login.html');
+  </script>
+  <script src="../assets/js/shared-layout.js"></script>
+</body>
+</html>

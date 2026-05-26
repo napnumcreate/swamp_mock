@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>個別設定（内勤向け）- ホストクラブ店内業務システム</title>
+  <link rel="stylesheet" href="../../assets/css/reset.css">
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/mockup.css">
+  <link rel="stylesheet" href="../assets/css/mobile.css">
+</head>
+<body>
+  <div class="mobile-shell">
+    <header class="mobile-header" data-title="個別設定" data-tag-class="tag" data-tag-text="内勤"></header>
+
+    <main class="mobile-body">
+      <section class="mobile-section" aria-label="アカウント情報">
+        <h2 class="mobile-section-title">アカウント情報</h2>
+        <article class="mobile-card">
+          <div class="mobile-key-value"><span class="mobile-key">表示名</span><span class="mobile-value">佐藤 美咲</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">役職</span><span class="mobile-value">内勤スタッフ</span></div>
+        </article>
+      </section>
+
+      <section class="mobile-section" aria-label="設定項目">
+        <h2 class="mobile-section-title">設定項目</h2>
+        <article class="mobile-card">
+          <a href="#" class="mobile-list-item">
+            <div class="mobile-list-title">通知設定 <span>›</span></div>
+          </a>
+          <a href="#" class="mobile-list-item">
+            <div class="mobile-list-title">表示設定（フォントサイズ・テーマ）<span>›</span></div>
+          </a>
+          <a href="#" class="mobile-list-item">
+            <div class="mobile-list-title">パスワード変更 <span>›</span></div>
+          </a>
+        </article>
+        <div class="mobile-btn-row" style="margin-top: var(--space-4);">
+          <button class="btn btn-secondary" type="button">ログアウト</button>
+        </div>
+      </section>
+    </main>
+
+    <nav class="mobile-bottom-nav" aria-label="メインナビゲーション"></nav>
+  </div>
+  <script src="../assets/js/shared-mobile-layout.js"></script>
+  <script type="module">
+    import { requireAuth } from '../../assets/js/auth.js';
+    requireAuth('login.html');
+  </script>
+</body>
+</html>
