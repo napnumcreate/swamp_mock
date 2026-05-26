@@ -14,6 +14,20 @@
   color: var(--color-text);
 }
 
+.mobile-shell--host {
+  --color-accent: #7C3AED;
+  --color-accent-hover: #6D28D9;
+  --color-accent-light: #F5F3FF;
+  --color-accent-text: #4C1D95;
+}
+
+.mobile-shell--staff {
+  --color-accent: #2563EB;
+  --color-accent-hover: #1D4ED8;
+  --color-accent-light: #EFF6FF;
+  --color-accent-text: #1E3A8A;
+}
+
 .mobile-header {
   position: fixed;
   top: 0;
