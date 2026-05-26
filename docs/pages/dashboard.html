@@ -19,6 +19,12 @@
       <header class="header" data-title="ダッシュボード" data-tag="本日"></header>
       <main class="main-content">
         <div class="page-header"><h1 class="page-title">ダッシュボード</h1></div>
+        <div class="grid-4 section-gap">
+          <div class="kpi-card kpi-accent"><div class="kpi-label">本日売上</div><div class="kpi-value">&yen;840,000</div><div class="kpi-trend kpi-trend--up">営業速報</div></div>
+          <div class="kpi-card"><div class="kpi-label">今月売上</div><div class="kpi-value">&yen;18,240,000</div><div class="kpi-trend">5月累計</div></div>
+          <div class="kpi-card"><div class="kpi-label">今月来店数</div><div class="kpi-value">186組</div><div class="kpi-trend">来店実績</div></div>
+          <div class="kpi-card"><div class="kpi-label">客単価</div><div class="kpi-value">&yen;98,000</div><div class="kpi-trend">平均金額</div></div>
+        </div>
         <div class="card section-gap">
           <div class="card-header"><span class="card-title">店舗状況</span><div class="btn-group"><span class="tag filter-btn" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-filter="all">すべて (20)</span><span class="tag tag-gray filter-btn" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-filter="active">在店中 (18)</span><span class="tag tag-gray filter-btn" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-filter="exited">退店済み (2)</span></div></div>
           <div class="table-wrapper">
@@ -26,6 +32,52 @@
               <thead><tr><th>顧客名</th><th>担当ホスト</th><th>座席</th><th>入店時間</th><th>退店時間</th><th>現在の売上</th></tr></thead>
               <tbody></tbody>
             </table>
+          </div>
+        </div>
+        <div class="card section-gap filter-card">
+          <div class="filter-row">
+            <span class="filter-row-label">日付</span>
+            <div class="date-nav">
+              <button type="button" class="btn btn-secondary btn-sm" id="prev-day">前日</button>
+              <span class="date-nav-label" id="date-label">2026/05/26</span>
+              <button type="button" class="btn btn-secondary btn-sm" id="today-btn">本日</button>
+              <button type="button" class="btn btn-secondary btn-sm" id="next-day">翌日</button>
+            </div>
+          </div>
+          <div class="filter-row">
+            <span class="filter-row-label">表示時間</span>
+            <div class="time-filter-bar">
+              <select id="filter-start" class="select-sm"></select>
+              <span class="time-filter-sep">〜</span>
+              <select id="filter-end" class="select-sm"></select>
+            </div>
+          </div>
+          <div class="filter-row">
+            <span class="filter-row-label">スタッフ</span>
+            <div class="filter-badges" id="staff-display-filter">
+              <span class="tag filter-badge" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-staff="all">全スタッフ</span>
+              <span class="tag tag-gray filter-badge" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-staff="scheduled">本日出勤予定</span>
+              <span class="tag tag-gray filter-badge" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-staff="working">現在出勤中</span>
+            </div>
+          </div>
+          <div class="filter-row">
+            <span class="filter-row-label">役職</span>
+            <div class="filter-badges" id="role-filter">
+              <span class="tag filter-badge" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-role="all">すべて</span>
+              <span class="tag tag-gray filter-badge" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-role="with-title">役職あり</span>
+              <span class="tag tag-gray filter-badge" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-role="no-title">役職なし</span>
+              <span class="tag tag-gray filter-badge" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-role="naikan">内勤</span>
+            </div>
+          </div>
+        </div>
+        <div class="card section-gap calendar-card">
+          <div class="calendar-scroll">
+            <div class="calendar-header-row" id="calendar-header">
+              <!-- JS が挿入 -->
+            </div>
+            <div class="calendar-body" id="calendar-body">
+              <!-- JS が挿入 -->
+            </div>
           </div>
         </div>
         <div id="customer-modal">
@@ -50,6 +102,8 @@
       </main>
     </div>
   </div>
+  <script src="../assets/mock/attendance.js"></script>
+  <script src="attendance.js"></script>
   <script src="script.js"></script>
   <script src="../assets/mock/customer.js"></script>
   <script src="dashboard.js"></script>

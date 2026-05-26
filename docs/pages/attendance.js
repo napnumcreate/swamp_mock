@@ -42,6 +42,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  if (!header || !body) {
+    renderMonthlyTable();
+    return;
+  }
+
   function parseTime(str) {
     var parts = str.split(':');
     return { hour: parseInt(parts[0], 10), minute: parseInt(parts[1], 10) };
@@ -214,6 +219,63 @@ document.addEventListener('DOMContentLoaded', function () {
     applyTimeFilter();
   }
 
+  function renderMonthlyTable() {
+    var table = document.getElementById('monthly-attendance-table');
+    if (!table) return;
+    var weekdays = ['日', '月', '火', '水', '木', '金', '土'];
+    var daysInMonth = new Date(ATTENDANCE_MONTHLY.year, ATTENDANCE_MONTHLY.month, 0).getDate();
+    var statusStyles = {
+      '出勤': { backgroundColor: '#e8f5e9' },
+      '遅刻': { backgroundColor: '#fff3e0' },
+      '未打刻': { backgroundColor: '#ffebee' },
+      '休み': { color: '#9e9e9e' }
+    };
+    table.innerHTML = '';
+
+    var thead = document.createElement('thead');
+    var headerRow = document.createElement('tr');
+    var staffHeader = document.createElement('th');
+    staffHeader.className = 'staff-col';
+    staffHeader.textContent = 'スタッフ';
+    headerRow.appendChild(staffHeader);
+
+    for (var day = 1; day <= daysInMonth; day++) {
+      var date = new Date(ATTENDANCE_MONTHLY.year, ATTENDANCE_MONTHLY.month - 1, day);
+      var weekday = date.getDay();
+      var dateHeader = document.createElement('th');
+      if (weekday === 6) dateHeader.className = 'day-saturday';
+      if (weekday === 0) dateHeader.className = 'day-sunday';
+      dateHeader.textContent = day + '（' + weekdays[weekday] + '）';
+      headerRow.appendChild(dateHeader);
+    }
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    var tbody = document.createElement('tbody');
+    ATTENDANCE_STAFF.forEach(function (staff) {
+      var row = document.createElement('tr');
+      var staffCell = document.createElement('td');
+      staffCell.className = 'staff-col';
+      staffCell.textContent = staff.name;
+      row.appendChild(staffCell);
+
+      ATTENDANCE_MONTHLY.data[staff.id].forEach(function (status) {
+        var cell = document.createElement('td');
+        var style = statusStyles[status];
+        cell.textContent = status;
+        cell.style.textAlign = 'center';
+        if (style) {
+          Object.keys(style).forEach(function (property) {
+            cell.style[property] = style[property];
+          });
+        }
+        row.appendChild(cell);
+      });
+      tbody.appendChild(row);
+    });
+    table.appendChild(tbody);
+  }
+
   document.getElementById('date-label').textContent = ATTENDANCE_DATE;
   document.getElementById('today-btn').addEventListener('click', function () {
     document.getElementById('date-label').textContent = ATTENDANCE_DATE;
@@ -328,4 +390,5 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   renderCalendar(getFilteredStaff());
+  renderMonthlyTable();
 });
