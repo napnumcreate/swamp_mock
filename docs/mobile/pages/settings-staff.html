@@ -28,17 +28,11 @@
         <h2 class="mobile-section-title">設定項目</h2>
         <article class="mobile-card">
           <a href="#" class="mobile-list-item">
-            <div class="mobile-list-title">通知設定 <span>›</span></div>
-          </a>
-          <a href="#" class="mobile-list-item">
-            <div class="mobile-list-title">表示設定（フォントサイズ・テーマ）<span>›</span></div>
-          </a>
-          <a href="#" class="mobile-list-item">
             <div class="mobile-list-title">パスワード変更 <span>›</span></div>
           </a>
         </article>
         <div class="mobile-btn-row" style="margin-top: var(--space-4);">
-          <button class="btn btn-secondary" type="button">ログアウト</button>
+          <button class="btn btn-secondary" id="settings-logout-btn" type="button">ログアウト</button>
         </div>
       </section>
     </main>
@@ -46,6 +40,7 @@
     <nav class="mobile-bottom-nav" aria-label="メインナビゲーション"></nav>
   </div>
   <script src="../assets/js/shared-mobile-layout.js"></script>
+  <script src="settings-staff.js"></script>
   <script type="module">
     import { requireAuth } from '../../assets/js/auth.js';
     requireAuth('login.html');

@@ -1,4 +1,73 @@
 document.addEventListener('DOMContentLoaded', function () {
+  var salesTbody = document.querySelector('#sales-report-table tbody');
+  TODAY_HOST_SALES.forEach(function (h) {
+    var tr = document.createElement('tr');
+    tr.dataset.hasSales = (h.sales !== '¥0') ? 'yes' : 'no';
+    tr.innerHTML =
+      '<td class="cell-strong">' + h.name + '</td>' +
+      '<td class="cell-money">' + h.sales + '</td>' +
+      '<td>' + h.guests + '</td>' +
+      '<td>' + h.nominations + '</td>' +
+      '<td>' + h.dohan + '</td>' +
+      '<td>' + h.after + '</td>';
+    salesTbody.appendChild(tr);
+  });
+
+  var salesRows = document.querySelectorAll('#sales-report-table tbody tr');
+  salesRows.forEach(function (row) {
+    row.style.cursor = 'pointer';
+    row.addEventListener('click', function () {
+      var hostName = row.cells[0].textContent;
+      var hostEntry = null;
+      if (typeof MOCK_HOSTS !== 'undefined') {
+        for (var i = 0; i < MOCK_HOSTS.length; i++) {
+          if (MOCK_HOSTS[i].name === hostName) {
+            hostEntry = MOCK_HOSTS[i];
+            break;
+          }
+        }
+      }
+      openHostModal(
+        row.cells[0].textContent,                            // name
+        hostEntry ? hostEntry.rank : '－',                    // rank
+        row.cells[1].textContent,                            // todaySales
+        row.cells[2].textContent,                            // guests
+        row.cells[3].textContent,                            // nominations
+        row.cells[4].textContent,                            // dohan
+        row.cells[5].textContent,                            // after
+        hostEntry ? hostEntry.monthlySales : '－',            // monthlySales
+        hostEntry ? hostEntry.monthlyAttendance : '－',       // monthlyAttendance
+        hostEntry ? hostEntry.todayShift : '－'               // todayShift
+      );
+    });
+  });
+
+  var salesFilterBtns = document.querySelectorAll('.sales-filter-btn');
+
+  function applySalesFilter(filter) {
+    salesRows.forEach(function (row) {
+      if (filter === 'all') {
+        row.style.display = '';
+      } else if (filter === 'with-sales') {
+        row.style.display = row.dataset.hasSales === 'yes' ? '' : 'none';
+      } else {
+        row.style.display = row.dataset.hasSales === 'no' ? '' : 'none';
+      }
+    });
+  }
+
+  salesFilterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      salesFilterBtns.forEach(function (b) {
+        b.className = 'tag tag-gray sales-filter-btn';
+      });
+      btn.className = 'tag sales-filter-btn';
+      applySalesFilter(btn.dataset.salesFilter);
+    });
+  });
+
+  applySalesFilter('with-sales');
+
   var visitTbody = document.querySelector('#visit-table tbody');
   TODAY_VISITS.forEach(function (v) {
     var tr = document.createElement('tr');
@@ -41,6 +110,9 @@ document.addEventListener('DOMContentLoaded', function () {
       openCustomerModal(
         row.cells[0].textContent,
         row.cells[1].textContent,
+        row.cells[2].textContent,
+        row.cells[3].textContent,
+        row.cells[4].textContent,
         row.dataset.registerDate,
         row.dataset.firstRepeat,
         row.dataset.visitCount,
@@ -50,5 +122,9 @@ document.addEventListener('DOMContentLoaded', function () {
         row.dataset.notes
       );
     });
+  });
+
+  rows.forEach(function (row) {
+    row.style.display = row.dataset.status === 'active' ? '' : 'none';
   });
 });

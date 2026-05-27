@@ -79,15 +79,18 @@ document.addEventListener('DOMContentLoaded', function () {
     row.style.cursor = 'pointer';
     row.addEventListener('click', function () {
       openCustomerModal(
-        row.cells[0].textContent,
-        row.cells[1].textContent,
-        row.dataset.registerDate,
-        row.dataset.firstRepeat,
-        row.dataset.visitCount,
-        row.dataset.visitFreq,
-        row.dataset.monthlySales,
-        row.dataset.totalSales,
-        row.dataset.notes
+        row.cells[0].textContent,  // name
+        row.cells[1].textContent,  // host
+        '',                        // seat（このモーダルには不要）
+        '',                        // entryTime（このモーダルには不要）
+        '',                        // exitTime（このモーダルには不要）
+        row.dataset.registerDate,  // firstVisit
+        row.dataset.firstRepeat,   // firstRepeat
+        row.dataset.visitCount,    // visitCount
+        row.dataset.visitFreq,     // visitFreq
+        row.dataset.monthlySales,  // monthlySales
+        row.dataset.totalSales,    // totalSales
+        row.dataset.notes          // notes
       );
     });
   });

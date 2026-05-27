@@ -10,9 +10,98 @@
 
 #customer-modal .customer-modal-card {
   min-width: 320px;
-  max-width: 460px;
+  max-width: 560px;
   width: 100%;
   margin: var(--space-5);
+}
+
+#customer-modal .customer-modal-card .card-body {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+@media (max-width: 479px) {
+  #customer-modal .customer-modal-card .card-body .detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  #customer-modal .customer-modal-card .card-body .detail-label {
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+@media (min-width: 640px) {
+  #customer-modal .customer-modal-card .card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  #customer-modal .customer-modal-card .card-body .detail-row:first-child {
+    grid-column: 1 / -1;
+  }
+
+  #customer-modal .customer-modal-card .card-body .detail-row:last-child {
+    grid-column: 1 / -1;
+  }
+
+  #customer-modal.cm-variant .customer-modal-card .card-body .detail-row:first-child {
+    grid-column: auto;
+  }
+}
+
+#host-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+#host-modal .host-modal-card {
+  min-width: 320px;
+  max-width: 560px;
+  width: 100%;
+  margin: var(--space-5);
+}
+
+#host-modal .host-modal-card .card-body {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+@media (max-width: 479px) {
+  #host-modal .host-modal-card .card-body .detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  #host-modal .host-modal-card .card-body .detail-label {
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+@media (min-width: 640px) {
+  #host-modal .host-modal-card .card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  #host-modal .host-modal-card .card-body .detail-row:first-child {
+    grid-column: 1 / -1;
+  }
+
+  #host-modal .host-modal-card .card-body .detail-row:last-child {
+    grid-column: 1 / -1;
+  }
 }
 
 .pagination-bar {

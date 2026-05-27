@@ -20,13 +20,54 @@
       <main class="main-content">
         <div class="page-header"><h1 class="page-title">ダッシュボード</h1></div>
         <div class="grid-4 section-gap">
-          <div class="kpi-card kpi-accent"><div class="kpi-label">本日売上</div><div class="kpi-value">&yen;840,000</div><div class="kpi-trend kpi-trend--up">営業速報</div></div>
-          <div class="kpi-card"><div class="kpi-label">今月売上</div><div class="kpi-value">&yen;18,240,000</div><div class="kpi-trend">5月累計</div></div>
-          <div class="kpi-card"><div class="kpi-label">今月来店数</div><div class="kpi-value">186組</div><div class="kpi-trend">来店実績</div></div>
-          <div class="kpi-card"><div class="kpi-label">客単価</div><div class="kpi-value">&yen;98,000</div><div class="kpi-trend">平均金額</div></div>
+          <div class="kpi-card kpi-accent">
+            <div class="kpi-label">本日売上</div>
+            <div class="kpi-value">&yen;840,000</div>
+            <div class="kpi-trend kpi-trend--up">営業速報</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">本日来店数</div>
+            <div class="kpi-value">8組</div>
+            <div class="kpi-trend">本日実績</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">本日売上トップ</div>
+            <div class="kpi-value">&yen;186,000</div>
+            <div class="kpi-trend">REN</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">今月売上</div>
+            <div class="kpi-value">&yen;18,240,000</div>
+            <div class="kpi-trend">5月累計</div>
+          </div>
         </div>
         <div class="card section-gap">
-          <div class="card-header"><span class="card-title">店舗状況</span><div class="btn-group"><span class="tag filter-btn" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-filter="all">すべて (20)</span><span class="tag tag-gray filter-btn" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-filter="active">在店中 (18)</span><span class="tag tag-gray filter-btn" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-filter="exited">退店済み (2)</span></div></div>
+          <div class="card-header">
+            <span class="card-title">売上速報</span>
+            <div class="btn-group">
+              <span class="tag tag-gray sales-filter-btn" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-sales-filter="all">全ホスト</span>
+              <span class="tag sales-filter-btn" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-sales-filter="with-sales">売上有</span>
+              <span class="tag tag-gray sales-filter-btn" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-sales-filter="no-sales">売上無</span>
+            </div>
+          </div>
+          <div class="table-wrapper">
+            <table class="table" id="sales-report-table">
+              <thead>
+                <tr>
+                  <th>ホスト名</th>
+                  <th>本日の売上</th>
+                  <th>客数</th>
+                  <th>リアルタイム指名数</th>
+                  <th>同伴</th>
+                  <th>アフター</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card section-gap">
+          <div class="card-header"><span class="card-title">店舗状況</span><div class="btn-group"><span class="tag tag-gray filter-btn" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-filter="all">すべて (20)</span><span class="tag filter-btn" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-filter="active">在店中 (18)</span><span class="tag tag-gray filter-btn" style="cursor:pointer; border-radius:9999px; border:1px solid currentColor;" data-filter="exited">退店済み (2)</span></div></div>
           <div class="table-wrapper">
             <table class="table" id="visit-table">
               <thead><tr><th>顧客名</th><th>担当ホスト</th><th>座席</th><th>入店時間</th><th>退店時間</th><th>現在の売上</th></tr></thead>
@@ -34,6 +75,7 @@
             </table>
           </div>
         </div>
+        <div class="page-header"><h2 class="page-title">出勤状況</h2></div>
         <div class="card section-gap filter-card">
           <div class="filter-row">
             <span class="filter-row-label">日付</span>
@@ -89,13 +131,36 @@
             <div class="card-body">
               <div class="detail-row"><span class="detail-label">顧客名</span><span class="detail-value" id="modal-name"></span></div>
               <div class="detail-row"><span class="detail-label">担当</span><span class="detail-value" id="modal-host"></span></div>
-              <div class="detail-row"><span class="detail-label">初来店日</span><span class="detail-value" id="modal-first-visit"></span></div>
-              <div class="detail-row"><span class="detail-label">初リピート日</span><span class="detail-value" id="modal-first-repeat"></span></div>
+              <div class="detail-row"><span class="detail-label">座席</span><span class="detail-value" id="modal-seat"></span></div>
+              <div class="detail-row"><span class="detail-label">入店時間</span><span class="detail-value" id="modal-entry-time"></span></div>
+              <div class="detail-row"><span class="detail-label">退店時間</span><span class="detail-value" id="modal-exit-time"></span></div>
               <div class="detail-row"><span class="detail-label">来店回数</span><span class="detail-value" id="modal-visit-count"></span></div>
               <div class="detail-row"><span class="detail-label">平均来店頻度</span><span class="detail-value" id="modal-visit-freq"></span></div>
               <div class="detail-row"><span class="detail-label">今月の売上</span><span class="detail-value" id="modal-monthly-sales"></span></div>
               <div class="detail-row"><span class="detail-label">総売上</span><span class="detail-value" id="modal-total-sales"></span></div>
+              <div class="detail-row"><span class="detail-label">初来店日</span><span class="detail-value" id="modal-first-visit"></span></div>
+              <div class="detail-row"><span class="detail-label">初リピート日</span><span class="detail-value" id="modal-first-repeat"></span></div>
               <div class="detail-row"><span class="detail-label">備考</span><span class="detail-value" id="modal-notes"></span></div>
+            </div>
+          </div>
+        </div>
+        <div id="host-modal">
+          <div class="card host-modal-card">
+            <div class="card-header">
+              <span class="card-title">ホスト詳細</span>
+              <button id="host-modal-close" class="btn btn-ghost btn-sm" type="button">✕</button>
+            </div>
+            <div class="card-body">
+              <div class="detail-row"><span class="detail-label">ホスト名</span><span class="detail-value" id="host-modal-name"></span></div>
+              <div class="detail-row"><span class="detail-label">役職</span><span class="detail-value" id="host-modal-rank"></span></div>
+              <div class="detail-row"><span class="detail-label">今月売上</span><span class="detail-value" id="host-modal-monthly-sales"></span></div>
+              <div class="detail-row"><span class="detail-label">今月出勤日数</span><span class="detail-value" id="host-modal-monthly-attendance"></span></div>
+              <div class="detail-row"><span class="detail-label">本日のシフト</span><span class="detail-value" id="host-modal-today-shift"></span></div>
+              <div class="detail-row"><span class="detail-label">本日売上</span><span class="detail-value" id="host-modal-today-sales"></span></div>
+              <div class="detail-row"><span class="detail-label">本日来客数</span><span class="detail-value" id="host-modal-guests"></span></div>
+              <div class="detail-row"><span class="detail-label">本日指名数</span><span class="detail-value" id="host-modal-nominations"></span></div>
+              <div class="detail-row"><span class="detail-label">同伴</span><span class="detail-value" id="host-modal-dohan"></span></div>
+              <div class="detail-row"><span class="detail-label">アフター</span><span class="detail-value" id="host-modal-after"></span></div>
             </div>
           </div>
         </div>
@@ -105,7 +170,9 @@
   <script src="assets/mock/attendance.js"></script>
   <script src="pages/attendance.js"></script>
   <script src="pages/script.js"></script>
+  <script src="assets/mock/sales-report.js"></script>
   <script src="assets/mock/customer.js"></script>
+  <script src="assets/mock/host-list.js"></script>
   <script src="pages/dashboard.js"></script>
   <script type="module">
     import { requireAuth } from 'assets/js/auth.js';

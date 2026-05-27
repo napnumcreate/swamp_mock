@@ -1,0 +1,20 @@
+var TODAY_HOST_SALES = [
+  { name: 'REN',     sales: '¥186,000', guests: 1, nominations: 1, dohan: '田中 優子', after: '松本 葵' },
+  { name: 'KAITO',   sales: '¥124,000', guests: 1, nominations: 0, dohan: '佐藤 美咲', after: '－' },
+  { name: 'HAYATO',  sales: '¥98,000',  guests: 1, nominations: 1, dohan: '鈴木 麻衣', after: '伊藤 沙織' },
+  { name: 'RYU',     sales: '¥72,000',  guests: 1, nominations: 1, dohan: '高橋 夏子', after: '－' },
+  { name: 'SORA',    sales: '¥65,000',  guests: 1, nominations: 0, dohan: '－', after: '渡辺 留美' },
+  { name: 'YUKI',    sales: '¥52,000',  guests: 1, nominations: 1, dohan: '渡辺 留美', after: '－' },
+  { name: 'DAIKI',   sales: '¥45,000',  guests: 1, nominations: 1, dohan: '中村 彩花', after: '－' },
+  { name: 'KENTA',   sales: '¥38,000',  guests: 1, nominations: 1, dohan: '山本 京香', after: '－' },
+  { name: 'KEN',     sales: '¥0',       guests: 0, nominations: 0, dohan: '吉田 真由', after: '－' },
+  { name: 'JUN',     sales: '¥0',       guests: 0, nominations: 0, dohan: '小林 里奈', after: '－' },
+  { name: 'HIROKI',  sales: '¥0',       guests: 0, nominations: 0, dohan: '－', after: '清水 恵美' },
+  { name: 'SHOTA',   sales: '¥0',       guests: 0, nominations: 0, dohan: '加藤 遥', after: '－' },
+  { name: 'TATSUYA', sales: '¥0',       guests: 0, nominations: 0, dohan: '－', after: '井上 理沙' },
+  { name: 'DAISUKE', sales: '¥0',       guests: 0, nominations: 0, dohan: '木村 千尋', after: '－' },
+  { name: 'KENJI',   sales: '¥0',       guests: 0, nominations: 0, dohan: '－', after: '－' },
+  { name: 'TOMOYA',  sales: '¥0',       guests: 0, nominations: 0, dohan: '清水 恵美', after: '－' },
+  { name: 'MASATO',  sales: '¥0',       guests: 0, nominations: 0, dohan: '－', after: '－' },
+  { name: 'SHINGO',  sales: '¥0',       guests: 0, nominations: 0, dohan: '－', after: '－' }
+];

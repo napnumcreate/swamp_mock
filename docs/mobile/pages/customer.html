@@ -10,6 +10,38 @@
   <link rel="stylesheet" href="../../assets/css/components.css">
   <link rel="stylesheet" href="../../assets/css/mockup.css">
   <link rel="stylesheet" href="../assets/css/mobile.css">
+  <style>
+    #mobile-customer-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.45);
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-4);
+    }
+    .mcm-card {
+      width: 100%;
+      max-width: 420px;
+      max-height: 82vh;
+      overflow-y: auto;
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4);
+      box-shadow: var(--shadow-lg, 0 8px 32px rgba(0,0,0,0.18));
+    }
+    .mcm-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: var(--space-4);
+    }
+    .mcm-title {
+      font-weight: 700;
+      font-size: var(--font-size-lg);
+    }
+  </style>
 </head>
 <body>
   <div class="mobile-shell mobile-shell--host">
@@ -23,32 +55,32 @@
 
       <section class="mobile-section">
         <h2 class="mobile-section-title">担当顧客一覧</h2>
-        <article class="mobile-card">
-          <div class="mobile-list-title"><span>高橋 美優</span><span class="tag">VIP</span></div>
-          <p class="mobile-list-meta">最終来店日：2026/05/23 / 来店回数：28回</p>
-        </article>
-        <article class="mobile-card">
-          <div class="mobile-list-title"><span>渡辺 ゆり</span><span class="tag">VIP</span></div>
-          <p class="mobile-list-meta">最終来店日：2026/05/15 / 来店回数：35回</p>
-        </article>
-        <article class="mobile-card">
-          <div class="mobile-list-title"><span>佐々木 結衣</span><span class="badge badge-info">レギュラー</span></div>
-          <p class="mobile-list-meta">最終来店日：2026/05/20 / 来店回数：15回</p>
-        </article>
-        <article class="mobile-card">
-          <div class="mobile-list-title"><span>田中 彩香</span><span class="badge badge-info">レギュラー</span></div>
-          <p class="mobile-list-meta">最終来店日：2026/05/19 / 来店回数：7回</p>
-        </article>
-        <article class="mobile-card">
-          <div class="mobile-list-title"><span>木村 なな</span><span class="badge badge-neutral">新規</span></div>
-          <p class="mobile-list-meta">最終来店日：2026/05/24 / 来店回数：2回</p>
-        </article>
+        <div id="customer-list"></div>
       </section>
+
+      <div id="mobile-customer-modal">
+        <div class="mcm-card">
+          <div class="mcm-header">
+            <span class="mcm-title">顧客詳細</span>
+            <button id="mcm-close" class="btn btn-ghost btn-sm" type="button">✕</button>
+          </div>
+          <div class="mobile-key-value"><span class="mobile-key">顧客名</span><span class="mobile-value" id="mcm-name"></span></div>
+          <div class="mobile-key-value"><span class="mobile-key">担当ホスト</span><span class="mobile-value" id="mcm-host"></span></div>
+          <div class="mobile-key-value"><span class="mobile-key">来店回数</span><span class="mobile-value" id="mcm-visit-count"></span></div>
+          <div class="mobile-key-value"><span class="mobile-key">平均来店頻度</span><span class="mobile-value" id="mcm-visit-freq"></span></div>
+          <div class="mobile-key-value"><span class="mobile-key">今月の売上</span><span class="mobile-value" id="mcm-monthly-sales"></span></div>
+          <div class="mobile-key-value"><span class="mobile-key">総売上</span><span class="mobile-value" id="mcm-total-sales"></span></div>
+          <div class="mobile-key-value"><span class="mobile-key">初来店日</span><span class="mobile-value" id="mcm-first-visit"></span></div>
+          <div class="mobile-key-value"><span class="mobile-key">初リピート日</span><span class="mobile-value" id="mcm-first-repeat"></span></div>
+          <div class="mobile-key-value"><span class="mobile-key">備考</span><span class="mobile-value" id="mcm-notes"></span></div>
+        </div>
+      </div>
     </main>
 
     <nav class="mobile-bottom-nav" aria-label="メインナビゲーション"></nav>
   </div>
   <script src="../assets/js/shared-mobile-layout.js"></script>
+  <script src="customer-mobile.js"></script>
   <script type="module">
     import { requireAuth } from '../../assets/js/auth.js';
     requireAuth('login.html');

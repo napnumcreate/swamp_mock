@@ -10,6 +10,49 @@
   <link rel="stylesheet" href="../../assets/css/components.css">
   <link rel="stylesheet" href="../../assets/css/mockup.css">
   <link rel="stylesheet" href="../assets/css/mobile.css">
+  <style>
+    .sales-chart-panel {
+      width: 100%;
+      height: 180px;
+      padding: 8px 4px 0;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sales-chart-panel--hidden {
+      display: none;
+    }
+
+    .sales-chart {
+      display: block;
+      width: 100%;
+      height: 160px;
+    }
+
+    .sales-chart-grid {
+      stroke: var(--color-border-light);
+      stroke-width: 1;
+    }
+
+    .sales-chart-axis,
+    .sales-chart-value {
+      fill: var(--color-text-muted);
+      font-size: 7px;
+      font-family: inherit;
+    }
+
+    .sales-chart-value {
+      fill: var(--color-text-secondary);
+      font-size: 6.5px;
+      text-anchor: middle;
+    }
+
+    .sales-chart-bar {
+      fill: #7C3AED;
+    }
+  </style>
 </head>
 <body>
   <div class="mobile-shell mobile-shell--host">
@@ -39,9 +82,103 @@
 
       <section class="mobile-section">
         <div class="mobile-btn-row">
-          <a href="#" class="btn btn-primary">本日</a>
-          <a href="#" class="btn btn-secondary">昨日</a>
-          <a href="#" class="btn btn-secondary">今週</a>
+          <button type="button" class="btn btn-primary" id="btn-today" data-period="today">本日</button>
+          <button type="button" class="btn btn-secondary" id="btn-week" data-period="week">今週</button>
+          <button type="button" class="btn btn-secondary" id="btn-month" data-period="month">今月</button>
+        </div>
+      </section>
+
+      <section class="mobile-section" aria-label="売上グラフ">
+        <div class="sales-chart-panel" id="chart-today">
+          <svg class="sales-chart" viewBox="0 0 340 160" role="img" aria-label="本日の時間帯別売上グラフ">
+            <line class="sales-chart-grid" x1="42" y1="30" x2="330" y2="30"></line>
+            <line class="sales-chart-grid" x1="42" y1="59" x2="330" y2="59"></line>
+            <line class="sales-chart-grid" x1="42" y1="88" x2="330" y2="88"></line>
+            <line class="sales-chart-grid" x1="42" y1="116" x2="330" y2="116"></line>
+            <text class="sales-chart-axis" x="2" y="33">120,000</text>
+            <text class="sales-chart-axis" x="7" y="62">80,000</text>
+            <text class="sales-chart-axis" x="7" y="91">40,000</text>
+            <text class="sales-chart-axis" x="27" y="119">0</text>
+            <rect class="sales-chart-bar" x="50" y="116" width="22" height="0"></rect>
+            <rect class="sales-chart-bar" x="86" y="103" width="22" height="13"></rect>
+            <rect class="sales-chart-bar" x="122" y="86" width="22" height="30"></rect>
+            <rect class="sales-chart-bar" x="158" y="69" width="22" height="47"></rect>
+            <rect class="sales-chart-bar" x="194" y="48" width="22" height="68"></rect>
+            <rect class="sales-chart-bar" x="230" y="30" width="22" height="86"></rect>
+            <rect class="sales-chart-bar" x="266" y="53" width="22" height="63"></rect>
+            <rect class="sales-chart-bar" x="302" y="79" width="22" height="37"></rect>
+            <text class="sales-chart-value" x="97" y="98">18,000</text>
+            <text class="sales-chart-value" x="133" y="81">42,000</text>
+            <text class="sales-chart-value" x="169" y="64">65,000</text>
+            <text class="sales-chart-value" x="205" y="43">95,000</text>
+            <text class="sales-chart-value" x="241" y="25">120,000</text>
+            <text class="sales-chart-value" x="277" y="48">88,000</text>
+            <text class="sales-chart-value" x="313" y="74">52,000</text>
+            <text class="sales-chart-axis" x="55" y="132">18時</text>
+            <text class="sales-chart-axis" x="91" y="132">19時</text>
+            <text class="sales-chart-axis" x="127" y="132">20時</text>
+            <text class="sales-chart-axis" x="163" y="132">21時</text>
+            <text class="sales-chart-axis" x="199" y="132">22時</text>
+            <text class="sales-chart-axis" x="235" y="132">23時</text>
+            <text class="sales-chart-axis" x="272" y="132">0時</text>
+            <text class="sales-chart-axis" x="308" y="132">1時</text>
+          </svg>
+        </div>
+        <div class="sales-chart-panel sales-chart-panel--hidden" id="chart-week">
+          <svg class="sales-chart" viewBox="0 0 340 160" role="img" aria-label="今週の日別売上グラフ">
+            <line class="sales-chart-grid" x1="42" y1="30" x2="330" y2="30"></line>
+            <line class="sales-chart-grid" x1="42" y1="59" x2="330" y2="59"></line>
+            <line class="sales-chart-grid" x1="42" y1="88" x2="330" y2="88"></line>
+            <line class="sales-chart-grid" x1="42" y1="116" x2="330" y2="116"></line>
+            <text class="sales-chart-axis" x="2" y="33">210,000</text>
+            <text class="sales-chart-axis" x="2" y="62">140,000</text>
+            <text class="sales-chart-axis" x="7" y="91">70,000</text>
+            <text class="sales-chart-axis" x="27" y="119">0</text>
+            <rect class="sales-chart-bar" x="52" y="116" width="27" height="0"></rect>
+            <rect class="sales-chart-bar" x="93" y="50" width="27" height="66"></rect>
+            <rect class="sales-chart-bar" x="134" y="30" width="27" height="86"></rect>
+            <rect class="sales-chart-bar" x="175" y="40" width="27" height="76"></rect>
+            <rect class="sales-chart-bar" x="216" y="77" width="27" height="39"></rect>
+            <rect class="sales-chart-bar" x="257" y="46" width="27" height="70"></rect>
+            <rect class="sales-chart-bar" x="298" y="57" width="27" height="59"></rect>
+            <text class="sales-chart-value" x="106.5" y="45">160,000</text>
+            <text class="sales-chart-value" x="147.5" y="25">210,000</text>
+            <text class="sales-chart-value" x="188.5" y="35">185,000</text>
+            <text class="sales-chart-value" x="229.5" y="72">95,000</text>
+            <text class="sales-chart-value" x="270.5" y="41">172,000</text>
+            <text class="sales-chart-value" x="311.5" y="52">145,000</text>
+            <text class="sales-chart-axis" x="56" y="132">5/21</text>
+            <text class="sales-chart-axis" x="97" y="132">5/22</text>
+            <text class="sales-chart-axis" x="138" y="132">5/23</text>
+            <text class="sales-chart-axis" x="179" y="132">5/24</text>
+            <text class="sales-chart-axis" x="220" y="132">5/25</text>
+            <text class="sales-chart-axis" x="261" y="132">5/26</text>
+            <text class="sales-chart-axis" x="302" y="132">5/27</text>
+          </svg>
+        </div>
+        <div class="sales-chart-panel sales-chart-panel--hidden" id="chart-month">
+          <svg class="sales-chart" viewBox="0 0 340 160" role="img" aria-label="今月の週別売上グラフ">
+            <line class="sales-chart-grid" x1="42" y1="30" x2="330" y2="30"></line>
+            <line class="sales-chart-grid" x1="42" y1="59" x2="330" y2="59"></line>
+            <line class="sales-chart-grid" x1="42" y1="88" x2="330" y2="88"></line>
+            <line class="sales-chart-grid" x1="42" y1="116" x2="330" y2="116"></line>
+            <text class="sales-chart-axis" x="2" y="33">600,000</text>
+            <text class="sales-chart-axis" x="2" y="62">400,000</text>
+            <text class="sales-chart-axis" x="2" y="91">200,000</text>
+            <text class="sales-chart-axis" x="27" y="119">0</text>
+            <rect class="sales-chart-bar" x="70" y="62" width="44" height="54"></rect>
+            <rect class="sales-chart-bar" x="136" y="42" width="44" height="74"></rect>
+            <rect class="sales-chart-bar" x="202" y="53" width="44" height="63"></rect>
+            <rect class="sales-chart-bar" x="268" y="48" width="44" height="68"></rect>
+            <text class="sales-chart-value" x="92" y="57">380,000</text>
+            <text class="sales-chart-value" x="158" y="37">520,000</text>
+            <text class="sales-chart-value" x="224" y="48">440,000</text>
+            <text class="sales-chart-value" x="290" y="43">480,000</text>
+            <text class="sales-chart-axis" x="80" y="132">1週目</text>
+            <text class="sales-chart-axis" x="146" y="132">2週目</text>
+            <text class="sales-chart-axis" x="212" y="132">3週目</text>
+            <text class="sales-chart-axis" x="278" y="132">4週目</text>
+          </svg>
         </div>
       </section>
 
@@ -89,6 +226,7 @@
     <nav class="mobile-bottom-nav" aria-label="メインナビゲーション"></nav>
   </div>
   <script src="../assets/js/shared-mobile-layout.js"></script>
+  <script src="sales.js"></script>
   <script type="module">
     import { requireAuth } from '../../assets/js/auth.js';
     requireAuth('login.html');

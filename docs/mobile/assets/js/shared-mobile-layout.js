@@ -18,17 +18,14 @@
     fetch('header/header.html')
       .then(function (r) { return r.text(); })
       .then(function (html) {
+        var roleSwitchText = layoutType === 'host' ? '内勤画面へ' : 'ホスト画面へ';
+        var roleSwitchHref = layoutType === 'host' ? 'attendance-staff.html' : 'attendance-host.html';
         header.innerHTML = html
           .replace('{{TITLE}}', title)
           .replace('{{TAG_CLASS}}', tagClass)
-          .replace('{{TAG_TEXT}}', tagText);
-        var logoutBtn = document.getElementById('mobile-logout-btn');
-        if (logoutBtn) {
-          logoutBtn.addEventListener('click', function () {
-            sessionStorage.removeItem(window.MOCK_SESSION_KEY || 'mock_authed');
-            window.location.href = 'login.html';
-          });
-        }
+          .replace('{{TAG_TEXT}}', tagText)
+          .replace('{{ROLE_SWITCH_TEXT}}', roleSwitchText)
+          .replace('{{ROLE_SWITCH_HREF}}', roleSwitchHref);
       });
   }
 

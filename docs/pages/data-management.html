@@ -19,33 +19,75 @@
       <header class="header" data-title="データ管理" data-tag="システム管理"></header>
       <main class="main-content">
         <div class="page-header"><h1 class="page-title">データ管理</h1></div>
-        <div class="grid-4 section-gap">
-          <div class="kpi-card kpi-accent"><div class="kpi-label">総データ件数</div><div class="kpi-value">顧客248件 / ホスト18件</div></div>
-          <div class="kpi-card"><div class="kpi-label">最終バックアップ</div><div class="kpi-value">2026年5月25日</div><div class="kpi-trend">23:00</div></div>
-          <div class="kpi-card"><div class="kpi-label">ストレージ使用量</div><div class="kpi-value">12.4 GB / 50 GB</div></div>
-          <div class="kpi-card"><div class="kpi-label">今月のエクスポート数</div><div class="kpi-value">7回</div></div>
-        </div>
-        <div class="grid-2 section-gap">
-          <div class="card">
-            <div class="card-header">
-              <span class="card-title">マスターデータ管理</span>
-            </div>
-            <div class="card-body">
-              <div class="detail-row"><span class="detail-label">ホストデータ</span><button type="button" class="btn btn-secondary">エクスポート</button></div>
-              <div class="detail-row"><span class="detail-label">顧客データ</span><button type="button" class="btn btn-secondary">エクスポート</button></div>
-              <div class="detail-row"><span class="detail-label">売上データ</span><button type="button" class="btn btn-secondary">エクスポート</button></div>
-              <div class="detail-row"><span class="detail-label">シフトデータ</span><button type="button" class="btn btn-secondary">エクスポート</button></div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header">
-              <span class="card-title">バックアップ・メンテナンス</span>
-            </div>
-            <div class="card-body">
-              <div class="detail-row"><span class="detail-label">バックアップ</span><button type="button" class="btn btn-secondary">手動バックアップ実行</button></div>
-              <div class="detail-row"><span class="detail-label">テストデータ</span><button type="button" class="btn btn-secondary">データクリア（テスト用）</button></div>
-              <div class="detail-row"><span class="detail-label">データ取込</span><button type="button" class="btn btn-secondary">CSVインポート</button></div>
-            </div>
+        <div class="card section-gap">
+          <div class="table-wrapper">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>データ種別</th>
+                  <th>件数</th>
+                  <th>最終バックアップ日時</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="cell-strong">ホストデータ</td>
+                  <td>18件</td>
+                  <td>2026/05/27 23:00</td>
+                  <td>
+                    <div style="display:flex;gap:0.5rem;">
+                      <button type="button" class="btn btn-secondary btn-sm">詳細</button>
+                      <button type="button" class="btn btn-secondary btn-sm">エクスポート</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="cell-strong">顧客データ</td>
+                  <td>248件</td>
+                  <td>2026/05/27 23:00</td>
+                  <td>
+                    <div style="display:flex;gap:0.5rem;">
+                      <button type="button" class="btn btn-secondary btn-sm">詳細</button>
+                      <button type="button" class="btn btn-secondary btn-sm">エクスポート</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="cell-strong">売上データ</td>
+                  <td>1,240件</td>
+                  <td>2026/05/27 22:30</td>
+                  <td>
+                    <div style="display:flex;gap:0.5rem;">
+                      <button type="button" class="btn btn-secondary btn-sm">詳細</button>
+                      <button type="button" class="btn btn-secondary btn-sm">エクスポート</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="cell-strong">シフトデータ</td>
+                  <td>312件</td>
+                  <td>2026/05/26 23:00</td>
+                  <td>
+                    <div style="display:flex;gap:0.5rem;">
+                      <button type="button" class="btn btn-secondary btn-sm">詳細</button>
+                      <button type="button" class="btn btn-secondary btn-sm">エクスポート</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="cell-strong">給与データ</td>
+                  <td>204件</td>
+                  <td>2026/05/25 23:00</td>
+                  <td>
+                    <div style="display:flex;gap:0.5rem;">
+                      <button type="button" class="btn btn-secondary btn-sm">詳細</button>
+                      <button type="button" class="btn btn-secondary btn-sm">エクスポート</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </main>

@@ -1,0 +1,20 @@
+var MOCK_HOSTS = [
+  { name: 'REN',     rank: 'No.1',  monthlySales: '¥2,420,000', monthlyAttendance: '20日', todayShift: '出勤' },
+  { name: 'KAITO',   rank: 'No.2',  monthlySales: '¥1,980,000', monthlyAttendance: '19日', todayShift: '出勤' },
+  { name: 'HAYATO',  rank: 'No.3',  monthlySales: '¥1,750,000', monthlyAttendance: '18日', todayShift: '出勤' },
+  { name: 'RYU',     rank: '幹部',  monthlySales: '¥1,340,000', monthlyAttendance: '17日', todayShift: '出勤' },
+  { name: 'SORA',    rank: '幹部',  monthlySales: '¥1,120,000', monthlyAttendance: '16日', todayShift: '出勤' },
+  { name: 'YUKI',    rank: 'チーフ', monthlySales: '¥890,000',  monthlyAttendance: '15日', todayShift: '出勤' },
+  { name: 'DAIKI',   rank: 'チーフ', monthlySales: '¥780,000',  monthlyAttendance: '14日', todayShift: '出勤' },
+  { name: 'KENTA',   rank: 'チーフ', monthlySales: '¥620,000',  monthlyAttendance: '13日', todayShift: '出勤' },
+  { name: 'KEN',     rank: 'ホスト', monthlySales: '¥480,000',  monthlyAttendance: '12日', todayShift: '出勤' },
+  { name: 'JUN',     rank: 'ホスト', monthlySales: '¥390,000',  monthlyAttendance: '11日', todayShift: '遅出' },
+  { name: 'HIROKI',  rank: 'ホスト', monthlySales: '¥310,000',  monthlyAttendance: '10日', todayShift: '遅出' },
+  { name: 'SHOTA',   rank: 'ホスト', monthlySales: '¥240,000',  monthlyAttendance: '9日',  todayShift: '休み' },
+  { name: 'TATSUYA', rank: 'ホスト', monthlySales: '¥180,000',  monthlyAttendance: '8日',  todayShift: '休み' },
+  { name: 'DAISUKE', rank: 'ホスト', monthlySales: '¥145,000',  monthlyAttendance: '7日',  todayShift: '休み' },
+  { name: 'KENJI',   rank: 'ホスト', monthlySales: '¥98,000',   monthlyAttendance: '6日',  todayShift: '休み' },
+  { name: 'TOMOYA',  rank: 'ホスト', monthlySales: '¥76,000',   monthlyAttendance: '5日',  todayShift: '休み' },
+  { name: 'MASATO',  rank: '新人',   monthlySales: '¥42,000',   monthlyAttendance: '4日',  todayShift: '出勤' },
+  { name: 'SHINGO',  rank: '新人',   monthlySales: '¥18,000',   monthlyAttendance: '3日',  todayShift: '出勤' }
+];
