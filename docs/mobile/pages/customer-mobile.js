@@ -1,8 +1,6 @@
 var MOBILE_CUSTOMER_LIST = [
   {
     name: '高橋 美優',
-    rankLabel: 'VIP',
-    rankClass: 'tag',
     lastVisit: '2026/05/23',
     visitCount: '28回',
     host: 'REN',
@@ -15,8 +13,6 @@ var MOBILE_CUSTOMER_LIST = [
   },
   {
     name: '渡辺 ゆり',
-    rankLabel: 'VIP',
-    rankClass: 'tag',
     lastVisit: '2026/05/15',
     visitCount: '35回',
     host: 'REN',
@@ -29,8 +25,6 @@ var MOBILE_CUSTOMER_LIST = [
   },
   {
     name: '佐々木 結衣',
-    rankLabel: 'レギュラー',
-    rankClass: 'badge badge-info',
     lastVisit: '2026/05/20',
     visitCount: '15回',
     host: 'REN',
@@ -43,8 +37,6 @@ var MOBILE_CUSTOMER_LIST = [
   },
   {
     name: '田中 彩香',
-    rankLabel: 'レギュラー',
-    rankClass: 'badge badge-info',
     lastVisit: '2026/05/19',
     visitCount: '7回',
     host: 'REN',
@@ -57,8 +49,6 @@ var MOBILE_CUSTOMER_LIST = [
   },
   {
     name: '木村 なな',
-    rankLabel: '新規',
-    rankClass: 'badge badge-neutral',
     lastVisit: '2026/05/24',
     visitCount: '2回',
     host: 'REN',
@@ -85,8 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
       article.className = 'mobile-card';
       article.style.cursor = 'pointer';
       article.innerHTML =
-        '<div class="mobile-list-title"><span>' + c.name + '</span>' +
-        '<span class="' + c.rankClass + '">' + c.rankLabel + '</span></div>' +
+        '<div class="mobile-list-title"><span>' + c.name + '</span></div>' +
         '<p class="mobile-list-meta">最終来店日：' + c.lastVisit + ' / 来店回数：' + c.visitCount + '</p>';
       article.addEventListener('click', function () {
         openModal(c);

@@ -18,28 +18,20 @@
       <section class="mobile-section" aria-label="席一覧">
         <h2 class="mobile-section-title">席一覧</h2>
         <article class="mobile-card" data-modal-trigger data-modal-title="A-01 注文登録" style="cursor:pointer;">
-          <div class="mobile-list-title"><span>A-01</span><span class="tag">選択中</span></div>
-          <p class="mobile-list-meta">客数：3名 / 担当ホスト：REN</p>
+          <div class="mobile-list-title"><span>A-01</span></div>
+          <p class="mobile-list-meta">担当ホスト：REN</p>
         </article>
         <article class="mobile-card" data-modal-trigger data-modal-title="A-02 注文登録" style="cursor:pointer;">
-          <div class="mobile-list-title"><span>A-02</span><span class="badge badge-neutral">入店中</span></div>
-          <p class="mobile-list-meta">客数：4名 / 担当ホスト：KAITO</p>
+          <div class="mobile-list-title"><span>A-02</span></div>
+          <p class="mobile-list-meta">担当ホスト：KAITO</p>
         </article>
         <article class="mobile-card" data-modal-trigger data-modal-title="B-01 注文登録" style="cursor:pointer;">
-          <div class="mobile-list-title"><span>B-01</span><span class="badge badge-neutral">入店中</span></div>
-          <p class="mobile-list-meta">客数：2名 / 担当ホスト：SORA</p>
-        </article>
-        <article class="mobile-card" data-modal-trigger data-modal-title="B-02 注文登録" style="cursor:pointer;">
-          <div class="mobile-list-title"><span>B-02</span><span class="badge badge-warning">会計待ち</span></div>
-          <p class="mobile-list-meta">客数：5名 / 担当ホスト：RYU</p>
-        </article>
-        <article class="mobile-card" data-modal-trigger data-modal-title="C-01 注文登録" style="cursor:pointer;">
-          <div class="mobile-list-title"><span>C-01</span><span class="badge badge-neutral">空席</span></div>
-          <p class="mobile-list-meta">客数：0名 / 担当ホスト：なし</p>
+          <div class="mobile-list-title"><span>B-01</span></div>
+          <p class="mobile-list-meta">担当ホスト：SORA</p>
         </article>
         <article class="mobile-card" data-modal-trigger data-modal-title="VIP-01 注文登録" style="cursor:pointer;">
-          <div class="mobile-list-title"><span>VIP-01</span><span class="badge badge-neutral">入店中</span></div>
-          <p class="mobile-list-meta">客数：2名 / 担当ホスト：HAYATO</p>
+          <div class="mobile-list-title"><span>VIP-01</span></div>
+          <p class="mobile-list-meta">担当ホスト：HAYATO</p>
         </article>
       </section>
 
@@ -52,36 +44,131 @@
         </div>
         <div class="mobile-modal-body">
           <div class="mobile-btn-row" style="margin-bottom: var(--space-4);">
-            <a href="#" class="btn btn-primary">ボトル</a>
-            <a href="#" class="btn btn-secondary">グラス</a>
-            <a href="#" class="btn btn-secondary">フード</a>
+            <button type="button" class="btn btn-primary order-cat-btn" data-category="bottle">ボトル</button>
+            <button type="button" class="btn btn-secondary order-cat-btn" data-category="can">缶物</button>
+            <button type="button" class="btn btn-secondary order-cat-btn" data-category="food">フード</button>
           </div>
           <article class="mobile-card">
-            <div class="mobile-list-item">
+            <div class="mobile-list-item" data-category="bottle" data-item="ドンペリ" data-price="35000">
               <div class="mobile-status-row">
                 <div><strong>ドンペリ</strong><p class="mobile-list-meta">&yen;35,000</p></div>
-                <a href="#" class="btn btn-primary btn-sm">追加</a>
+                <div class="qty-ctrl" style="display:flex; align-items:center; gap:var(--space-2);">
+                  <button type="button" class="btn btn-secondary btn-sm qty-minus">－</button>
+                  <span class="qty-val" style="min-width:1.5em; text-align:center;">0</span>
+                  <button type="button" class="btn btn-primary btn-sm qty-plus">＋</button>
+                </div>
               </div>
             </div>
-            <div class="mobile-list-item">
+            <div class="mobile-list-item" data-category="bottle" data-item="ジャックダニエル" data-price="8000">
               <div class="mobile-status-row">
                 <div><strong>ジャックダニエル</strong><p class="mobile-list-meta">&yen;8,000</p></div>
-                <a href="#" class="btn btn-primary btn-sm">追加</a>
+                <div class="qty-ctrl" style="display:flex; align-items:center; gap:var(--space-2);">
+                  <button type="button" class="btn btn-secondary btn-sm qty-minus">－</button>
+                  <span class="qty-val" style="min-width:1.5em; text-align:center;">0</span>
+                  <button type="button" class="btn btn-primary btn-sm qty-plus">＋</button>
+                </div>
               </div>
             </div>
-            <div class="mobile-list-item">
+            <div class="mobile-list-item" data-category="bottle" data-item="ヘネシーVSOP" data-price="42000">
+              <div class="mobile-status-row">
+                <div><strong>ヘネシーVSOP</strong><p class="mobile-list-meta">&yen;42,000</p></div>
+                <div class="qty-ctrl" style="display:flex; align-items:center; gap:var(--space-2);">
+                  <button type="button" class="btn btn-secondary btn-sm qty-minus">－</button>
+                  <span class="qty-val" style="min-width:1.5em; text-align:center;">0</span>
+                  <button type="button" class="btn btn-primary btn-sm qty-plus">＋</button>
+                </div>
+              </div>
+            </div>
+            <div class="mobile-list-item" data-category="bottle" data-item="シャトーマルゴー" data-price="28000">
+              <div class="mobile-status-row">
+                <div><strong>シャトーマルゴー</strong><p class="mobile-list-meta">&yen;28,000</p></div>
+                <div class="qty-ctrl" style="display:flex; align-items:center; gap:var(--space-2);">
+                  <button type="button" class="btn btn-secondary btn-sm qty-minus">－</button>
+                  <span class="qty-val" style="min-width:1.5em; text-align:center;">0</span>
+                  <button type="button" class="btn btn-primary btn-sm qty-plus">＋</button>
+                </div>
+              </div>
+            </div>
+            <div class="mobile-list-item" data-category="can" data-item="プレミアムモルツ" data-price="800">
+              <div class="mobile-status-row">
+                <div><strong>プレミアムモルツ</strong><p class="mobile-list-meta">&yen;800</p></div>
+                <div class="qty-ctrl" style="display:flex; align-items:center; gap:var(--space-2);">
+                  <button type="button" class="btn btn-secondary btn-sm qty-minus">－</button>
+                  <span class="qty-val" style="min-width:1.5em; text-align:center;">0</span>
+                  <button type="button" class="btn btn-primary btn-sm qty-plus">＋</button>
+                </div>
+              </div>
+            </div>
+            <div class="mobile-list-item" data-category="can" data-item="ハイボール" data-price="700">
+              <div class="mobile-status-row">
+                <div><strong>ハイボール</strong><p class="mobile-list-meta">&yen;700</p></div>
+                <div class="qty-ctrl" style="display:flex; align-items:center; gap:var(--space-2);">
+                  <button type="button" class="btn btn-secondary btn-sm qty-minus">－</button>
+                  <span class="qty-val" style="min-width:1.5em; text-align:center;">0</span>
+                  <button type="button" class="btn btn-primary btn-sm qty-plus">＋</button>
+                </div>
+              </div>
+            </div>
+            <div class="mobile-list-item" data-category="can" data-item="レモンサワー" data-price="700">
+              <div class="mobile-status-row">
+                <div><strong>レモンサワー</strong><p class="mobile-list-meta">&yen;700</p></div>
+                <div class="qty-ctrl" style="display:flex; align-items:center; gap:var(--space-2);">
+                  <button type="button" class="btn btn-secondary btn-sm qty-minus">－</button>
+                  <span class="qty-val" style="min-width:1.5em; text-align:center;">0</span>
+                  <button type="button" class="btn btn-primary btn-sm qty-plus">＋</button>
+                </div>
+              </div>
+            </div>
+            <div class="mobile-list-item" data-category="can" data-item="ノンアルコール" data-price="600">
+              <div class="mobile-status-row">
+                <div><strong>ノンアルコール</strong><p class="mobile-list-meta">&yen;600</p></div>
+                <div class="qty-ctrl" style="display:flex; align-items:center; gap:var(--space-2);">
+                  <button type="button" class="btn btn-secondary btn-sm qty-minus">－</button>
+                  <span class="qty-val" style="min-width:1.5em; text-align:center;">0</span>
+                  <button type="button" class="btn btn-primary btn-sm qty-plus">＋</button>
+                </div>
+              </div>
+            </div>
+            <div class="mobile-list-item" data-category="food" data-item="フルーツ盛り合わせ" data-price="3500">
               <div class="mobile-status-row">
                 <div><strong>フルーツ盛り合わせ</strong><p class="mobile-list-meta">&yen;3,500</p></div>
-                <a href="#" class="btn btn-primary btn-sm">追加</a>
+                <div class="qty-ctrl" style="display:flex; align-items:center; gap:var(--space-2);">
+                  <button type="button" class="btn btn-secondary btn-sm qty-minus">－</button>
+                  <span class="qty-val" style="min-width:1.5em; text-align:center;">0</span>
+                  <button type="button" class="btn btn-primary btn-sm qty-plus">＋</button>
+                </div>
               </div>
             </div>
-            <div class="mobile-list-item">
+            <div class="mobile-list-item" data-category="food" data-item="おつまみセット" data-price="1500">
               <div class="mobile-status-row">
-                <div><strong>カクテル</strong><p class="mobile-list-meta">&yen;2,000</p></div>
-                <a href="#" class="btn btn-primary btn-sm">追加</a>
+                <div><strong>おつまみセット</strong><p class="mobile-list-meta">&yen;1,500</p></div>
+                <div class="qty-ctrl" style="display:flex; align-items:center; gap:var(--space-2);">
+                  <button type="button" class="btn btn-secondary btn-sm qty-minus">－</button>
+                  <span class="qty-val" style="min-width:1.5em; text-align:center;">0</span>
+                  <button type="button" class="btn btn-primary btn-sm qty-plus">＋</button>
+                </div>
+              </div>
+            </div>
+            <div class="mobile-list-item" data-category="food" data-item="チョコレートプレート" data-price="2000">
+              <div class="mobile-status-row">
+                <div><strong>チョコレートプレート</strong><p class="mobile-list-meta">&yen;2,000</p></div>
+                <div class="qty-ctrl" style="display:flex; align-items:center; gap:var(--space-2);">
+                  <button type="button" class="btn btn-secondary btn-sm qty-minus">－</button>
+                  <span class="qty-val" style="min-width:1.5em; text-align:center;">0</span>
+                  <button type="button" class="btn btn-primary btn-sm qty-plus">＋</button>
+                </div>
               </div>
             </div>
           </article>
+          <div id="order-cart" style="display:none; margin-top:var(--space-3);">
+            <article class="mobile-card">
+              <div id="cart-lines"></div>
+              <div class="mobile-status-row" style="padding-top:var(--space-2); border-top:1px solid #e5e7eb; margin-top:var(--space-2);">
+                <strong>合計</strong>
+                <strong id="cart-total" style="color:var(--color-accent);">¥0</strong>
+              </div>
+            </article>
+          </div>
           <div class="mobile-btn-row" style="margin-top: var(--space-4);">
             <a href="#" class="btn btn-primary">注文確定</a>
           </div>
@@ -95,6 +182,77 @@
   <script type="module">
     import { requireAuth } from '../../assets/js/auth.js';
     requireAuth('login.html');
+  </script>
+  <script>
+  (function () {
+    // --- カテゴリーフィルター ---
+    function applyCategory(cat) {
+      document.querySelectorAll('.order-cat-btn').forEach(function (b) {
+        b.className = b.dataset.category === cat
+          ? 'btn btn-primary order-cat-btn'
+          : 'btn btn-secondary order-cat-btn';
+      });
+      document.querySelectorAll('.mobile-list-item[data-category]').forEach(function (item) {
+        item.style.display = item.dataset.category === cat ? '' : 'none';
+      });
+    }
+    document.querySelectorAll('.order-cat-btn').forEach(function (b) {
+      b.addEventListener('click', function () { applyCategory(this.dataset.category); });
+    });
+    applyCategory('bottle');
+
+    // --- カート更新 ---
+    function updateCart() {
+      var lines = [];
+      var total = 0;
+      document.querySelectorAll('.mobile-list-item[data-item]').forEach(function (item) {
+        var qty = parseInt(item.querySelector('.qty-val').textContent, 10);
+        if (qty > 0) {
+          var price = parseInt(item.dataset.price, 10);
+          lines.push({ name: item.dataset.item, qty: qty, price: price });
+          total += qty * price;
+        }
+      });
+      var cart = document.getElementById('order-cart');
+      var cartLines = document.getElementById('cart-lines');
+      var cartTotal = document.getElementById('cart-total');
+      if (lines.length === 0) {
+        cart.style.display = 'none';
+      } else {
+        cart.style.display = '';
+        cartLines.innerHTML = lines.map(function (l) {
+          return '<div class="mobile-status-row" style="padding:var(--space-1) 0;">'
+            + '<span>' + l.name + ' &times; ' + l.qty + '</span>'
+            + '<span>&yen;' + (l.qty * l.price).toLocaleString() + '</span>'
+            + '</div>';
+        }).join('');
+        cartTotal.textContent = '¥' + total.toLocaleString();
+      }
+    }
+
+    // --- ＋ボタン ---
+    document.querySelectorAll('.qty-plus').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = this.closest('.mobile-list-item');
+        var valEl = item.querySelector('.qty-val');
+        valEl.textContent = parseInt(valEl.textContent, 10) + 1;
+        updateCart();
+      });
+    });
+
+    // --- －ボタン ---
+    document.querySelectorAll('.qty-minus').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = this.closest('.mobile-list-item');
+        var valEl = item.querySelector('.qty-val');
+        var cur = parseInt(valEl.textContent, 10);
+        if (cur > 0) {
+          valEl.textContent = cur - 1;
+          updateCart();
+        }
+      });
+    });
+  }());
   </script>
 </body>
 </html>

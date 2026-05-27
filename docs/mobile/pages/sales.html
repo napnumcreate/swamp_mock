@@ -14,11 +14,16 @@
     .sales-chart-panel {
       width: 100%;
       height: 180px;
-      padding: 8px 4px 0;
+      padding: 4px 0 0;
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: var(--radius-md);
       box-shadow: var(--shadow-sm);
+    }
+
+    .mobile-section--chart {
+      padding-left: 0;
+      padding-right: 0;
     }
 
     .sales-chart-panel--hidden {
@@ -49,7 +54,15 @@
       text-anchor: middle;
     }
 
-    .sales-chart-bar {
+    .sales-chart-line {
+      fill: none;
+      stroke: #7C3AED;
+      stroke-width: 2;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+
+    .sales-chart-dot {
       fill: #7C3AED;
     }
   </style>
@@ -88,7 +101,7 @@
         </div>
       </section>
 
-      <section class="mobile-section" aria-label="売上グラフ">
+      <section class="mobile-section mobile-section--chart" aria-label="売上グラフ">
         <div class="sales-chart-panel" id="chart-today">
           <svg class="sales-chart" viewBox="0 0 340 160" role="img" aria-label="本日の時間帯別売上グラフ">
             <line class="sales-chart-grid" x1="42" y1="30" x2="330" y2="30"></line>
@@ -99,14 +112,15 @@
             <text class="sales-chart-axis" x="7" y="62">80,000</text>
             <text class="sales-chart-axis" x="7" y="91">40,000</text>
             <text class="sales-chart-axis" x="27" y="119">0</text>
-            <rect class="sales-chart-bar" x="50" y="116" width="22" height="0"></rect>
-            <rect class="sales-chart-bar" x="86" y="103" width="22" height="13"></rect>
-            <rect class="sales-chart-bar" x="122" y="86" width="22" height="30"></rect>
-            <rect class="sales-chart-bar" x="158" y="69" width="22" height="47"></rect>
-            <rect class="sales-chart-bar" x="194" y="48" width="22" height="68"></rect>
-            <rect class="sales-chart-bar" x="230" y="30" width="22" height="86"></rect>
-            <rect class="sales-chart-bar" x="266" y="53" width="22" height="63"></rect>
-            <rect class="sales-chart-bar" x="302" y="79" width="22" height="37"></rect>
+            <polyline class="sales-chart-line" points="61,116 97,103 133,86 169,69 205,48 241,30 277,53 313,79"></polyline>
+            <circle class="sales-chart-dot" cx="61" cy="116" r="3"></circle>
+            <circle class="sales-chart-dot" cx="97" cy="103" r="3"></circle>
+            <circle class="sales-chart-dot" cx="133" cy="86" r="3"></circle>
+            <circle class="sales-chart-dot" cx="169" cy="69" r="3"></circle>
+            <circle class="sales-chart-dot" cx="205" cy="48" r="3"></circle>
+            <circle class="sales-chart-dot" cx="241" cy="30" r="3"></circle>
+            <circle class="sales-chart-dot" cx="277" cy="53" r="3"></circle>
+            <circle class="sales-chart-dot" cx="313" cy="79" r="3"></circle>
             <text class="sales-chart-value" x="97" y="98">18,000</text>
             <text class="sales-chart-value" x="133" y="81">42,000</text>
             <text class="sales-chart-value" x="169" y="64">65,000</text>
@@ -134,13 +148,14 @@
             <text class="sales-chart-axis" x="2" y="62">140,000</text>
             <text class="sales-chart-axis" x="7" y="91">70,000</text>
             <text class="sales-chart-axis" x="27" y="119">0</text>
-            <rect class="sales-chart-bar" x="52" y="116" width="27" height="0"></rect>
-            <rect class="sales-chart-bar" x="93" y="50" width="27" height="66"></rect>
-            <rect class="sales-chart-bar" x="134" y="30" width="27" height="86"></rect>
-            <rect class="sales-chart-bar" x="175" y="40" width="27" height="76"></rect>
-            <rect class="sales-chart-bar" x="216" y="77" width="27" height="39"></rect>
-            <rect class="sales-chart-bar" x="257" y="46" width="27" height="70"></rect>
-            <rect class="sales-chart-bar" x="298" y="57" width="27" height="59"></rect>
+            <polyline class="sales-chart-line" points="66,116 107,50 148,30 189,40 230,77 271,46 312,57"></polyline>
+            <circle class="sales-chart-dot" cx="66" cy="116" r="3"></circle>
+            <circle class="sales-chart-dot" cx="107" cy="50" r="3"></circle>
+            <circle class="sales-chart-dot" cx="148" cy="30" r="3"></circle>
+            <circle class="sales-chart-dot" cx="189" cy="40" r="3"></circle>
+            <circle class="sales-chart-dot" cx="230" cy="77" r="3"></circle>
+            <circle class="sales-chart-dot" cx="271" cy="46" r="3"></circle>
+            <circle class="sales-chart-dot" cx="312" cy="57" r="3"></circle>
             <text class="sales-chart-value" x="106.5" y="45">160,000</text>
             <text class="sales-chart-value" x="147.5" y="25">210,000</text>
             <text class="sales-chart-value" x="188.5" y="35">185,000</text>
@@ -166,10 +181,11 @@
             <text class="sales-chart-axis" x="2" y="62">400,000</text>
             <text class="sales-chart-axis" x="2" y="91">200,000</text>
             <text class="sales-chart-axis" x="27" y="119">0</text>
-            <rect class="sales-chart-bar" x="70" y="62" width="44" height="54"></rect>
-            <rect class="sales-chart-bar" x="136" y="42" width="44" height="74"></rect>
-            <rect class="sales-chart-bar" x="202" y="53" width="44" height="63"></rect>
-            <rect class="sales-chart-bar" x="268" y="48" width="44" height="68"></rect>
+            <polyline class="sales-chart-line" points="92,62 158,42 224,53 290,48"></polyline>
+            <circle class="sales-chart-dot" cx="92" cy="62" r="4"></circle>
+            <circle class="sales-chart-dot" cx="158" cy="42" r="4"></circle>
+            <circle class="sales-chart-dot" cx="224" cy="53" r="4"></circle>
+            <circle class="sales-chart-dot" cx="290" cy="48" r="4"></circle>
             <text class="sales-chart-value" x="92" y="57">380,000</text>
             <text class="sales-chart-value" x="158" y="37">520,000</text>
             <text class="sales-chart-value" x="224" y="48">440,000</text>

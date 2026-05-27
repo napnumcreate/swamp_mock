@@ -7,7 +7,12 @@
       "Bash(node *)",
       "Bash(Get-ChildItem -Path \"C:\\\\VikitSystem_workspace\\\\swamp_mock\\\\docs\" -Recurse -Force)",
       "Bash(Select-Object FullName)",
-      "Bash(Sort-Object FullName)"
+      "Bash(Sort-Object FullName)",
+      "PowerShell(codex exec --skip-git-repo-check -s workspace-write \"$\\(Get-Content -Raw -Encoding UTF8 '.codex-prompt.tmp.md'\\)\")",
+      "Bash(New-Item -Force \"C:\\\\VikitSystem_workspace\\\\swamp_mock\\\\.codex-prompt.tmp.md\")",
+      "Bash(Out-Null)",
+      "Bash(Write-Output \"created\")",
+      "PowerShell(New-Item *)"
     ]
   }
 }

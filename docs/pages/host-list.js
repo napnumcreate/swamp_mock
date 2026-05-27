@@ -55,15 +55,15 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // KPI カード更新
-  var totalHosts = MOCK_HOSTS.length;
+  var totalHosts = MOCK_HOSTS.filter(function (h) { return h.rank !== '体験入店'; }).length;
   var todayAttendance = MOCK_HOSTS.filter(function (h) { return h.todayShift !== '休み'; }).length;
   var topEntry = (typeof TODAY_HOST_SALES !== 'undefined' && TODAY_HOST_SALES.length > 0) ? TODAY_HOST_SALES[0] : null;
-  var newHosts = MOCK_HOSTS.filter(function (h) { return h.rank === '新人'; }).length;
+  var todayTrial = MOCK_HOSTS.filter(function (h) { return h.rank === '体験入店' && h.todayShift !== '休み'; }).length;
 
   var kpiEl;
   kpiEl = document.querySelector('#kpi-total-hosts');     if (kpiEl) kpiEl.textContent = totalHosts + '名';
   kpiEl = document.querySelector('#kpi-today-attendance'); if (kpiEl) kpiEl.textContent = todayAttendance + '名';
   kpiEl = document.querySelector('#kpi-top-host');         if (kpiEl) kpiEl.textContent = topEntry ? topEntry.name : '－';
   kpiEl = document.querySelector('#kpi-top-sales');        if (kpiEl) kpiEl.textContent = topEntry ? topEntry.sales : '－';
-  kpiEl = document.querySelector('#kpi-new-hosts');        if (kpiEl) kpiEl.textContent = newHosts + '名';
+  kpiEl = document.querySelector('#kpi-new-hosts');        if (kpiEl) kpiEl.textContent = todayTrial + '名';
 });
