@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
     staffList.forEach(function (staff) {
       var cell = document.createElement('div');
       cell.className = 'calendar-staff-name';
-      cell.innerHTML = staff.name + '<span class="calendar-staff-role">' + staff.role + '</span>';
+      cell.innerHTML = '<span class="calendar-staff-name-text">' + staff.name + '</span><span class="calendar-staff-role">' + staff.role + '</span>';
       header.appendChild(cell);
     });
 

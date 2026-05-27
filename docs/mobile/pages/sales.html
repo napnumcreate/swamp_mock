@@ -11,19 +11,10 @@
   <link rel="stylesheet" href="../../assets/css/mockup.css">
   <link rel="stylesheet" href="../assets/css/mobile.css">
   <style>
-    .sales-chart-panel {
-      width: 100%;
-      height: 180px;
-      padding: 4px 0 0;
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-sm);
-    }
-
     .mobile-section--chart {
       padding-left: 0;
       padding-right: 0;
+      padding-bottom: 0;
     }
 
     .sales-chart-panel--hidden {
@@ -33,7 +24,7 @@
     .sales-chart {
       display: block;
       width: 100%;
-      height: 160px;
+      height: 220px;
     }
 
     .sales-chart-grid {
@@ -102,7 +93,7 @@
       </section>
 
       <section class="mobile-section mobile-section--chart" aria-label="売上グラフ">
-        <div class="sales-chart-panel" id="chart-today">
+        <div id="chart-today">
           <svg class="sales-chart" viewBox="0 0 340 160" role="img" aria-label="本日の時間帯別売上グラフ">
             <line class="sales-chart-grid" x1="42" y1="30" x2="330" y2="30"></line>
             <line class="sales-chart-grid" x1="42" y1="59" x2="330" y2="59"></line>
@@ -138,7 +129,7 @@
             <text class="sales-chart-axis" x="308" y="132">1時</text>
           </svg>
         </div>
-        <div class="sales-chart-panel sales-chart-panel--hidden" id="chart-week">
+        <div class="sales-chart-panel--hidden" id="chart-week">
           <svg class="sales-chart" viewBox="0 0 340 160" role="img" aria-label="今週の日別売上グラフ">
             <line class="sales-chart-grid" x1="42" y1="30" x2="330" y2="30"></line>
             <line class="sales-chart-grid" x1="42" y1="59" x2="330" y2="59"></line>
@@ -171,7 +162,7 @@
             <text class="sales-chart-axis" x="302" y="132">5/27</text>
           </svg>
         </div>
-        <div class="sales-chart-panel sales-chart-panel--hidden" id="chart-month">
+        <div class="sales-chart-panel--hidden" id="chart-month">
           <svg class="sales-chart" viewBox="0 0 340 160" role="img" aria-label="今月の週別売上グラフ">
             <line class="sales-chart-grid" x1="42" y1="30" x2="330" y2="30"></line>
             <line class="sales-chart-grid" x1="42" y1="59" x2="330" y2="59"></line>
