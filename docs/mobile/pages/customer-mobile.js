@@ -1,66 +1,3 @@
-var MOBILE_CUSTOMER_LIST = [
-  {
-    name: '高橋 美優',
-    lastVisit: '2026/05/23',
-    visitCount: '28回',
-    host: 'REN',
-    visitFreq: '月3回',
-    monthlySales: '¥285,000',
-    totalSales: '¥4,200,000',
-    firstVisit: '2023/08/15',
-    firstRepeat: '2023/09/02',
-    notes: 'シャンパン好み、VIP個室希望'
-  },
-  {
-    name: '渡辺 ゆり',
-    lastVisit: '2026/05/15',
-    visitCount: '35回',
-    host: 'REN',
-    visitFreq: '月3回',
-    monthlySales: '¥210,000',
-    totalSales: '¥5,600,000',
-    firstVisit: '2022/12/10',
-    firstRepeat: '2023/01/05',
-    notes: 'ワイン好み、連れ来店多い'
-  },
-  {
-    name: '佐々木 結衣',
-    lastVisit: '2026/05/20',
-    visitCount: '15回',
-    host: 'REN',
-    visitFreq: '月2回',
-    monthlySales: '¥88,000',
-    totalSales: '¥1,240,000',
-    firstVisit: '2025/02/11',
-    firstRepeat: '2025/03/07',
-    notes: ''
-  },
-  {
-    name: '田中 彩香',
-    lastVisit: '2026/05/19',
-    visitCount: '7回',
-    host: 'REN',
-    visitFreq: '月1回',
-    monthlySales: '¥42,000',
-    totalSales: '¥360,000',
-    firstVisit: '2025/10/22',
-    firstRepeat: '2025/11/15',
-    notes: 'ソフトドリンク希望'
-  },
-  {
-    name: '木村 なな',
-    lastVisit: '2026/05/24',
-    visitCount: '2回',
-    host: 'REN',
-    visitFreq: '－',
-    monthlySales: '¥36,000',
-    totalSales: '¥36,000',
-    firstVisit: '2026/05/10',
-    firstRepeat: '2026/05/24',
-    notes: ''
-  }
-];
-
 document.addEventListener('DOMContentLoaded', function () {
   var container = document.getElementById('customer-list');
   var searchInput = document.getElementById('customer-search');
@@ -96,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     set('mcm-visit-freq', c.visitFreq);
     set('mcm-monthly-sales', c.monthlySales);
     set('mcm-total-sales', c.totalSales);
-    set('mcm-first-visit', c.firstVisit);
+    set('mcm-first-visit', c.registerDate);
     set('mcm-first-repeat', c.firstRepeat);
     set('mcm-notes', c.notes);
     modal.style.display = 'flex';
@@ -117,12 +54,13 @@ document.addEventListener('DOMContentLoaded', function () {
   if (searchInput) {
     searchInput.addEventListener('input', function () {
       var query = searchInput.value;
-      var filtered = MOBILE_CUSTOMER_LIST.filter(function (c) {
+      var renCustomers = MOCK_CUSTOMERS.filter(function (c) { return c.hostId === 'ren'; });
+      var filtered = renCustomers.filter(function (c) {
         return c.name.indexOf(query) !== -1;
       });
       renderCustomers(filtered);
     });
   }
 
-  renderCustomers(MOBILE_CUSTOMER_LIST);
+  renderCustomers(MOCK_CUSTOMERS.filter(function (c) { return c.hostId === 'ren'; }));
 });

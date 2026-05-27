@@ -1,0 +1,23 @@
+var MOCK_HOSTS = [
+  { id: 'ren',     name: '瑞樹成瀬',          rank: '主任',     title: '副代表',     monthlySales: '¥2,420,000', monthlyAttendance: '20日', todayShift: '出勤'   },
+  { id: 'kaito',   name: '鳳條隼人',          rank: 'リーダー', title: '',           monthlySales: '¥1,980,000', monthlyAttendance: '19日', todayShift: '出勤'   },
+  { id: 'hayato',  name: '戦神',              rank: 'リーダー', title: 'ナンバー2',  monthlySales: '¥1,750,000', monthlyAttendance: '18日', todayShift: '出勤'   },
+  { id: 'ryu',     name: '成宮サラン',         rank: 'リーダー', title: 'キャプテン', monthlySales: '¥1,340,000', monthlyAttendance: '17日', todayShift: '出勤'   },
+  { id: 'sora',    name: '海堂しんのすけ',     rank: 'ホスト',   title: '',           monthlySales: '¥1,120,000', monthlyAttendance: '16日', todayShift: '出勤'   },
+  { id: 'yuki',    name: '京本カレン',         rank: 'ホスト',   title: '',           monthlySales: '¥890,000',   monthlyAttendance: '15日', todayShift: '出勤'   },
+  { id: 'daiki',   name: 'トリンドルウララ',   rank: 'ホスト',   title: '',           monthlySales: '¥780,000',   monthlyAttendance: '14日', todayShift: '出勤'   },
+  { id: 'kenta',   name: '神月黒夜',          rank: 'ホスト',   title: '',           monthlySales: '¥620,000',   monthlyAttendance: '13日', todayShift: '出勤'   },
+  { id: 'ken',     name: 'ぱくっぱくっいちご', rank: 'ホスト',   title: 'ナンバー3',  monthlySales: '¥480,000',   monthlyAttendance: '12日', todayShift: '出勤'   },
+  { id: 'jun',     name: 'yasu',             rank: 'ホスト',   title: 'キャプテン', monthlySales: '¥390,000',   monthlyAttendance: '11日', todayShift: '出勤'   },
+  { id: 'hiroki',  name: '愛斗',              rank: 'ホスト',   title: '',           monthlySales: '¥310,000',   monthlyAttendance: '10日', todayShift: '出勤'   },
+  { id: 'shota',   name: '夜空月羽',          rank: 'ホスト',   title: '',           monthlySales: '¥240,000',   monthlyAttendance: '9日',  todayShift: '休み'   },
+  { id: 'tatsuya', name: '神なびき',          rank: 'ホスト',   title: '',           monthlySales: '¥180,000',   monthlyAttendance: '8日',  todayShift: '休み'   },
+  { id: 'daisuke', name: '絢都',              rank: 'ホスト',   title: 'ナンバー4',  monthlySales: '¥145,000',   monthlyAttendance: '7日',  todayShift: '休み'   },
+  { id: 'kenji',   name: '丑嶋馨味はsweet',   rank: 'ホスト',   title: '',           monthlySales: '¥98,000',    monthlyAttendance: '6日',  todayShift: '休み'   },
+  { id: 'tomoya',  name: '神谷 翼',           rank: '新人',     title: '',           monthlySales: '¥76,000',    monthlyAttendance: '5日',  todayShift: '休み'   },
+  { id: 'masato',  name: '志龍',              rank: '新人',     title: '',           monthlySales: '¥42,000',    monthlyAttendance: '4日',  todayShift: '出勤'   },
+  { id: 'shingo',  name: '渡辺響',            rank: '新人',     title: 'チーフ',     monthlySales: '¥18,000',    monthlyAttendance: '3日',  todayShift: '出勤'   },
+  { id: 'naoki',   name: '颯貴',              rank: 'ホスト',   title: '',           monthlySales: '¥0',         monthlyAttendance: '0日',  todayShift: '未打刻' },
+  { id: 'kota',    name: '唯',               rank: '体験入店', title: '',           monthlySales: '¥0',         monthlyAttendance: '1日',  todayShift: '出勤'   },
+  { id: 'ryota',   name: '神刃龍惺',          rank: '体験入店', title: '',           monthlySales: '¥0',         monthlyAttendance: '1日',  todayShift: '出勤'   }
+];

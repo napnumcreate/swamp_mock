@@ -34,7 +34,7 @@
           <div class="kpi-card">
             <div class="kpi-label">本日売上トップ</div>
             <div class="kpi-value">&yen;186,000</div>
-            <div class="kpi-trend">REN</div>
+            <div class="kpi-trend">瑞樹成瀬</div>
           </div>
           <div class="kpi-card">
             <div class="kpi-label">今月売上</div>
@@ -57,7 +57,9 @@
                 <tr>
                   <th>ホスト名</th>
                   <th>本日の売上</th>
-                  <th>客数</th>
+                  <th>順位</th>
+                  <th>ラスソン売り上げ</th>
+                  <th>組数</th>
                   <th>リアルタイム指名数</th>
                   <th>同伴</th>
                   <th>アフター</th>
@@ -158,8 +160,8 @@
               <div class="detail-row"><span class="detail-label">今月出勤日数</span><span class="detail-value" id="host-modal-monthly-attendance"></span></div>
               <div class="detail-row"><span class="detail-label">本日のシフト</span><span class="detail-value" id="host-modal-today-shift"></span></div>
               <div class="detail-row"><span class="detail-label">本日売上</span><span class="detail-value" id="host-modal-today-sales"></span></div>
-              <div class="detail-row"><span class="detail-label">本日来客数</span><span class="detail-value" id="host-modal-guests"></span></div>
-              <div class="detail-row"><span class="detail-label">本日指名数</span><span class="detail-value" id="host-modal-nominations"></span></div>
+              <div class="detail-row"><span class="detail-label">新規組数</span><span class="detail-value" id="host-modal-guests"></span></div>
+              <div class="detail-row"><span class="detail-label">本日組数</span><span class="detail-value" id="host-modal-nominations"></span></div>
               <div class="detail-row"><span class="detail-label">同伴</span><span class="detail-value" id="host-modal-dohan"></span></div>
               <div class="detail-row"><span class="detail-label">アフター</span><span class="detail-value" id="host-modal-after"></span></div>
             </div>
@@ -168,12 +170,13 @@
       </main>
     </div>
   </div>
+  <script src="assets/mock/hosts.js"></script>
+  <script src="assets/mock/staff.js"></script>
   <script src="assets/mock/attendance.js"></script>
   <script src="pages/attendance.js"></script>
   <script src="pages/script.js"></script>
   <script src="assets/mock/sales-report.js"></script>
   <script src="assets/mock/customer.js"></script>
-  <script src="assets/mock/host-list.js"></script>
   <script src="pages/dashboard.js"></script>
   <script type="module">
     import { requireAuth } from 'assets/js/auth.js';

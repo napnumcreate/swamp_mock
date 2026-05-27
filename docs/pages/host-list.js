@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   MOCK_HOSTS.forEach(function (host) {
     var row = document.createElement('tr');
+    row.dataset.hostId = host.id;
     var cells = [
       { value: host.name, className: 'cell-strong' },
       { value: host.rank },
@@ -29,11 +30,11 @@ document.addEventListener('DOMContentLoaded', function () {
   hostRows.forEach(function (row) {
     row.style.cursor = 'pointer';
     row.addEventListener('click', function () {
-      var hostName = row.cells[0].textContent;
+      var hostId = row.dataset.hostId;
       var salesEntry = null;
       if (typeof TODAY_HOST_SALES !== 'undefined') {
         for (var i = 0; i < TODAY_HOST_SALES.length; i++) {
-          if (TODAY_HOST_SALES[i].name === hostName) {
+          if (TODAY_HOST_SALES[i].hostId === hostId) {
             salesEntry = TODAY_HOST_SALES[i];
             break;
           }

@@ -1,13 +1,26 @@
 document.addEventListener('DOMContentLoaded', function () {
   var salesTbody = document.querySelector('#sales-report-table tbody');
+  function parseSales(salesStr) {
+    return parseInt(salesStr.replace(/[¥,]/g, ''), 10) || 0;
+  }
+  var sortedSales = TODAY_HOST_SALES.slice().sort(function (a, b) {
+    return parseSales(b.sales) - parseSales(a.sales);
+  });
+  var rankLabels = {};
+  if (sortedSales.length >= 1) rankLabels[sortedSales[0].hostId] = 'ラスソン';
+  if (sortedSales.length >= 3) rankLabels[sortedSales[2].hostId] = 'オリシャン一位';
+
   TODAY_HOST_SALES.forEach(function (h) {
     var tr = document.createElement('tr');
+    tr.dataset.hostId = h.hostId;
     tr.dataset.hasSales = (h.sales !== '¥0') ? 'yes' : 'no';
     tr.innerHTML =
       '<td class="cell-strong">' + h.name + '</td>' +
       '<td class="cell-money">' + h.sales + '</td>' +
-      '<td>' + h.guests + '</td>' +
-      '<td>' + h.nominations + '</td>' +
+      '<td>' + (rankLabels[h.hostId] || '－') + '</td>' +
+      '<td class="cell-money">' + h.sales + '</td>' +
+      '<td>' + h.guests + '組</td>' +
+      '<td>' + h.nominations + '組</td>' +
       '<td>' + h.dohan + '</td>' +
       '<td>' + h.after + '</td>';
     salesTbody.appendChild(tr);
@@ -17,27 +30,36 @@ document.addEventListener('DOMContentLoaded', function () {
   salesRows.forEach(function (row) {
     row.style.cursor = 'pointer';
     row.addEventListener('click', function () {
-      var hostName = row.cells[0].textContent;
+      var hostId = row.dataset.hostId;
       var hostEntry = null;
+      var salesEntry = null;
       if (typeof MOCK_HOSTS !== 'undefined') {
         for (var i = 0; i < MOCK_HOSTS.length; i++) {
-          if (MOCK_HOSTS[i].name === hostName) {
+          if (MOCK_HOSTS[i].id === hostId) {
             hostEntry = MOCK_HOSTS[i];
             break;
           }
         }
       }
+      if (typeof TODAY_HOST_SALES !== 'undefined') {
+        for (var i = 0; i < TODAY_HOST_SALES.length; i++) {
+          if (TODAY_HOST_SALES[i].hostId === hostId) {
+            salesEntry = TODAY_HOST_SALES[i];
+            break;
+          }
+        }
+      }
       openHostModal(
-        row.cells[0].textContent,                            // name
-        hostEntry ? hostEntry.rank : '－',                    // rank
-        row.cells[1].textContent,                            // todaySales
-        row.cells[2].textContent,                            // guests
-        row.cells[3].textContent,                            // nominations
-        row.cells[4].textContent,                            // dohan
-        row.cells[5].textContent,                            // after
-        hostEntry ? hostEntry.monthlySales : '－',            // monthlySales
-        hostEntry ? hostEntry.monthlyAttendance : '－',       // monthlyAttendance
-        hostEntry ? hostEntry.todayShift : '－'               // todayShift
+        hostEntry ? hostEntry.name : row.cells[0].textContent, // name
+        hostEntry ? hostEntry.rank : '－',                      // rank
+        salesEntry ? salesEntry.sales : '－',                   // todaySales
+        salesEntry ? String(salesEntry.guests) : '－',          // guests
+        salesEntry ? String(salesEntry.nominations) : '－',     // nominations
+        salesEntry ? salesEntry.dohan : '－',                   // dohan
+        salesEntry ? salesEntry.after : '－',                   // after
+        hostEntry ? hostEntry.monthlySales : '－',              // monthlySales
+        hostEntry ? hostEntry.monthlyAttendance : '－',         // monthlyAttendance
+        hostEntry ? hostEntry.todayShift : '－'                 // todayShift
       );
     });
   });

@@ -252,6 +252,55 @@ document.addEventListener('DOMContentLoaded', function () {
     table.appendChild(thead);
 
     var tbody = document.createElement('tbody');
+    function buildSummaryRow(label, ids, redThreshold) {
+      var row = document.createElement('tr');
+      row.style.background = '#f5f5f5';
+      row.style.fontWeight = 'bold';
+      var labelCell = document.createElement('td');
+      labelCell.className = 'staff-col';
+      labelCell.textContent = label + '（' + ids.length + '名）';
+      row.appendChild(labelCell);
+      for (var d = 1; d <= daysInMonth; d++) {
+        var cell = document.createElement('td');
+        cell.style.textAlign = 'center';
+        var count = ids.reduce(function (acc, id) {
+          var data = ATTENDANCE_MONTHLY.data[id];
+          if (!data) return acc;
+          var s = data[d - 1];
+          return (s === '出勤' || s === '遅刻' || s === '未打刻') ? acc + 1 : acc;
+        }, 0);
+        cell.textContent = String(count);
+        if (redThreshold !== null && redThreshold !== undefined && count <= redThreshold) {
+          cell.style.color = 'red';
+        }
+        row.appendChild(cell);
+      }
+      return row;
+    }
+
+    var hostIds = ATTENDANCE_STAFF
+      .filter(function (s) { return s.role === 'ホスト'; })
+      .map(function (s) { return s.id; });
+
+    var titleHostIds = ATTENDANCE_STAFF
+      .filter(function (s) { return s.role === 'ホスト' && s.title !== ''; })
+      .map(function (s) { return s.id; });
+
+    var newHostIds = (typeof MOCK_HOSTS !== 'undefined')
+      ? MOCK_HOSTS
+          .filter(function (h) { return h.rank === '新人' || h.rank === '体験入店'; })
+          .map(function (h) { return h.id; })
+      : [];
+
+    var internalIds = ATTENDANCE_STAFF
+      .filter(function (s) { return s.role === '内勤'; })
+      .map(function (s) { return s.id; });
+
+    tbody.appendChild(buildSummaryRow('ホスト', hostIds));
+    tbody.appendChild(buildSummaryRow('　├役職', titleHostIds, 2));
+    tbody.appendChild(buildSummaryRow('　└新人', newHostIds));
+    tbody.appendChild(buildSummaryRow('内勤', internalIds, 0));
+
     ATTENDANCE_STAFF.forEach(function (staff) {
       var row = document.createElement('tr');
       var staffCell = document.createElement('td');
@@ -259,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function () {
       staffCell.textContent = staff.name;
       row.appendChild(staffCell);
 
-      ATTENDANCE_MONTHLY.data[staff.id].forEach(function (status) {
+      (ATTENDANCE_MONTHLY.data[staff.id] || []).forEach(function (status) {
         var cell = document.createElement('td');
         var style = statusStyles[status];
         cell.textContent = status;

@@ -1,27 +1,14 @@
 var ATTENDANCE_DATE = '2026/05/24';
 
-var ATTENDANCE_STAFF = [
-  { id: 'ren',     name: 'REN',       role: 'ホスト', title: '副代表'     },
-  { id: 'kaito',   name: 'KAITO',     role: 'ホスト', title: ''           },
-  { id: 'sora',    name: 'SORA',      role: 'ホスト', title: ''           },
-  { id: 'hayato',  name: 'HAYATO',    role: 'ホスト', title: 'ナンバー2'  },
-  { id: 'ryu',     name: 'RYU',       role: 'ホスト', title: 'キャプテン' },
-  { id: 'yuki',    name: 'YUKI',      role: 'ホスト', title: ''           },
-  { id: 'ryota',   name: 'RYOTA',     role: 'ホスト', title: ''           },
-  { id: 'hanako',  name: '山田 花子', role: '内勤',   title: '店長'       },
-  { id: 'ken',     name: 'KEN',       role: 'ホスト', title: 'ナンバー3'  },
-  { id: 'daiki',   name: 'DAIKI',     role: 'ホスト', title: ''           },
-  { id: 'shota',   name: 'SHOTA',     role: 'ホスト', title: ''           },
-  { id: 'jun',     name: 'JUN',       role: 'ホスト', title: 'キャプテン' },
-  { id: 'tatsuya', name: 'TATSUYA',   role: 'ホスト', title: ''           },
-  { id: 'hiroki',  name: 'HIROKI',    role: 'ホスト', title: ''           },
-  { id: 'daisuke', name: 'DAISUKE',   role: 'ホスト', title: 'ナンバー4'  },
-  { id: 'kenji',   name: 'KENJI',     role: 'ホスト', title: ''           },
-  { id: 'tomoya',  name: 'TOMOYA',    role: 'ホスト', title: ''           },
-  { id: 'masato',  name: 'MASATO',    role: 'ホスト', title: ''           },
-  { id: 'shingo',  name: 'SHINGO',    role: 'ホスト', title: 'チーフ'     },
-  { id: 'naoki',   name: 'NAOKI',     role: 'ホスト', title: ''           }
-];
+var ATTENDANCE_STAFF = (function () {
+  var hosts = MOCK_HOSTS.map(function (h) {
+    return { id: h.id, name: h.name, role: 'ホスト', title: h.title };
+  });
+  var staff = MOCK_STAFF.map(function (s) {
+    return { id: s.id, name: s.name, role: s.role, title: s.title };
+  });
+  return hosts.concat(staff);
+})();
 
 var ATTENDANCE_SHIFTS = [
   { staffId: 'ren',    scheduledStart: '20:00', scheduledEnd: '02:00', actualStart: '20:03', status: 'active'  },
@@ -43,7 +30,9 @@ var ATTENDANCE_SHIFTS = [
   { staffId: 'tomoya',  scheduledStart: '21:30', scheduledEnd: '02:30', actualStart: '21:30', status: 'active'  },
   { staffId: 'masato',  scheduledStart: '20:00', scheduledEnd: '02:00', actualStart: '20:01', status: 'active'  },
   { staffId: 'shingo',  scheduledStart: '19:30', scheduledEnd: '01:00', actualStart: '19:32', status: 'active'  },
-  { staffId: 'naoki',   scheduledStart: '20:00', scheduledEnd: '02:00', actualStart: null,    status: 'missing' }
+  { staffId: 'naoki',   scheduledStart: '20:00', scheduledEnd: '02:00', actualStart: null,    status: 'missing' },
+  { staffId: 'kenta', scheduledStart: '20:00', scheduledEnd: '02:00', actualStart: '20:01', status: 'active'  },
+  { staffId: 'kota',  scheduledStart: '21:00', scheduledEnd: '02:00', actualStart: '21:05', status: 'active'  }
 ];
 
 var ATTENDANCE_MONTHLY = {
@@ -69,6 +58,10 @@ var ATTENDANCE_MONTHLY = {
     tomoya:  ['出勤', '休み', '出勤', '出勤', '未打刻', '休み', '出勤', '出勤', '休み', '出勤', '出勤', '出勤', '休み', '遅刻', '出勤', '休み', '休み', '出勤', '出勤', '出勤', '出勤', '休み', '出勤', '出勤', '-', '-', '-', '-', '-', '-', '-'],
     masato:  ['出勤', '出勤', '休み', '休み', '出勤', '出勤', '出勤', '休み', '出勤', '遅刻', '出勤', '休み', '出勤', '出勤', '出勤', '休み', '出勤', '出勤', '出勤', '休み', '未打刻', '出勤', '休み', '出勤', '-', '-', '-', '-', '-', '-', '-'],
     shingo:  ['休み', '出勤', '出勤', '休み', '出勤', '出勤', '休み', '出勤', '出勤', '出勤', '休み', '出勤', '遅刻', '出勤', '出勤', '休み', '出勤', '休み', '出勤', '出勤', '出勤', '出勤', '休み', '出勤', '-', '-', '-', '-', '-', '-', '-'],
-    naoki:   ['出勤', '出勤', '休み', '出勤', '休み', '未打刻', '出勤', '出勤', '休み', '出勤', '出勤', '休み', '出勤', '出勤', '出勤', '休み', '遅刻', '出勤', '休み', '出勤', '出勤', '休み', '出勤', '未打刻', '-', '-', '-', '-', '-', '-', '-']
+    naoki:   ['出勤', '出勤', '休み', '出勤', '休み', '未打刻', '出勤', '出勤', '休み', '出勤', '出勤', '休み', '出勤', '出勤', '出勤', '休み', '遅刻', '出勤', '休み', '出勤', '出勤', '休み', '出勤', '未打刻', '-', '-', '-', '-', '-', '-', '-'],
+    aoi:     ['出勤', '出勤', '休み', '出勤', '出勤', '休み', '出勤', '出勤', '休み', '出勤', '出勤', '出勤', '休み', '出勤', '出勤', '休み', '出勤', '出勤', '休み', '出勤', '出勤', '休み', '出勤', '出勤', '-', '-', '-', '-', '-', '-', '-'],
+    mai:     ['休み', '出勤', '出勤', '休み', '出勤', '出勤', '休み', '出勤', '休み', '出勤', '出勤', '休み', '出勤', '出勤', '出勤', '休み', '休み', '出勤', '出勤', '休み', '出勤', '出勤', '出勤', '休み', '-', '-', '-', '-', '-', '-', '-'],
+    kenta:   ['出勤', '休み', '休み', '出勤', '休み', '出勤', '休み', '出勤', '出勤', '休み', '出勤', '休み', '出勤', '出勤', '休み', '出勤', '休み', '休み', '出勤', '出勤', '休み', '出勤', '休み', '出勤', '-', '-', '-', '-', '-', '-', '-'],
+    kota:    ['休み', '休み', '休み', '休み', '休み', '休み', '休み', '休み', '休み', '休み', '休み', '休み', '休み', '休み', '休み', '休み', '休み', '休み', '休み', '休み', '休み', '休み', '休み', '出勤', '-', '-', '-', '-', '-', '-', '-']
   }
 };

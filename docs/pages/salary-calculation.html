@@ -44,54 +44,82 @@
           <span class="btn btn-secondary" data-tab="staff">内勤スタッフ給与</span>
         </div>
         <div class="card section-gap" id="tab-host">
-          <div class="card-header"><span class="card-title">ホスト報酬</span><span class="note-sample-data">売上歩合・指名バック適用</span></div>
+          <div class="card-header"><span class="card-title">ホスト報酬</span><div style="display:flex;align-items:center;gap:8px;margin-left:auto"><span class="note-sample-data">売上歩合・指名バック適用</span><button type="button" class="btn btn-secondary btn-sm">給料計算ルール</button></div></div>
           <div class="table-wrapper">
             <table class="table">
               <thead><tr><th>ホスト名</th><th>役職</th><th>差引支給予定額</th><th>基本給</th><th>歩合総計</th><th>売上バック</th><th>同伴バック</th><th>その他</th><th>控除総計</th><th>ステータス</th></tr></thead>
-              <tbody>
-                <tr><td class="cell-strong">REN</td><td>主任</td><td class="cell-money"><strong>&yen;436,000</strong></td><td class="cell-money">&yen;150,000</td><td class="cell-money">&yen;304,000</td><td class="cell-money">&yen;242,000</td><td class="cell-money">&yen;62,000</td><td class="cell-money">&yen;0</td><td class="cell-money">&yen;18,000</td><td><span class="badge badge-success">支払済</span></td></tr>
-                <tr><td class="cell-strong">KAITO</td><td>リーダー</td><td class="cell-money"><strong>&yen;363,000</strong></td><td class="cell-money">&yen;130,000</td><td class="cell-money">&yen;248,000</td><td class="cell-money">&yen;198,000</td><td class="cell-money">&yen;50,000</td><td class="cell-money">&yen;0</td><td class="cell-money">&yen;15,000</td><td><span class="badge badge-success">支払済</span></td></tr>
-                <tr><td class="cell-strong">HAYATO</td><td>リーダー</td><td class="cell-money"><strong>&yen;335,000</strong></td><td class="cell-money">&yen;130,000</td><td class="cell-money">&yen;219,000</td><td class="cell-money">&yen;175,000</td><td class="cell-money">&yen;44,000</td><td class="cell-money">&yen;0</td><td class="cell-money">&yen;14,000</td><td><span class="badge badge-success">支払済</span></td></tr>
-                <tr><td class="cell-strong">RYU</td><td>リーダー</td><td class="cell-money"><strong>&yen;276,000</strong></td><td class="cell-money">&yen;120,000</td><td class="cell-money">&yen;168,000</td><td class="cell-money">&yen;134,000</td><td class="cell-money">&yen;34,000</td><td class="cell-money">&yen;0</td><td class="cell-money">&yen;12,000</td><td><span class="badge badge-success">支払済</span></td></tr>
-                <tr><td class="cell-strong">SORA</td><td>ホスト</td><td class="cell-money"><strong>&yen;230,000</strong></td><td class="cell-money">&yen;100,000</td><td class="cell-money">&yen;140,000</td><td class="cell-money">&yen;112,000</td><td class="cell-money">&yen;28,000</td><td class="cell-money">&yen;0</td><td class="cell-money">&yen;10,000</td><td><span class="badge badge-success">支払済</span></td></tr>
-                <tr><td class="cell-strong">YUKI</td><td>ホスト</td><td class="cell-money"><strong>&yen;192,000</strong></td><td class="cell-money">&yen;90,000</td><td class="cell-money">&yen;111,000</td><td class="cell-money">&yen;89,000</td><td class="cell-money">&yen;22,000</td><td class="cell-money">&yen;0</td><td class="cell-money">&yen;9,000</td><td><span class="badge badge-success">支払済</span></td></tr>
-                <tr><td class="cell-strong">DAIKI</td><td>ホスト</td><td class="cell-money"><strong>&yen;180,000</strong></td><td class="cell-money">&yen;90,000</td><td class="cell-money">&yen;98,000</td><td class="cell-money">&yen;78,000</td><td class="cell-money">&yen;20,000</td><td class="cell-money">&yen;0</td><td class="cell-money">&yen;8,000</td><td><span class="badge badge-success">支払済</span></td></tr>
-                <tr><td class="cell-strong">KENTA</td><td>ホスト</td><td class="cell-money"><strong>&yen;151,000</strong></td><td class="cell-money">&yen;80,000</td><td class="cell-money">&yen;78,000</td><td class="cell-money">&yen;62,000</td><td class="cell-money">&yen;16,000</td><td class="cell-money">&yen;0</td><td class="cell-money">&yen;7,000</td><td><span class="badge badge-success">支払済</span></td></tr>
-                <tr><td class="cell-strong">KEN</td><td>ホスト</td><td class="cell-money"><strong>&yen;134,000</strong></td><td class="cell-money">&yen;80,000</td><td class="cell-money">&yen;60,000</td><td class="cell-money">&yen;48,000</td><td class="cell-money">&yen;12,000</td><td class="cell-money">&yen;0</td><td class="cell-money">&yen;6,000</td><td><span class="badge badge-warning">未支払</span></td></tr>
-                <tr><td class="cell-strong">JUN</td><td>ホスト</td><td class="cell-money"><strong>&yen;124,000</strong></td><td class="cell-money">&yen;80,000</td><td class="cell-money">&yen;49,000</td><td class="cell-money">&yen;39,000</td><td class="cell-money">&yen;10,000</td><td class="cell-money">&yen;0</td><td class="cell-money">&yen;5,000</td><td><span class="badge badge-success">支払済</span></td></tr>
-                <tr><td class="cell-strong">HIROKI</td><td>ホスト</td><td class="cell-money"><strong>&yen;114,000</strong></td><td class="cell-money">&yen;80,000</td><td class="cell-money">&yen;39,000</td><td class="cell-money">&yen;31,000</td><td class="cell-money">&yen;8,000</td><td class="cell-money">&yen;0</td><td class="cell-money">&yen;5,000</td><td><span class="badge badge-success">支払済</span></td></tr>
-                <tr><td class="cell-strong">SHOTA</td><td>ホスト</td><td class="cell-money"><strong>&yen;106,000</strong></td><td class="cell-money">&yen;80,000</td><td class="cell-money">&yen;30,000</td><td class="cell-money">&yen;24,000</td><td class="cell-money">&yen;6,000</td><td class="cell-money">&yen;0</td><td class="cell-money">&yen;4,000</td><td><span class="badge badge-success">支払済</span></td></tr>
-                <tr><td class="cell-strong">TATSUYA</td><td>ホスト</td><td class="cell-money"><strong>&yen;99,000</strong></td><td class="cell-money">&yen;80,000</td><td class="cell-money">&yen;23,000</td><td class="cell-money">&yen;18,000</td><td class="cell-money">&yen;5,000</td><td class="cell-money">&yen;0</td><td class="cell-money">&yen;4,000</td><td><span class="badge badge-success">支払済</span></td></tr>
-                <tr><td class="cell-strong">DAISUKE</td><td>ホスト</td><td class="cell-money"><strong>&yen;95,000</strong></td><td class="cell-money">&yen;80,000</td><td class="cell-money">&yen;19,000</td><td class="cell-money">&yen;15,000</td><td class="cell-money">&yen;4,000</td><td class="cell-money">&yen;0</td><td class="cell-money">&yen;4,000</td><td><span class="badge badge-success">支払済</span></td></tr>
-                <tr><td class="cell-strong">KENJI</td><td>ホスト</td><td class="cell-money"><strong>&yen;90,000</strong></td><td class="cell-money">&yen;80,000</td><td class="cell-money">&yen;13,000</td><td class="cell-money">&yen;10,000</td><td class="cell-money">&yen;3,000</td><td class="cell-money">&yen;0</td><td class="cell-money">&yen;3,000</td><td><span class="badge badge-success">支払済</span></td></tr>
-                <tr><td class="cell-strong">TOMOYA</td><td>新人</td><td class="cell-money"><strong>&yen;78,000</strong></td><td class="cell-money">&yen;70,000</td><td class="cell-money">&yen;10,000</td><td class="cell-money">&yen;8,000</td><td class="cell-money">&yen;2,000</td><td class="cell-money">&yen;0</td><td class="cell-money">&yen;2,000</td><td><span class="badge badge-success">支払済</span></td></tr>
-                <tr><td class="cell-strong">MASATO</td><td>新人</td><td class="cell-money"><strong>&yen;63,000</strong></td><td class="cell-money">&yen;60,000</td><td class="cell-money">&yen;5,000</td><td class="cell-money">&yen;4,000</td><td class="cell-money">&yen;1,000</td><td class="cell-money">&yen;0</td><td class="cell-money">&yen;2,000</td><td><span class="badge badge-warning">未支払</span></td></tr>
-                <tr><td class="cell-strong">SHINGO</td><td>新人</td><td class="cell-money"><strong>&yen;61,000</strong></td><td class="cell-money">&yen;60,000</td><td class="cell-money">&yen;2,000</td><td class="cell-money">&yen;2,000</td><td class="cell-money">&yen;0</td><td class="cell-money">&yen;0</td><td class="cell-money">&yen;1,000</td><td><span class="badge badge-warning">未支払</span></td></tr>
-              </tbody>
+              <tbody id="host-salary-tbody"></tbody>
             </table>
           </div>
         </div>
         <div class="card" id="tab-staff" style="display:none">
-          <div class="card-header"><span class="card-title">内勤スタッフ給与</span><span class="note-sample-data">基本給・手当計算</span></div>
+          <div class="card-header"><span class="card-title">内勤スタッフ給与</span><div style="display:flex;align-items:center;gap:8px;margin-left:auto"><span class="note-sample-data">基本給・手当計算</span><button type="button" class="btn btn-secondary btn-sm">給料計算ルール</button></div></div>
           <div class="table-wrapper">
             <table class="table">
               <thead><tr><th>氏名</th><th>役職</th><th>差引支給予定額</th><th>基本給</th><th>手当</th><th>控除</th><th>ステータス</th></tr></thead>
-              <tbody>
-                <tr><td class="cell-strong">山田 花子</td><td>チーフ</td><td class="cell-money"><strong>&yen;255,000</strong></td><td class="cell-money">&yen;250,000</td><td class="cell-money">&yen;30,000</td><td class="cell-money">&yen;25,000</td><td><span class="badge badge-success">支払済</span></td></tr>
-                <tr><td class="cell-strong">田中 葵</td><td>スタッフ</td><td class="cell-money"><strong>&yen;197,000</strong></td><td class="cell-money">&yen;200,000</td><td class="cell-money">&yen;15,000</td><td class="cell-money">&yen;18,000</td><td><span class="badge badge-success">支払済</span></td></tr>
-                <tr><td class="cell-strong">佐々木 舞</td><td>アルバイト</td><td class="cell-money"><strong>&yen;117,000</strong></td><td class="cell-money">&yen;120,000</td><td class="cell-money">&yen;5,000</td><td class="cell-money">&yen;8,000</td><td><span class="badge badge-warning">未支払</span></td></tr>
-              </tbody>
+              <tbody id="staff-salary-tbody"></tbody>
             </table>
           </div>
         </div>
       </main>
     </div>
   </div>
+  <script src="../assets/mock/hosts.js"></script>
+  <script src="../assets/mock/staff.js"></script>
+  <script src="../assets/mock/salary.js"></script>
   <script type="module">
     import { requireAuth } from '../assets/js/auth.js';
     requireAuth('login.html');
   </script>
   <script src="../assets/js/shared-layout.js"></script>
+  <script>
+    (function () {
+      var formatYen = function (n) { return '¥' + n.toLocaleString('ja-JP'); };
+
+      var hostTbody = document.getElementById('host-salary-tbody');
+      HOST_SALARY.forEach(function (s) {
+        var host = null;
+        for (var i = 0; i < MOCK_HOSTS.length; i++) {
+          if (MOCK_HOSTS[i].id === s.hostId) { host = MOCK_HOSTS[i]; break; }
+        }
+        if (!host) return;
+        var badgeClass = s.status === '支払済' ? 'badge-success' : 'badge-warning';
+        var tr = document.createElement('tr');
+        tr.innerHTML =
+          '<td class="cell-strong">' + host.name + '</td>' +
+          '<td>' + host.rank + '</td>' +
+          '<td class="cell-money"><strong>' + formatYen(s.net) + '</strong></td>' +
+          '<td class="cell-money">' + formatYen(s.base) + '</td>' +
+          '<td class="cell-money">' + formatYen(s.commission) + '</td>' +
+          '<td class="cell-money">' + formatYen(s.salesBack) + '</td>' +
+          '<td class="cell-money">' + formatYen(s.dohanBack) + '</td>' +
+          '<td class="cell-money">' + formatYen(s.other) + '</td>' +
+          '<td class="cell-money">' + formatYen(s.deduction) + '</td>' +
+          '<td><span class="badge ' + badgeClass + '">' + s.status + '</span></td>';
+        hostTbody.appendChild(tr);
+      });
+
+      var staffTbody = document.getElementById('staff-salary-tbody');
+      STAFF_SALARY.forEach(function (s) {
+        var staff = null;
+        for (var i = 0; i < MOCK_STAFF.length; i++) {
+          if (MOCK_STAFF[i].id === s.staffId) { staff = MOCK_STAFF[i]; break; }
+        }
+        if (!staff) return;
+        var badgeClass = s.status === '支払済' ? 'badge-success' : 'badge-warning';
+        var tr = document.createElement('tr');
+        tr.innerHTML =
+          '<td class="cell-strong">' + staff.name + '</td>' +
+          '<td>' + staff.title + '</td>' +
+          '<td class="cell-money"><strong>' + formatYen(s.net) + '</strong></td>' +
+          '<td class="cell-money">' + formatYen(s.base) + '</td>' +
+          '<td class="cell-money">' + formatYen(s.allowance) + '</td>' +
+          '<td class="cell-money">' + formatYen(s.deduction) + '</td>' +
+          '<td><span class="badge ' + badgeClass + '">' + s.status + '</span></td>';
+        staffTbody.appendChild(tr);
+      });
+    })();
+  </script>
   <script>
     const tabButtons = document.querySelectorAll('[data-tab]');
     const tabHost = document.getElementById('tab-host');
