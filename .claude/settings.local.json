@@ -12,7 +12,8 @@
       "Bash(New-Item -Force \"C:\\\\VikitSystem_workspace\\\\swamp_mock\\\\.codex-prompt.tmp.md\")",
       "Bash(Out-Null)",
       "Bash(Write-Output \"created\")",
-      "PowerShell(New-Item *)"
+      "PowerShell(New-Item *)",
+      "PowerShell(Stop-Process *)"
     ]
   }
 }

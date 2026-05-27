@@ -25,6 +25,7 @@ export function logout(redirectPath = LOGIN_PATH) {
 
 export function requireAuth(redirectPath = LOGIN_PATH) {
   if (isAuthenticated()) {
+    document.body.style.visibility = 'visible';
     return;
   }
 
