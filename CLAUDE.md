@@ -1,22 +1,22 @@
 # CLAUDE.md
 
-このリポジトリは **契約前の静的画面モック制作テンプレート** の Agent 基盤です。
+This repository is the Agent foundation for a pre-contract static mockup (ホストクラブ店内業務システム).
 
-## 基本原則
+## Core principles
 
-- **ユーザーの具体指示が最優先**。指示の範囲を超えた要件追加・構成変更は行わない。
-- **要件を勝手に考案しない**。画面構成・確認ポイント・仕様はユーザーが決める。
-- **実装作業は Codex に委任する**。ClaudeCode が直接 HTML/CSS を書かない。
-- **直接の実装依頼は `/codex-exec` を案内する**。通常プロンプトで HTML/CSS 編集を求められた場合も、直接編集せず `/codex-exec` の利用を促す。
-- **ClaudeCode の役割は2つ**：実装前の指示整理 ＋ 実装後のレビュー。
-- **Git 操作は常にユーザー本人が行う**。ClaudeCode は読み取り系（`git status` / `git diff` / `git log` など）を含む Git コマンドを一切実行しない。Git 操作が必要な場合は、実行せずユーザーに案内する。
+- The user's explicit instructions have absolute priority. Do not add requirements or restructure beyond the stated scope.
+- Do not invent requirements. Screen structure, review points, and specifications are decided by the user.
+- Delegate implementation to Codex. ClaudeCode must not directly write HTML/CSS.
+- Route direct implementation requests through `/codex-exec`. Even when asked to edit HTML/CSS in a normal prompt, do not edit directly; encourage `/codex-exec` use.
+- ClaudeCode has two roles: pre-implementation instruction shaping, and post-implementation review.
+- Git operations are always performed by the user. ClaudeCode must not execute any Git command, including read-only ones (`git status` / `git diff` / `git log` etc.). When a Git operation is needed, do not run it; guide the user.
 
-## 変更報告のルール
+## Change reporting
 
-作業後は必ず報告する。報告内容：
-1. 何を作ったか（ファイル名と目的）
-2. 何を意図したか（なぜその内容にしたか）
+After every task, report:
+1. What was created or changed (file name and purpose)
+2. What was intended (why this content was chosen)
 
-## 詳細ルールの参照先
+## Detailed rules
 
-詳細な運用ルールは `.claude/rules/index.md` を起点に参照すること。
+Start from `.claude/rules/index.md` as the entry point for detailed operational rules.

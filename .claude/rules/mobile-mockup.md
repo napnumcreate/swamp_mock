@@ -1,52 +1,52 @@
 ---
-description: mobile モック制作時の ClaudeCode 方針
+description: ClaudeCode policy for mobile mockup work
 paths:
   - "docs/mobile/**"
   - "samples/mobile-basic/**"
 ---
 
-# mobile モック制作方針
+# Mobile mockup policy
 
-## 利用方針
+## When to apply
 
-ユーザー指示に mobile 画面・スマートフォン向け導線・mobile-first な画面確認が含まれる場合、Required reading として以下を候補に含める：
+When the user's instruction involves mobile screens, smartphone navigation, or mobile-first verification, include the following as Required reading candidates:
 
 - `docs/mobile/assets/css/mobile.css`
-- `samples/mobile-basic/pages/home.html`（app-shell 構成の参考）
-- （対象画面が明確な場合は対応するサンプルページ）
+- `samples/mobile-basic/pages/home.html` (app-shell reference)
+- (Add a specific sample page when the target screen is clear)
 
-mobile 画面が不要な案件では、`docs/mobile/` や mobile sample を無理に読ませない。
+Do not force-load `docs/mobile/` or mobile samples for non-mobile work.
 
-## 実装範囲
+## Implementation scope
 
-- mobile 実装の対象は `docs/mobile/` 配下
-- mobile 共通スタイルは `docs/mobile/assets/css/mobile.css` を優先活用する
-- mobile UI の参考として `samples/mobile-basic/` を必要に応じて参照できる
-- 静的モックの範囲を守る（本番機能に膨らませない）
+- Mobile implementation target is `docs/mobile/`.
+- Prefer the shared style `docs/mobile/assets/css/mobile.css` for mobile.
+- Reference `samples/mobile-basic/` as needed.
+- Stay within static mockup scope (do not inflate into production features).
 
-## ロール別カラーテーマ（確定仕様）
+## Role color theme (confirmed spec)
 
-モバイル画面はホスト向け・内勤向けでアクセントカラーが異なる。`.mobile-shell` に付与するロール修飾クラスで切り替える。
+Mobile screens differ in accent color between ホスト向け and 内勤向け. Switch via a role modifier class on `.mobile-shell`.
 
-| ロール | クラス | アクセントカラー |
+| Role | Class | Accent color |
 |---|---|---|
-| ホスト向け | `.mobile-shell--host` | パープル `#7C3AED` |
-| 内勤向け | `.mobile-shell--staff` | ブルー `#2563EB` |
+| ホスト向け | `.mobile-shell--host` | Purple `#7C3AED` |
+| 内勤向け | `.mobile-shell--staff` | Blue `#2563EB` |
 
-- CSS 変数（`--color-accent` / `--color-accent-hover` / `--color-accent-light` / `--color-accent-text` / `--color-accent-shadow` / `--color-accent-shadow-hover`）を `.mobile-shell--host` および `.mobile-shell--staff` で上書きする
-- この変数を参照している全子要素（ヘッダー・フッター・ボタン等）が自動的にロールカラーで描画される
-- ホスト向け画面では `<div class="mobile-shell mobile-shell--host">`, 内勤向けでは `mobile-shell--staff` を付与する
+- CSS variables (`--color-accent` / `--color-accent-hover` / `--color-accent-light` / `--color-accent-text` / `--color-accent-shadow` / `--color-accent-shadow-hover`) are overridden under `.mobile-shell--host` and `.mobile-shell--staff`.
+- All child elements that reference these variables (header, footer, buttons, etc.) automatically render in the role color.
+- For ホスト向け screens use `<div class="mobile-shell mobile-shell--host">`, for 内勤向け use `mobile-shell--staff`.
 
-## 共通ヘッダー・ロール別フッター構成（確定仕様）
+## Shared header / role-specific footer (confirmed spec)
 
-- **ヘッダー**：`docs/mobile/pages/header/header.html` を全ロール共通で `fetch` する
-  - `{{TITLE}}` / `{{TAG_CLASS}}` / `{{TAG_TEXT}}` のプレースホルダをロードJSで差し替える
-- **フッター**：ロール別に別ファイルを使用
-  - ホスト向け：`docs/mobile/pages/footer/footer-host.html`
-  - 内勤向け：`docs/mobile/pages/footer/footer-staff.html`
-- `docs/mobile/assets/js/shared-mobile-layout.js` がヘッダー・フッターの fetch・注入・ログアウト処理を担当する
+- Header: `docs/mobile/pages/header/header.html` is fetched in common for all roles.
+  - Placeholders `{{TITLE}}` / `{{TAG_CLASS}}` / `{{TAG_TEXT}}` are substituted by the loader JS.
+- Footer: a separate file per role.
+  - ホスト向け: `docs/mobile/pages/footer/footer-host.html`
+  - 内勤向け: `docs/mobile/pages/footer/footer-staff.html`
+- `docs/mobile/assets/js/shared-mobile-layout.js` handles header/footer fetch, injection, and logout.
 
-## ログイン後リダイレクト仕様（確定仕様）
+## Post-login redirect spec (confirmed)
 
-`docs/mobile/pages/login.js` はログイン成功後に `attendance-host.html` へ固定遷移する。
-ログイン画面にホスト/内勤の選択 UI はない。この動作は仕様通りのため修正提案しない。
+`docs/mobile/pages/login.js` redirects to `attendance-host.html` on successful login.
+The login screen has no ホスト/内勤 selector. This behavior is intentional; do not propose changes.

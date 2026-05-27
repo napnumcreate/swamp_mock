@@ -1,18 +1,20 @@
-# ルールインデックス
+# Rule index
 
-作業ごとの参照先を示します。詳細な手順は各ファイルを参照してください。
+This index maps each task to its rule file. Refer to each file for the full procedure.
 
-| 作業 | 参照先 |
+| Task | Reference |
 |---|---|
-| **プロジェクト前提を確認する** | `.claude/rules/project-premises.md` |
-| 静的モック制作の考え方を確認する | `.claude/rules/static-mockup-workflow.md` |
-| Codex 委任の原則を確認する | `.claude/rules/codex-workflow.md` |
-| 実装レビューを行う | `.claude/rules/implementation-review.md` |
-| 実装委任を実行する | `.claude/commands/codex-exec.md`（`/codex-exec` Command） |
-| mobile モック制作の方針を確認する | `.claude/rules/mobile-mockup.md`（mobile 作業時のみ自動ロード） |
-| Docker / nginx 確認環境の方針を確認する | `.claude/rules/docker-preview.md`（Docker 作業時のみ自動ロード） |
+| Confirm project premise | `.claude/rules/project-premises.md` |
+| Confirm static mockup approach | `.claude/rules/static-mockup-workflow.md` |
+| Confirm Codex delegation principles | `.claude/rules/codex-workflow.md` |
+| Review implementation | `.claude/rules/implementation-review.md` |
+| Execute implementation delegation | `.claude/commands/codex-exec.md` (`/codex-exec` Command) |
+| Confirm audit / cleanup output rule | `.claude/rules/static-mockup-workflow.md` (section: "Audit and cleanup output rule") |
+| Confirm screen navigation premise | `.claude/rules/static-mockup-workflow.md` (section: "Screen navigation premise") |
+| Confirm mobile mockup policy | `.claude/rules/mobile-mockup.md` (auto-loaded on mobile work) |
+| Confirm Docker / nginx preview policy | `.claude/rules/docker-preview.md` (auto-loaded on Docker work) |
 
-## 注意
+## Notes
 
-- 詳細な実行手順は `.claude/commands/codex-exec.md` が正本。
-- 必要なルールだけを参照し、無関係なファイルを広げない。
+- The authoritative procedure for delegation is `.claude/commands/codex-exec.md`.
+- Read only the rules you need. Do not open unrelated files.

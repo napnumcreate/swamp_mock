@@ -1,77 +1,104 @@
-# 静的モック制作ワークフロー
+# Static mockup workflow
 
-## 大原則
+## Principle
 
-**ユーザーの具体指示が制作の唯一の起点**です。
-ClaudeCode は制作要件を自ら考案せず、ユーザー指示を Codex に伝わる形へ整理することに専念します。
+The user's explicit instructions are the sole starting point of production.
+ClaudeCode does not invent production requirements; its job is to shape the user's instructions into something Codex can execute.
 
-## ClaudeCode の役割範囲
+## ClaudeCode role boundary
 
-### やること
-- ユーザー指示を読み、Codex 用実装プロンプトとして構造化する
-- 指示内容の前提を整理し、実装者が迷わない記述にまとめる
-- 指示に不明瞭な点があれば、ユーザーに確認する（推測で補完しない）
+### Do
 
-### やってはいけないこと
-- 作るべき画面を新しく考案する
-- 顧客確認ポイントを独自に追加する
-- ユーザーが指定していない仕様を補完する
-- 業務要件を推測して内容を膨らませる
-- 「一般的にはこう」として構成を大きく変える
+- Read the user's instructions and structure them into a Codex implementation prompt.
+- Organize background premises so the implementer does not get lost.
+- If anything is unclear, ask the user (do not infer or fill in).
 
-## Codex 用プロンプトの整理項目
+### Do not
 
-ユーザー指示を Codex に渡す際は、以下を必ず整理すること。
+- Invent screens.
+- Add customer review points on your own.
+- Fill in specifications the user did not state.
+- Inflate scope by guessing business requirements.
+- Restructure significantly under the excuse of "this is the usual way".
+- Send dead links, unimplemented buttons, or placeholder UI elements to Codex as "deletion candidates" or "cleanup candidates" on your own. The user may be intentionally keeping them as future-implementation placeholders. Always confirm with the user first.
 
-| 項目 | 内容 |
+## Sections of a Codex prompt
+
+When passing instructions to Codex, always organize the following.
+
+| Section | Content |
 |---|---|
-| **Goal** | この実装で達成したいこと（1〜2文） |
-| **User instruction summary** | ユーザー指示の要点（原文に忠実に） |
-| **Required reading** | Codex が実装前に読むべきファイル（最小限） |
-| **Edit scope** | 変更してよいファイル・ディレクトリの明示 |
-| **Implementation requirements** | 実装すべき内容の具体的な列挙 |
-| **Must not do** | 実装してはいけないことの明示 |
-| **Acceptance criteria** | レビュー時に確認する完了基準 |
+| Goal | What this implementation aims to achieve (1-2 sentences). |
+| User instruction summary | The user's instructions, faithful to the original. |
+| Required reading | Files Codex must read before implementation (minimal). |
+| Edit scope | Files / directories that may be changed (explicit). |
+| Implementation requirements | Concrete list of what to implement. |
+| Must not do | Explicit list of what must not be implemented. |
+| Acceptance criteria | Completion criteria for review. |
 
-## 不明瞭な指示への対応
+## Handling unclear instructions
 
-- 実装に必要な情報が不足している場合は、ユーザーに確認する
-- 確認せず推測で補完してはいけない
-- ただし、テキスト・仮データなど「静的モックの表示内容」に関する軽微な仮置きは、
-  「仮仕様として置いた」と明示した上で許容する
+- If essential implementation information is missing, ask the user.
+- Do not fill in by guess.
+- Minor placeholder choices (tentative texts, dummy data) are allowed as long as you state "this is a tentative value".
 
-## JS / mock データ基盤の利用方針
+## JS / mock data usage policy
 
-ユーザー指示にログイン画面・認証済み導線・ダミーデータによる表示が含まれる場合、Required reading として以下を候補に含める：
+When the user's instructions involve login flow, post-auth navigation, or display of dummy data, include the following as Required reading when relevant:
 
-- `docs/assets/js/auth.js`（認証・セッションキー管理）
-- `samples/auth/login.html`（認証 UI 表現の参考）
+- `docs/assets/js/auth.js` (auth / session key management)
+- `samples/auth/login.html` (login UI reference)
 
-ただし、静的 HTML だけで十分な案件では無理に JS を使わない。
+If the work can be done in static HTML only, do not introduce JS unnecessarily.
 
-**注意：** `docs/assets/mock/data.js` および `docs/assets/mock/options.js` は削除済み。これらをプロンプトに記載しない。
+When mock data is needed, list the relevant files under `docs/assets/mock/` in Required reading (e.g. `hosts.js` / `staff.js` / `customer.js` / `salary.js` / `attendance.js` / `sales-report.js` / `auth-config.js`).
 
-## 静的モックの範囲を守る
+## Stay within static mockup scope
 
-- 実装は「顧客に画面イメージを見せる」ための静的 HTML/CSS に限定する
-- 本番実装（API・DB・認証・ビジネスロジック）に膨らませない
-- 画面の分かりやすさは確認するが、構成・要件そのものを ClaudeCode が変更しない
+- Implementation is limited to static HTML/CSS for "showing the customer what the screen will look like".
+- Do not inflate into production (API, DB, real auth, business logic).
+- Review clarity, but do not let ClaudeCode change the structure or requirements themselves.
 
-## 顧客共有導線の方針
+## Audit and cleanup output rule
 
-- 複数ページを含む実案件モックでは、顧客がルートURLから各ページへ辿れるよう、**`docs/index.html` から主要ページへの導線を原則として用意する**
-- Codex 用プロンプトを作る際、新規ページが増える場合は「`docs/index.html` にリンクを追加する」を Edit scope または Implementation requirements に含める
-- ユーザーが「個別ページURLを直接渡す」「index は更新しない」と明示した場合はその指示を優先する
-- `docs/index.html` は顧客が見る可能性があるため、内部ツール名や制作フローの説明を含めない
-- `docs/index.html` または `docs/mobile/index.html` にページ導線を追加する場合、`.no-pages-note` 初期プレースホルダーを削除し、実リンク群に置き換えることを Codex 用プロンプトの要件に含める
+When you find "deletion candidates" during an audit or cleanup task, output findings in three confidence tiers.
+Do not delegate deletion to Codex on your own; for [WARN] and [INFO], always seek user judgment.
 
-## `docs/` と `samples/` の扱い
+| Tier | Description | Examples |
+|---|---|---|
+| [OK] Clearly unnecessary | Zero references, clearly duplicated, deletion does not affect display or behavior | Orphaned files, fully duplicated code, unreferenced imports |
+| [WARN] Cleanup candidate, requires user confirmation | Removable, but intent is unclear | Dead links, placeholder UI, unimplemented buttons, suspicious-looking sidemenu items |
+| [INFO] Information only | Specification judgment belongs to the user; do not touch in a cleanup task | Mock data integrity, id/name mismatch, string/number type mixing, hardcoded values |
 
-- **通常のモック制作では `docs/` を編集対象とする**
-  - 新規ページは `docs/pages/` に配置する
-  - 共通スタイルは `docs/assets/css/` を参照する
-- **`samples/` は実装参考資料であり、制作物そのものではない**
-  - `samples/basic-admin/` はレイアウト・表現・デザイン方針の参考に使う
-  - ユーザー指示に応じて、Codex プロンプトの Required reading に含めてよい
-  - ただし常に全サンプルを読ませるのではなく、必要な画面・必要な CSS に絞る
-  - ユーザーから明示的な指示がない限り `samples/` を Edit scope に含めない
+- Do not bundle [WARN] or [INFO] into the same Codex task as [OK] items.
+- Include only [OK] in the cleanup task.
+- [WARN] is delegated to Codex only when the user explicitly says "you may delete it", as a separate task.
+- [INFO] involves spec changes; act only when the user instructs it as a new requirement.
+
+This tier rule exists because, in a past audit, an item the user was keeping as a future-implementation placeholder was deleted by mistake.
+
+## Screen navigation premise
+
+In this project, `docs/index.html` is the PC admin dashboard (KPI cards, store status, attendance, etc.; protected by `requireAuth`).
+Navigation to the screens is concentrated in:
+
+- PC side: `docs/pages/sidemenu/sidemenu.html` (sidebar menu)
+- Mobile side: `docs/mobile/pages/footer/footer-host.html` and `footer-staff.html` (role-based bottom nav)
+
+### Navigation rule when adding new pages
+
+- For new PC screens, add a nav link to `docs/pages/sidemenu/sidemenu.html` when appropriate.
+- For new mobile screens, add a nav link to the role footer file.
+- Do not change the existing dashboard structure of `docs/index.html` (KPI cards, tables, calendar etc.) unless explicitly instructed.
+- If the user explicitly says "no navigation link needed", follow that instruction.
+
+## `docs/` and `samples/` handling
+
+- For project mockups, edit `docs/`.
+  - Place new pages under `docs/pages/`.
+  - Reference shared styles in `docs/assets/css/`.
+- `samples/` is reference material, not the deliverable.
+  - Use `samples/basic-admin/` as a reference for layout / expression / design direction.
+  - May be included in Codex Required reading when relevant.
+  - Do not always load all samples; list only the screen / CSS actually needed.
+  - Do not include `samples/` in Edit scope unless the user explicitly says so.

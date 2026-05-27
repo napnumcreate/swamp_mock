@@ -1,23 +1,23 @@
 ---
-description: Docker / nginx ローカル確認環境を扱う場合の方針
+description: Policy for Docker / nginx local preview work
 paths:
   - "docker/**"
   - "docker-compose.yml"
 ---
 
-# Docker / nginx ローカル確認環境方針
+# Docker / nginx local preview policy
 
-## 利用方針
+## When to apply
 
-ユーザーがローカル確認環境・Docker 起動・nginx 配信に関する依頼をした場合、Required reading として以下を候補に含める：
+When the user requests work on local preview, Docker startup, or nginx serving, include the following as Required reading candidates:
 
 - `docker/Dockerfile`
 - `docker/nginx.conf`
 - `docker-compose.yml`
 
-通常の画面モック制作では、Docker / nginx 構成を無理に編集対象に含めない。
+For ordinary screen mockup work, do not force Docker / nginx configuration into the Edit scope.
 
-## 運用範囲
+## Scope
 
-- Docker はローカル確認専用であり、本番インフラへ膨らませない
-- 画面モック制作のみの案件では Docker 構成を触らない
+- Docker is for local preview only; do not inflate into production infrastructure.
+- For screen-only mockup work, do not touch the Docker configuration.
