@@ -13,7 +13,8 @@
       "Bash(Out-Null)",
       "Bash(Write-Output \"created\")",
       "PowerShell(New-Item *)",
-      "PowerShell(Stop-Process *)"
+      "PowerShell(Stop-Process *)",
+      "PowerShell(codex exec --skip-git-repo-check -s workspace-write \\(Get-Content -Raw .codex-prompt.tmp.md\\))"
     ]
   }
 }
