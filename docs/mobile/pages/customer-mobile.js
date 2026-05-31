@@ -28,7 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
       if (el) el.textContent = (val && val !== '') ? val : '－';
     };
     set('mcm-name', c.name);
-    set('mcm-host', c.host);
+    var _hr = (typeof MOCK_HOSTS !== 'undefined') ? MOCK_HOSTS.filter(function(m){ return m.id === c.hostId; })[0] : null;
+    set('mcm-host', _hr ? _hr.name : c.hostId);
     set('mcm-visit-count', c.visitCount);
     set('mcm-visit-freq', c.visitFreq);
     set('mcm-monthly-sales', c.monthlySales);

@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
+  function getHostName(hostId) {
+    if (typeof MOCK_HOSTS === 'undefined') return hostId;
+    for (var i = 0; i < MOCK_HOSTS.length; i++) {
+      if (MOCK_HOSTS[i].id === hostId) return MOCK_HOSTS[i].name;
+    }
+    return hostId;
+  }
+
   var customerTbody = document.querySelector('#customer-table tbody');
   MOCK_CUSTOMERS.forEach(function (c) {
     var tr = document.createElement('tr');
@@ -11,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     tr.dataset.notes = c.notes;
     tr.innerHTML =
       '<td class="cell-strong">' + c.name + '</td>' +
-      '<td>' + c.host + '</td>' +
+      '<td>' + getHostName(c.hostId) + '</td>' +
       '<td>' + c.registerDate + '</td>' +
       '<td>' + c.firstRepeat + '</td>' +
       '<td>' + c.visitCount + '</td>' +

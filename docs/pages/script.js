@@ -18,12 +18,13 @@
     modal.style.display = 'flex';
   };
 
-  window.openHostModal = function (name, rank, todaySales, guests, nominations, dohan, after, monthlySales, monthlyAttendance, todayShift) {
+  window.openHostModal = function (name, rank, age, todaySales, guests, nominations, dohan, after, ageVerification, permanentResidenceDate, monthlySales, monthlyAttendance, todayShift) {
     var modal = document.querySelector('#host-modal');
     if (!modal) return;
     var el;
     el = document.querySelector('#host-modal-name');               if (el) el.textContent = name;
     el = document.querySelector('#host-modal-rank');               if (el) el.textContent = rank;
+    el = document.querySelector('#host-modal-age');                if (el) el.textContent = age;
     el = document.querySelector('#host-modal-monthly-sales');      if (el) el.textContent = monthlySales;
     el = document.querySelector('#host-modal-monthly-attendance'); if (el) el.textContent = monthlyAttendance;
     el = document.querySelector('#host-modal-today-shift');        if (el) el.textContent = todayShift;
@@ -32,6 +33,8 @@
     el = document.querySelector('#host-modal-nominations');        if (el) el.textContent = nominations;
     el = document.querySelector('#host-modal-dohan');              if (el) el.textContent = dohan;
     el = document.querySelector('#host-modal-after');              if (el) el.textContent = after;
+    el = document.querySelector('#host-modal-age-verification');   if (el) el.textContent = ageVerification;
+    el = document.querySelector('#host-modal-permanent-residence'); if (el) el.textContent = permanentResidenceDate;
     modal.style.display = 'flex';
   };
 

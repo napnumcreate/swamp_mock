@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>アナリティクス - GENESIS店内業務システム</title>
+  <title>アナリティクス - SWAMP店内業務システム</title>
   <link rel="stylesheet" href="../assets/css/reset.css">
   <link rel="stylesheet" href="../assets/css/tokens.css">
   <link rel="stylesheet" href="../assets/css/base.css">
@@ -20,10 +20,157 @@
       <main class="main-content">
         <div class="page-header"><h1 class="page-title">アナリティクス</h1><p class="page-subtitle">売上・来客・ホスト実績の概要</p></div>
         <div class="grid-4 section-gap">
-          <div class="kpi-card kpi-accent"><div class="kpi-label">本日売上</div><div class="kpi-value">&yen;840,000</div><div class="kpi-trend kpi-trend--up">営業速報</div></div>
-          <div class="kpi-card"><div class="kpi-label">今月売上</div><div class="kpi-value">&yen;18,240,000</div><div class="kpi-trend">5月累計</div></div>
-          <div class="kpi-card"><div class="kpi-label">今月来店数</div><div class="kpi-value">186組</div><div class="kpi-trend">来店実績</div></div>
-          <div class="kpi-card"><div class="kpi-label">客単価</div><div class="kpi-value">&yen;98,000</div><div class="kpi-trend">平均金額</div></div>
+          <div class="kpi-card kpi-accent" style="padding:8px 12px;"><div class="kpi-label">本日売上</div><div class="kpi-value" style="font-size:20px; margin-bottom:2px;">&yen;840,000</div><div class="kpi-trend kpi-trend--up" style="font-size:11px;">営業速報</div></div>
+          <div class="kpi-card" style="padding:8px 12px;"><div class="kpi-label">今月売上</div><div class="kpi-value" style="font-size:20px; margin-bottom:2px;">&yen;18,240,000</div><div class="kpi-trend" style="font-size:11px;">5月累計</div></div>
+          <div class="kpi-card" style="padding:8px 12px;"><div class="kpi-label">今月来店数</div><div class="kpi-value" style="font-size:20px; margin-bottom:2px;">186組</div><div class="kpi-trend" style="font-size:11px;">来店実績</div></div>
+          <div class="kpi-card" style="padding:8px 12px;"><div class="kpi-label">客単価</div><div class="kpi-value" style="font-size:20px; margin-bottom:2px;">&yen;98,000</div><div class="kpi-trend" style="font-size:11px;">平均金額</div></div>
+        </div>
+        <div class="grid-4 section-gap">
+
+          <!-- today budget -->
+          <div class="kpi-card kpi-accent" style="padding:8px 12px; display:flex; flex-direction:column;">
+            <div class="kpi-label" style="font-weight:900;">本日の目標</div>
+            <div style="flex:1; display:flex; align-items:center;">
+              <div class="kpi-value" style="font-size:24px; margin-bottom:0;">¥1,000,000</div>
+            </div>
+          </div>
+          <!-- today actual remaining -->
+          <div class="card kpi-accent" style="padding:8px 12px;">
+            <div class="card-header" style="margin-bottom:4px;"><span class="card-title" style="font-size:11px; font-weight:900; text-transform:uppercase; letter-spacing:0.05em; color:var(--color-text-secondary);">本日の実績/残</span></div>
+            <div class="card-body" style="padding:4px 0;">
+              <div class="detail-row" style="margin:0; padding:2px 0;"><span class="detail-label">実績</span><span class="detail-value" style="color:var(--color-accent); font-weight:700;">¥600,000</span></div>
+              <div class="detail-row" style="margin:0; padding:2px 0;"><span class="detail-label">残</span><span class="detail-value">¥400,000</span></div>
+            </div>
+          </div>
+
+          <!-- today progress -->
+          <div class="card kpi-accent" style="padding:8px 12px;">
+            <div class="card-header" style="margin-bottom:4px;"><span class="card-title" style="font-size:11px; font-weight:900; text-transform:uppercase; letter-spacing:0.05em; color:var(--color-text-secondary);">本日の進捗</span></div>
+            <div class="card-body" style="padding:4px 0; display:flex; flex-direction:column; gap:4px;">
+              <div style="font-size:18px; font-weight:700; color:var(--color-accent); text-align:center;">60%</div>
+              <div style="background:var(--color-surface-secondary); border-radius:4px; height:6px; overflow:hidden;">
+                <div style="width:60%; background:var(--color-accent); height:100%; border-radius:4px;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- today time achievement -->
+          <div class="card kpi-accent" style="padding:8px 12px;">
+            <div class="card-header" style="margin-bottom:4px;"><span class="card-title" style="font-size:11px; font-weight:900; text-transform:uppercase; letter-spacing:0.05em; color:var(--color-text-secondary);">本日の時間達成率</span></div>
+            <div class="card-body" style="padding:4px 0; display:flex; flex-direction:column; gap:4px;">
+              <div style="font-size:18px; font-weight:700; color:var(--color-success, #16a34a); text-align:center;">98%</div>
+              <div style="background:var(--color-surface-secondary); border-radius:4px; height:6px; overflow:hidden;">
+                <div style="width:98%; background:var(--color-success, #16a34a); height:100%; border-radius:4px;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- weekly budget -->
+          <div class="kpi-card" style="padding:8px 12px; display:flex; flex-direction:column;">
+            <div class="kpi-label">週次の目標</div>
+            <div style="flex:1; display:flex; align-items:center;">
+              <div class="kpi-value" style="font-size:24px; margin-bottom:0;">¥2,000,000</div>
+            </div>
+          </div>
+          <!-- weekly actual remaining -->
+          <div class="card" style="padding:8px 12px;">
+            <div class="card-header" style="margin-bottom:4px;"><span class="card-title" style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:var(--color-text-secondary);">週次の実績/残</span></div>
+            <div class="card-body" style="padding:4px 0;">
+              <div class="detail-row" style="margin:0; padding:2px 0;"><span class="detail-label">実績</span><span class="detail-value" style="color:var(--color-accent); font-weight:700;">¥1,200,000</span></div>
+              <div class="detail-row" style="margin:0; padding:2px 0;"><span class="detail-label">残</span><span class="detail-value">¥800,000</span></div>
+            </div>
+          </div>
+
+          <!-- weekly progress -->
+          <div class="card" style="padding:8px 12px;">
+            <div class="card-header" style="margin-bottom:4px;"><span class="card-title" style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:var(--color-text-secondary);">週次の進捗</span></div>
+            <div class="card-body" style="padding:4px 0; display:flex; flex-direction:column; gap:4px;">
+              <div style="font-size:18px; font-weight:700; color:var(--color-accent); text-align:center;">60%</div>
+              <div style="background:var(--color-surface-secondary); border-radius:4px; height:6px; overflow:hidden;">
+                <div style="width:60%; background:var(--color-accent); height:100%; border-radius:4px;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- weekly time achievement -->
+          <div class="card" style="padding:8px 12px;">
+            <div class="card-header" style="margin-bottom:4px;"><span class="card-title" style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:var(--color-text-secondary);">週次の時間達成率</span></div>
+            <div class="card-body" style="padding:4px 0; display:flex; flex-direction:column; gap:4px;">
+              <div style="font-size:18px; font-weight:700; color:var(--color-success, #16a34a); text-align:center;">98%</div>
+              <div style="background:var(--color-surface-secondary); border-radius:4px; height:6px; overflow:hidden;">
+                <div style="width:98%; background:var(--color-success, #16a34a); height:100%; border-radius:4px;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- monthly budget -->
+          <div class="kpi-card" style="padding:8px 12px; display:flex; flex-direction:column;">
+            <div class="kpi-label">月次の目標</div>
+            <div style="flex:1; display:flex; align-items:center;">
+              <div class="kpi-value" style="font-size:24px; margin-bottom:0;">¥2,000,000</div>
+            </div>
+          </div>
+          <!-- monthly actual remaining -->
+          <div class="card" style="padding:8px 12px;">
+            <div class="card-header" style="margin-bottom:4px;"><span class="card-title" style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:var(--color-text-secondary);">月次の実績/残</span></div>
+            <div class="card-body" style="padding:4px 0;">
+              <div class="detail-row" style="margin:0; padding:2px 0;"><span class="detail-label">実績</span><span class="detail-value" style="color:var(--color-accent); font-weight:700;">¥1,200,000</span></div>
+              <div class="detail-row" style="margin:0; padding:2px 0;"><span class="detail-label">残</span><span class="detail-value">¥800,000</span></div>
+            </div>
+          </div>
+
+          <!-- monthly progress -->
+          <div class="card" style="padding:8px 12px;">
+            <div class="card-header" style="margin-bottom:4px;"><span class="card-title" style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:var(--color-text-secondary);">月次の進捗</span></div>
+            <div class="card-body" style="padding:4px 0; display:flex; flex-direction:column; gap:4px;">
+              <div style="font-size:18px; font-weight:700; color:var(--color-accent); text-align:center;">60%</div>
+              <div style="background:var(--color-surface-secondary); border-radius:4px; height:6px; overflow:hidden;">
+                <div style="width:60%; background:var(--color-accent); height:100%; border-radius:4px;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- monthly time achievement -->
+          <div class="card" style="padding:8px 12px;">
+            <div class="card-header" style="margin-bottom:4px;"><span class="card-title" style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:var(--color-text-secondary);">月次の時間達成率</span></div>
+            <div class="card-body" style="padding:4px 0; display:flex; flex-direction:column; gap:4px;">
+              <div style="font-size:18px; font-weight:700; color:var(--color-success, #16a34a); text-align:center;">98%</div>
+              <div style="background:var(--color-surface-secondary); border-radius:4px; height:6px; overflow:hidden;">
+                <div style="width:98%; background:var(--color-success, #16a34a); height:100%; border-radius:4px;"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="card section-gap" id="host-sales-chart-card">
+          <div class="card-header">
+            <span class="card-title">ホスト別売上 vs 目標</span>
+            <div style="display:flex; align-items:center; gap:8px; margin-left:auto;">
+              <button type="button" class="btn btn-secondary btn-sm" id="chart-host-prev">←</button>
+              <span id="chart-host-name" style="font-weight:600; min-width:96px; text-align:center; font-size:14px;"></span>
+              <button type="button" class="btn btn-secondary btn-sm" id="chart-host-next">→</button>
+            </div>
+          </div>
+          <div class="card-body" style="padding-bottom:8px;">
+            <div style="display:flex; gap:6px; margin-bottom:12px;">
+              <button type="button" class="btn btn-primary btn-sm chart-period-btn" data-period="today">本日</button>
+              <button type="button" class="btn btn-secondary btn-sm chart-period-btn" data-period="week">今週</button>
+              <button type="button" class="btn btn-secondary btn-sm chart-period-btn" data-period="month">今月</button>
+            </div>
+            <div style="display:flex; gap:16px; margin-bottom:8px; font-size:12px; color:var(--color-text-secondary);">
+              <div style="display:flex; align-items:center; gap:6px;">
+                <svg width="24" height="8"><line x1="0" y1="4" x2="24" y2="4" stroke="#C9A84C" stroke-width="2.5"/></svg>
+                <span>実売り上げ</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:6px;">
+                <svg width="24" height="8"><line x1="0" y1="4" x2="24" y2="4" stroke="#9ca3af" stroke-width="2" stroke-dasharray="5,3"/></svg>
+                <span>目標</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:0;">
+            <svg id="host-sales-svg" viewBox="0 0 500 160" style="width:100%; height:auto; display:block;" role="img" aria-label="ホスト別売上グラフ"></svg>
+          </div>
         </div>
         <div class="grid-2 section-gap">
           <div class="card">
@@ -40,11 +187,11 @@
           <div class="card">
             <div class="card-header"><span class="card-title">ホスト別売上ランキング（今月）</span></div>
             <div class="card-body">
-              <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="min-width:72px; font-size:12px; color:var(--color-text-secondary); font-weight:600;">1. REN</span><div style="flex:1; background:var(--color-surface-secondary); border-radius:4px; height:18px;"><div style="width:100%; background:var(--color-accent); height:100%; border-radius:4px;"></div></div><span style="min-width:88px; font-size:12px; font-weight:600; text-align:right;">&yen;2,480,000</span></div>
-              <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="min-width:72px; font-size:12px; color:var(--color-text-secondary); font-weight:600;">2. HAYATO</span><div style="flex:1; background:var(--color-surface-secondary); border-radius:4px; height:18px;"><div style="width:94%; background:var(--color-accent); height:100%; border-radius:4px;"></div></div><span style="min-width:88px; font-size:12px; font-weight:600; text-align:right;">&yen;2,320,000</span></div>
-              <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="min-width:72px; font-size:12px; color:var(--color-text-secondary); font-weight:600;">3. KAITO</span><div style="flex:1; background:var(--color-surface-secondary); border-radius:4px; height:18px;"><div style="width:78%; background:var(--color-accent); height:100%; border-radius:4px;"></div></div><span style="min-width:88px; font-size:12px; font-weight:600; text-align:right;">&yen;1,920,000</span></div>
-              <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="min-width:72px; font-size:12px; color:var(--color-text-secondary); font-weight:600;">4. RYU</span><div style="flex:1; background:var(--color-surface-secondary); border-radius:4px; height:18px;"><div style="width:67%; background:var(--color-accent); height:100%; border-radius:4px;"></div></div><span style="min-width:88px; font-size:12px; font-weight:600; text-align:right;">&yen;1,650,000</span></div>
-              <div style="display:flex; align-items:center; gap:8px;"><span style="min-width:72px; font-size:12px; color:var(--color-text-secondary); font-weight:600;">5. SORA</span><div style="flex:1; background:var(--color-surface-secondary); border-radius:4px; height:18px;"><div style="width:52%; background:var(--color-accent); height:100%; border-radius:4px;"></div></div><span style="min-width:88px; font-size:12px; font-weight:600; text-align:right;">&yen;1,280,000</span></div>
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="min-width:72px; font-size:12px; color:var(--color-text-secondary); font-weight:600;">1. <span data-host-id="ren"></span></span><div style="flex:1; background:var(--color-surface-secondary); border-radius:4px; height:18px;"><div style="width:100%; background:var(--color-accent); height:100%; border-radius:4px;"></div></div><span style="min-width:88px; font-size:12px; font-weight:600; text-align:right;">&yen;2,480,000</span></div>
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="min-width:72px; font-size:12px; color:var(--color-text-secondary); font-weight:600;">2. <span data-host-id="hayato"></span></span><div style="flex:1; background:var(--color-surface-secondary); border-radius:4px; height:18px;"><div style="width:94%; background:var(--color-accent); height:100%; border-radius:4px;"></div></div><span style="min-width:88px; font-size:12px; font-weight:600; text-align:right;">&yen;2,320,000</span></div>
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="min-width:72px; font-size:12px; color:var(--color-text-secondary); font-weight:600;">3. <span data-host-id="kaito"></span></span><div style="flex:1; background:var(--color-surface-secondary); border-radius:4px; height:18px;"><div style="width:78%; background:var(--color-accent); height:100%; border-radius:4px;"></div></div><span style="min-width:88px; font-size:12px; font-weight:600; text-align:right;">&yen;1,920,000</span></div>
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="min-width:72px; font-size:12px; color:var(--color-text-secondary); font-weight:600;">4. <span data-host-id="ryu"></span></span><div style="flex:1; background:var(--color-surface-secondary); border-radius:4px; height:18px;"><div style="width:67%; background:var(--color-accent); height:100%; border-radius:4px;"></div></div><span style="min-width:88px; font-size:12px; font-weight:600; text-align:right;">&yen;1,650,000</span></div>
+              <div style="display:flex; align-items:center; gap:8px;"><span style="min-width:72px; font-size:12px; color:var(--color-text-secondary); font-weight:600;">5. <span data-host-id="sora"></span></span><div style="flex:1; background:var(--color-surface-secondary); border-radius:4px; height:18px;"><div style="width:52%; background:var(--color-accent); height:100%; border-radius:4px;"></div></div><span style="min-width:88px; font-size:12px; font-weight:600; text-align:right;">&yen;1,280,000</span></div>
             </div>
           </div>
         </div>
@@ -82,5 +229,17 @@
     requireAuth('login.html');
   </script>
   <script src="../assets/js/shared-layout.js"></script>
+  <script src="../assets/mock/hosts.js"></script>
+  <script src="analytics.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof MOCK_HOSTS !== 'undefined') {
+    document.querySelectorAll('[data-host-id]').forEach(function (el) {
+      var h = MOCK_HOSTS.filter(function (m) { return m.id === el.getAttribute('data-host-id'); })[0];
+      if (h) el.textContent = h.name;
+    });
+  }
+});
+</script>
 </body>
 </html>

@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>個別設定（ホスト向け）- GENESIS店内業務システム</title>
+  <title>個別設定（ホスト向け）- SWAMP店内業務システム</title>
   <link rel="stylesheet" href="../../assets/css/reset.css">
   <link rel="stylesheet" href="../../assets/css/tokens.css">
   <link rel="stylesheet" href="../../assets/css/base.css">
@@ -20,7 +20,7 @@
       <section class="mobile-section" aria-label="アカウント情報">
         <h2 class="mobile-section-title">アカウント情報</h2>
         <article class="mobile-card">
-          <div class="mobile-key-value"><span class="mobile-key">表示名</span><span class="mobile-value">瑞樹成瀬</span></div>
+          <div class="mobile-key-value"><span class="mobile-key">表示名</span><span class="mobile-value" data-host-id="ren"></span></div>
           <div class="mobile-key-value"><span class="mobile-key">ランク</span><span class="mobile-value">主任</span></div>
           <div class="mobile-key-value"><span class="mobile-key">在籍日</span><span class="mobile-value">2024年4月入店</span></div>
         </article>
@@ -41,10 +41,21 @@
 
     <nav class="mobile-bottom-nav" aria-label="メインナビゲーション"></nav>
   </div>
+  <script src="../../assets/mock/hosts.js"></script>
   <script src="../assets/js/shared-mobile-layout.js"></script>
   <script type="module">
     import { requireAuth } from '../../assets/js/auth.js';
     requireAuth('login.html');
   </script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof MOCK_HOSTS !== 'undefined') {
+    document.querySelectorAll('[data-host-id]').forEach(function (el) {
+      var h = MOCK_HOSTS.filter(function (m) { return m.id === el.getAttribute('data-host-id'); })[0];
+      if (h) el.textContent = h.name;
+    });
+  }
+});
+</script>
 </body>
 </html>

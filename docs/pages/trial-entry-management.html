@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>体験入店管理 - SWAMP店内業務システム</title>
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/mockup.css">
+  <link rel="stylesheet" href="style.css">
+  <style>body{visibility:hidden}</style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar"></aside>
+    <div class="main-wrapper">
+      <header class="header" data-title="体験入店管理" data-tag="2026年5月"></header>
+      <main class="main-content">
+        <div class="page-header">
+          <h1 class="page-title">体験入店管理</h1>
+          <p class="page-subtitle">体験入店者の入店状況・担当者別入店率</p>
+        </div>
+
+        <div class="grid-4 section-gap">
+          <div class="kpi-card kpi-accent"><div class="kpi-label">今月の体験入店者数</div><div class="kpi-value">10名</div><div class="kpi-trend">2026年5月</div></div>
+          <div class="kpi-card"><div class="kpi-label">入店済</div><div class="kpi-value">5名</div><div class="kpi-trend">体験後に入店確定</div></div>
+          <div class="kpi-card"><div class="kpi-label">入店率</div><div class="kpi-value">50%</div><div class="kpi-trend">入店済 5名 / 全体 10名</div></div>
+          <div class="kpi-card"><div class="kpi-label">検討中</div><div class="kpi-value">2名</div><div class="kpi-trend">追客・再連絡対象</div></div>
+        </div>
+
+        <div class="card section-gap">
+          <div class="card-header"><span class="card-title">面接担当別入店率</span></div>
+          <div class="table-wrapper">
+            <table class="table">
+              <thead><tr><th>担当者名</th><th>面接件数</th><th>入店数</th><th>入店率</th></tr></thead>
+              <tbody>
+                <tr><td data-host-id="ren"></td><td>4件</td><td>2件</td><td>50%</td></tr>
+                <tr><td data-host-id="kaito"></td><td>2件</td><td>1件</td><td>50%</td></tr>
+                <tr><td data-host-id="hayato"></td><td>2件</td><td>1件</td><td>50%</td></tr>
+                <tr><td data-host-id="ryu"></td><td>2件</td><td>1件</td><td>50%</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card section-gap">
+          <div class="card-header"><span class="card-title">教育担当別入店率</span></div>
+          <div class="table-wrapper">
+            <table class="table">
+              <thead><tr><th>担当者名</th><th>担当件数</th><th>入店数</th><th>入店率</th></tr></thead>
+              <tbody>
+                <tr><td data-host-id="kaito"></td><td>3件</td><td>2件</td><td>67%</td></tr>
+                <tr><td data-host-id="hayato"></td><td>3件</td><td>1件</td><td>33%</td></tr>
+                <tr><td data-host-id="ryu"></td><td>2件</td><td>1件</td><td>50%</td></tr>
+                <tr><td data-host-id="ren"></td><td>2件</td><td>1件</td><td>50%</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card section-gap">
+          <div class="card-header"><span class="card-title">体験入店者一覧</span><div style="display:flex;align-items:center;gap:8px;margin-left:auto"><span class="note-sample-data">サンプルデータ</span></div></div>
+          <div class="table-wrapper">
+            <table class="table">
+              <thead><tr><th>氏名</th><th>体験日</th><th>面接担当</th><th>教育担当</th><th>有効求人度</th><th>経験</th><th>電話番号</th><th>メールアドレス</th><th>ステータス</th></tr></thead>
+              <tbody>
+                <tr><td>佐藤 大輝</td><td>2026-05-01</td><td data-host-id="ren"></td><td data-host-id="kaito"></td><td><span class="tag tag--danger">高</span></td><td>3年1カ月</td><td>090-1234-5678</td><td>daisuke.sato@example.com</td><td><span class="tag tag--success" style="background-color:var(--color-success-bg);color:var(--color-success);">入店済</span></td></tr>
+                <tr><td>鈴木 翔</td><td>2026-05-03</td><td data-host-id="ren"></td><td data-host-id="hayato"></td><td><span class="tag">中</span></td><td>未経験</td><td>090-2345-6789</td><td>sho.suzuki@example.com</td><td><span class="tag tag--success" style="background-color:var(--color-success-bg);color:var(--color-success);">入店済</span></td></tr>
+                <tr><td>田中 悠真</td><td>2026-05-05</td><td data-host-id="ren"></td><td data-host-id="ryu"></td><td><span class="tag" style="opacity:0.6">低</span></td><td>未経験</td><td>090-3456-7890</td><td>yuma.tanaka@example.com</td><td><span class="tag tag--danger" style="background-color:var(--color-danger-bg);color:var(--color-danger);">未入店</span></td></tr>
+                <tr><td>高橋 蓮</td><td>2026-05-07</td><td data-host-id="ren"></td><td data-host-id="kaito"></td><td><span class="tag tag--danger">高</span></td><td>1年6カ月</td><td>090-4567-8901</td><td>ren.takahashi@example.com</td><td><span class="tag">検討中</span></td></tr>
+                <tr><td>伊藤 海斗</td><td>2026-05-09</td><td data-host-id="kaito"></td><td data-host-id="kaito"></td><td><span class="tag">中</span></td><td>未経験</td><td>090-5678-9012</td><td>kaito.ito@example.com</td><td><span class="tag tag--success" style="background-color:var(--color-success-bg);color:var(--color-success);">入店済</span></td></tr>
+                <tr><td>渡辺 隼人</td><td>2026-05-11</td><td data-host-id="kaito"></td><td data-host-id="hayato"></td><td><span class="tag" style="opacity:0.6">低</span></td><td>6カ月</td><td>090-6789-0123</td><td>hayato.watanabe@example.com</td><td><span class="tag tag--danger" style="background-color:var(--color-danger-bg);color:var(--color-danger);">未入店</span></td></tr>
+                <tr><td>山本 琉</td><td>2026-05-13</td><td data-host-id="hayato"></td><td data-host-id="ryu"></td><td><span class="tag">中</span></td><td>未経験</td><td>090-7890-1234</td><td>ryu.yamamoto@example.com</td><td><span class="tag tag--success" style="background-color:var(--color-success-bg);color:var(--color-success);">入店済</span></td></tr>
+                <tr><td>中村 蒼</td><td>2026-05-16</td><td data-host-id="hayato"></td><td data-host-id="hayato"></td><td><span class="tag tag--danger">高</span></td><td>5年</td><td>090-8901-2345</td><td>sora.nakamura@example.com</td><td><span class="tag">検討中</span></td></tr>
+                <tr><td>小林 健太</td><td>2026-05-20</td><td data-host-id="ryu"></td><td data-host-id="ren"></td><td><span class="tag">中</span></td><td>2年4カ月</td><td>090-9012-3456</td><td>kenta.kobayashi@example.com</td><td><span class="tag tag--success" style="background-color:var(--color-success-bg);color:var(--color-success);">入店済</span></td></tr>
+                <tr><td>加藤 大和</td><td>2026-05-24</td><td data-host-id="ryu"></td><td data-host-id="ren"></td><td><span class="tag" style="opacity:0.6">低</span></td><td>未経験</td><td>090-0123-4567</td><td>yamato.kato@example.com</td><td><span class="tag tag--danger" style="background-color:var(--color-danger-bg);color:var(--color-danger);">未入店</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../assets/mock/hosts.js"></script>
+  <script src="../assets/mock/trial-entry.js"></script>
+  <script type="module">
+    import { requireAuth } from '../assets/js/auth.js';
+    requireAuth('login.html');
+  </script>
+  <script src="../assets/js/shared-layout.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof MOCK_HOSTS !== 'undefined') {
+    document.querySelectorAll('[data-host-id]').forEach(function (el) {
+      var h = MOCK_HOSTS.filter(function (m) { return m.id === el.getAttribute('data-host-id'); })[0];
+      if (h) el.textContent = h.name;
+    });
+  }
+});
+</script>
+</body>
+</html>

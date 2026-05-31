@@ -1,4 +1,12 @@
-document.addEventListener('DOMContentLoaded', function () {
+﻿document.addEventListener('DOMContentLoaded', function () {
+  function getHostName(hostId) {
+    if (typeof MOCK_HOSTS === 'undefined') return hostId;
+    for (var i = 0; i < MOCK_HOSTS.length; i++) {
+      if (MOCK_HOSTS[i].id === hostId) return MOCK_HOSTS[i].name;
+    }
+    return hostId;
+  }
+
   var salesTbody = document.querySelector('#sales-report-table tbody');
   function parseSales(salesStr) {
     return parseInt(salesStr.replace(/[¥,]/g, ''), 10) || 0;
@@ -6,6 +14,10 @@ document.addEventListener('DOMContentLoaded', function () {
   var sortedSales = TODAY_HOST_SALES.slice().sort(function (a, b) {
     return parseSales(b.sales) - parseSales(a.sales);
   });
+  var topHostEl = document.getElementById('kpi-top-host-name');
+  if (topHostEl && sortedSales.length > 0) {
+    topHostEl.textContent = getHostName(sortedSales[0].hostId);
+  }
   var rankLabels = {};
   if (sortedSales.length >= 1) rankLabels[sortedSales[0].hostId] = 'ラスソン';
   if (sortedSales.length >= 3) rankLabels[sortedSales[2].hostId] = 'オリシャン一位';
@@ -15,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     tr.dataset.hostId = h.hostId;
     tr.dataset.hasSales = (h.sales !== '¥0') ? 'yes' : 'no';
     tr.innerHTML =
-      '<td class="cell-strong">' + h.name + '</td>' +
+      '<td class="cell-strong">' + getHostName(h.hostId) + '</td>' +
       '<td class="cell-money">' + h.sales + '</td>' +
       '<td>' + (rankLabels[h.hostId] || '－') + '</td>' +
       '<td class="cell-money">' + h.sales + '</td>' +
@@ -50,16 +62,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
       openHostModal(
-        hostEntry ? hostEntry.name : row.cells[0].textContent, // name
-        hostEntry ? hostEntry.rank : '－',                      // rank
-        salesEntry ? salesEntry.sales : '－',                   // todaySales
-        salesEntry ? String(salesEntry.guests) : '－',          // guests
-        salesEntry ? String(salesEntry.nominations) : '－',     // nominations
-        salesEntry ? salesEntry.dohan : '－',                   // dohan
-        salesEntry ? salesEntry.after : '－',                   // after
-        hostEntry ? hostEntry.monthlySales : '－',              // monthlySales
-        hostEntry ? hostEntry.monthlyAttendance : '－',         // monthlyAttendance
-        hostEntry ? hostEntry.todayShift : '－'                 // todayShift
+        hostEntry ? hostEntry.name : row.cells[0].textContent,           // name
+        hostEntry ? hostEntry.rank : '－',                               // rank
+        hostEntry ? hostEntry.age : '－',                                // age
+        salesEntry ? salesEntry.sales : '－',                            // todaySales
+        salesEntry ? String(salesEntry.guests) : '－',                   // guests
+        salesEntry ? String(salesEntry.nominations) : '－',              // nominations
+        salesEntry ? salesEntry.dohan : '－',                            // dohan
+        salesEntry ? salesEntry.after : '－',                            // after
+        hostEntry ? (hostEntry.ageVerification || '未確認') : '未確認',  // ageVerification
+        hostEntry ? (hostEntry.permanentResidenceDate || '未確認') : '未確認', // permanentResidenceDate
+        hostEntry ? hostEntry.monthlySales : '－',                       // monthlySales
+        hostEntry ? hostEntry.monthlyAttendance : '－',                  // monthlyAttendance
+        hostEntry ? hostEntry.todayShift : '－'                          // todayShift
       );
     });
   });
@@ -103,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
     tr.dataset.notes = v.notes;
     tr.innerHTML =
       '<td class="cell-strong">' + v.name + '</td>' +
-      '<td>' + v.host + '</td>' +
+      '<td>' + getHostName(v.hostId) + '</td>' +
       '<td>' + v.seat + '</td>' +
       '<td class="cell-time">' + v.entryTime + '</td>' +
       '<td class="cell-time">' + v.exitTime + '</td>' +

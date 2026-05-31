@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>出勤管理（ホスト向け）- GENESIS店内業務システム</title>
+  <title>出勤管理（ホスト向け）- SWAMP店内業務システム</title>
   <link rel="stylesheet" href="../../assets/css/reset.css">
   <link rel="stylesheet" href="../../assets/css/tokens.css">
   <link rel="stylesheet" href="../../assets/css/base.css">
@@ -20,7 +20,7 @@
       <section class="mobile-section" aria-label="本日のステータス">
         <div class="mobile-tile-grid">
           <div class="mobile-tile kpi-accent">
-            <div class="mobile-tile-value">瑞樹成瀬</div>
+            <div class="mobile-tile-value" data-host-id="ren"></div>
             <div class="mobile-tile-label">ログイン中のホスト</div>
           </div>
           <div class="mobile-tile">
@@ -88,10 +88,21 @@
 
     <nav class="mobile-bottom-nav" aria-label="メインナビゲーション"></nav>
   </div>
+  <script src="../../assets/mock/hosts.js"></script>
   <script src="../assets/js/shared-mobile-layout.js"></script>
   <script type="module">
     import { requireAuth } from '../../assets/js/auth.js';
     requireAuth('login.html');
   </script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof MOCK_HOSTS !== 'undefined') {
+    document.querySelectorAll('[data-host-id]').forEach(function (el) {
+      var h = MOCK_HOSTS.filter(function (m) { return m.id === el.getAttribute('data-host-id'); })[0];
+      if (h) el.textContent = h.name;
+    });
+  }
+});
+</script>
 </body>
 </html>

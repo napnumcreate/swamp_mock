@@ -14,7 +14,10 @@
       "Bash(Write-Output \"created\")",
       "PowerShell(New-Item *)",
       "PowerShell(Stop-Process *)",
-      "PowerShell(codex exec --skip-git-repo-check -s workspace-write \\(Get-Content -Raw .codex-prompt.tmp.md\\))"
+      "PowerShell(codex exec --skip-git-repo-check -s workspace-write \\(Get-Content -Raw .codex-prompt.tmp.md\\))",
+      "Bash(Get-ChildItem -Path \"C:\\\\VikitSystem_workspace\\\\genesis-mock\\\\docs\" -Recurse -Filter \"hosts.js\")",
+      "Bash(Select-Object -First 1)",
+      "Bash(Get-Content)"
     ]
   }
 }

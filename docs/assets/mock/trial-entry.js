@@ -1,0 +1,122 @@
+var MOCK_TRIAL_ENTRIES = [
+  {
+    id: 'trial-001',
+    name: '佐藤 大輝',
+    trialDate: '2026-05-01',
+    interviewerId: 'ren',
+    educatorId: 'kaito',
+    demand: 'high',
+    experience: '3年1カ月',
+    phone: '090-1234-5678',
+    email: 'daisuke.sato@example.com',
+    status: 'joined'
+  },
+  {
+    id: 'trial-002',
+    name: '鈴木 翔',
+    trialDate: '2026-05-03',
+    interviewerId: 'ren',
+    educatorId: 'hayato',
+    demand: 'medium',
+    experience: '未経験',
+    phone: '090-2345-6789',
+    email: 'sho.suzuki@example.com',
+    status: 'joined'
+  },
+  {
+    id: 'trial-003',
+    name: '田中 悠真',
+    trialDate: '2026-05-05',
+    interviewerId: 'ren',
+    educatorId: 'ryu',
+    demand: 'low',
+    experience: '未経験',
+    phone: '090-3456-7890',
+    email: 'yuma.tanaka@example.com',
+    status: 'not_joined'
+  },
+  {
+    id: 'trial-004',
+    name: '高橋 蓮',
+    trialDate: '2026-05-07',
+    interviewerId: 'ren',
+    educatorId: 'kaito',
+    demand: 'high',
+    experience: '1年6カ月',
+    phone: '090-4567-8901',
+    email: 'ren.takahashi@example.com',
+    status: 'pending'
+  },
+  {
+    id: 'trial-005',
+    name: '伊藤 海斗',
+    trialDate: '2026-05-09',
+    interviewerId: 'kaito',
+    educatorId: 'kaito',
+    demand: 'medium',
+    experience: '未経験',
+    phone: '090-5678-9012',
+    email: 'kaito.ito@example.com',
+    status: 'joined'
+  },
+  {
+    id: 'trial-006',
+    name: '渡辺 隼人',
+    trialDate: '2026-05-11',
+    interviewerId: 'kaito',
+    educatorId: 'hayato',
+    demand: 'low',
+    experience: '6カ月',
+    phone: '090-6789-0123',
+    email: 'hayato.watanabe@example.com',
+    status: 'not_joined'
+  },
+  {
+    id: 'trial-007',
+    name: '山本 琉',
+    trialDate: '2026-05-13',
+    interviewerId: 'hayato',
+    educatorId: 'ryu',
+    demand: 'medium',
+    experience: '未経験',
+    phone: '090-7890-1234',
+    email: 'ryu.yamamoto@example.com',
+    status: 'joined'
+  },
+  {
+    id: 'trial-008',
+    name: '中村 蒼',
+    trialDate: '2026-05-16',
+    interviewerId: 'hayato',
+    educatorId: 'hayato',
+    demand: 'high',
+    experience: '5年',
+    phone: '090-8901-2345',
+    email: 'sora.nakamura@example.com',
+    status: 'pending'
+  },
+  {
+    id: 'trial-009',
+    name: '小林 健太',
+    trialDate: '2026-05-20',
+    interviewerId: 'ryu',
+    educatorId: 'ren',
+    demand: 'medium',
+    experience: '2年4カ月',
+    phone: '090-9012-3456',
+    email: 'kenta.kobayashi@example.com',
+    status: 'joined'
+  },
+  {
+    id: 'trial-010',
+    name: '加藤 大和',
+    trialDate: '2026-05-24',
+    interviewerId: 'ryu',
+    educatorId: 'ren',
+    demand: 'low',
+    experience: '未経験',
+    phone: '090-0123-4567',
+    email: 'yamato.kato@example.com',
+    status: 'not_joined'
+  }
+];

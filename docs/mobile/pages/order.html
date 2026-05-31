@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>注文管理 - GENESIS店内業務システム</title>
+  <title>注文管理 - SWAMP店内業務システム</title>
   <link rel="stylesheet" href="../../assets/css/reset.css">
   <link rel="stylesheet" href="../../assets/css/tokens.css">
   <link rel="stylesheet" href="../../assets/css/base.css">
@@ -20,19 +20,19 @@
         <h2 class="mobile-section-title">席一覧</h2>
         <article class="mobile-card" data-modal-trigger data-modal-title="A-01 注文登録" style="cursor:pointer;">
           <div class="mobile-list-title"><span>A-01</span></div>
-          <p class="mobile-list-meta">担当ホスト：瑞樹成瀬</p>
+          <p class="mobile-list-meta">担当ホスト：<span data-host-id="ren"></span></p>
         </article>
         <article class="mobile-card" data-modal-trigger data-modal-title="A-02 注文登録" style="cursor:pointer;">
           <div class="mobile-list-title"><span>A-02</span></div>
-          <p class="mobile-list-meta">担当ホスト：鳳條隼人</p>
+          <p class="mobile-list-meta">担当ホスト：<span data-host-id="kaito"></span></p>
         </article>
         <article class="mobile-card" data-modal-trigger data-modal-title="B-01 注文登録" style="cursor:pointer;">
           <div class="mobile-list-title"><span>B-01</span></div>
-          <p class="mobile-list-meta">担当ホスト：海堂しんのすけ</p>
+          <p class="mobile-list-meta">担当ホスト：<span data-host-id="sora"></span></p>
         </article>
         <article class="mobile-card" data-modal-trigger data-modal-title="VIP-01 注文登録" style="cursor:pointer;">
           <div class="mobile-list-title"><span>VIP-01</span></div>
-          <p class="mobile-list-meta">担当ホスト：戦神</p>
+          <p class="mobile-list-meta">担当ホスト：<span data-host-id="hayato"></span></p>
         </article>
       </section>
 
@@ -184,6 +184,17 @@
     import { requireAuth } from '../../assets/js/auth.js';
     requireAuth('login.html');
   </script>
+  <script src="../../assets/mock/hosts.js"></script>
   <script src="order.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof MOCK_HOSTS !== 'undefined') {
+    document.querySelectorAll('[data-host-id]').forEach(function (el) {
+      var h = MOCK_HOSTS.filter(function (m) { return m.id === el.getAttribute('data-host-id'); })[0];
+      if (h) el.textContent = h.name;
+    });
+  }
+});
+</script>
 </body>
 </html>
