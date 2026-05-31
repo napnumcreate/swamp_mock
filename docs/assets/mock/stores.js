@@ -1,7 +1,7 @@
 var MOCK_STORES = [
   {
     id: 'genesis',
-    name: 'GENESIS',
+    name: 'SWAMP',
     status: '営業中',
     todaySales: 1380000,
     monthlySales: 26800000,
@@ -19,7 +19,7 @@ var MOCK_STORES = [
   },
   {
     id: 'monstar',
-    name: 'MONSTAR -本店-',
+    name: '店舗A',
     status: '営業中',
     todaySales: 1200000,
     monthlySales: 24500000,
@@ -37,7 +37,7 @@ var MOCK_STORES = [
   },
   {
     id: 'atop',
-    name: 'A-TOP -MONSTAR-',
+    name: '店舗B',
     status: '準備中',
     todaySales: 680000,
     monthlySales: 15100000,
@@ -55,7 +55,7 @@ var MOCK_STORES = [
   },
   {
     id: 'crossguild',
-    name: 'CROSS GUILD',
+    name: '店舗C',
     status: '営業中',
     todaySales: 920000,
     monthlySales: 20300000,
