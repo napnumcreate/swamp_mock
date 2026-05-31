@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>各店舗アナリティクス - GENESIS店内業務システム</title>
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/mockup.css">
+  <style>body{visibility:hidden}</style>
+  <style>
+    #progress-tbody tr:hover td { background-color: var(--color-surface); }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar"></aside>
+    <div class="main-wrapper">
+      <header class="header" data-title="各店舗アナリティクス" data-tag="2026年5月"></header>
+      <main class="main-content">
+        <div class="page-header">
+          <h1 class="page-title">各店舗アナリティクス</h1>
+          <p class="page-subtitle">グループ全店舗の実績比較</p>
+        </div>
+
+        <div class="grid-4 section-gap">
+          <div class="kpi-card kpi-accent">
+            <div class="kpi-label">グループ総売上（今月）</div>
+            <div class="kpi-value" id="kpi-total-sales">&yen;78,140,000</div>
+            <div class="kpi-trend">4店舗合計</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">総来店数（今月）</div>
+            <div class="kpi-value" id="kpi-total-visits">794組</div>
+            <div class="kpi-trend">月間累計</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">平均客単価</div>
+            <div class="kpi-value" id="kpi-avg-spend">&yen;98,400</div>
+            <div class="kpi-trend">全店舗平均</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">総在籍ホスト数</div>
+            <div class="kpi-value" id="kpi-total-hosts">55名</div>
+            <div class="kpi-trend">在籍合計</div>
+          </div>
+        </div>
+
+        <div class="card section-gap">
+          <div class="card-header">
+            <span class="card-title">店舗別実績</span>
+            <span class="tag">今月</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="data-table table">
+              <thead>
+                <tr>
+                  <th>店舗名</th>
+                  <th>本日売上</th>
+                  <th>今月売上</th>
+                  <th>達成率</th>
+                  <th>在籍ホスト数</th>
+                  <th>今月来店数</th>
+                  <th>客単価（平均）</th>
+                  <th>VIP顧客数</th>
+                </tr>
+              </thead>
+              <tbody id="store-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card section-gap">
+          <div class="card-header">
+            <span class="card-title">目標達成状況</span>
+            <span class="tag">日次・週次・月次</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="data-table table">
+              <thead>
+                <tr>
+                  <th>店舗名</th>
+                  <th>期間</th>
+                  <th>実績</th>
+                  <th>進捗</th>
+                  <th>時間達成率</th>
+                </tr>
+              </thead>
+              <tbody id="progress-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="grid-2 section-gap">
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">今月売上ランキング</span>
+            </div>
+            <div class="card-body" id="store-ranking"></div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">今月進捗率ランキング</span>
+            </div>
+            <div class="card-body" id="progress-rate-ranking"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../assets/mock/stores.js"></script>
+  <script src="store-analytics.js"></script>
+  <script type="module">
+    import { requireAuth } from '../assets/js/auth.js';
+    requireAuth('login.html');
+  </script>
+  <script src="../assets/js/shared-layout.js"></script>
+</body>
+</html>
